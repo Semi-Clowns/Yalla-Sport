@@ -101,14 +101,17 @@
 		B315D28E2FA9B412000A70D9 /* SportsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				B3C7964F2FAB21A300CB12A1 /* View */,
+				B3C7964E2FAB216900CB12A1 /* Modules */,
+				B3C7964D2FAB20FE00CB12A1 /* Model */,
 				B315D28F2FA9B412000A70D9 /* AppDelegate.swift */,
 				B315D2912FA9B412000A70D9 /* SceneDelegate.swift */,
 				B315D2932FA9B412000A70D9 /* ViewController.swift */,
-				B315D2952FA9B412000A70D9 /* Main.storyboard */,
 				B315D29B2FA9B413000A70D9 /* Assets.xcassets */,
-				B315D29D2FA9B413000A70D9 /* LaunchScreen.storyboard */,
 				B315D2A02FA9B413000A70D9 /* Info.plist */,
 				B315D2982FA9B412000A70D9 /* SportsApplication.xcdatamodeld */,
+				B315D2952FA9B412000A70D9 /* Main.storyboard */,
+				B315D29D2FA9B413000A70D9 /* LaunchScreen.storyboard */,
 			);
 			path = SportsApplication;
 			sourceTree = "<group>";
@@ -128,6 +131,59 @@
 				B315D2B52FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift */,
 			);
 			path = SportsApplicationUITests;
+			sourceTree = "<group>";
+		};
+		B3C7964D2FAB20FE00CB12A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3C796532FAB222A00CB12A1 /* Services */,
+				B3C796522FAB221600CB12A1 /* Entities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3C7964E2FAB216900CB12A1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B3C796512FAB220600CB12A1 /* Home */,
+				B3C796502FAB21F000CB12A1 /* Onboadrding */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B3C7964F2FAB21A300CB12A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3C796502FAB21F000CB12A1 /* Onboadrding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboadrding;
+			sourceTree = "<group>";
+		};
+		B3C796512FAB220600CB12A1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B3C796522FAB221600CB12A1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B3C796532FAB222A00CB12A1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
