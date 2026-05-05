@@ -1,0 +1,34 @@
+# --- Xcode ---
+# User-specific files (Crucial for teams to ignore)
+# These files store your personal window sizes, open tabs, and simulator choices.
+# If you don't ignore these, you and your partner will constantly overwrite each other's settings.
+xcuserdata/
+*.xcuserdatad
+*.xcuserstate
+
+# Build results and temporary files
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.playground.xcworkspace
+
+# --- Swift Package Manager (SPM) ---
+# If you use SPM for Alamofire, ignore the local build cache
+.build/
+.swiftpm
+
+# --- Dependency Managers ---
+# If you decide to use CocoaPods instead of SPM
+Pods/
+Podfile.lock
+
+# If you use Carthage
+Carthage/Build/
+
+# --- System Files ---
+# macOS specific hidden files
+.DS_Store
+*.swp
+*~
+executable
