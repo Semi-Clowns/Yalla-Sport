@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4109A9722FAB946800B1F5F8 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */; };
+		4109A9742FAB969900B1F5F8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */; };
+		411142872FAC6CEC00268097 /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */; };
+		411142892FAC6D7000268097 /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411142882FAC6D7000268097 /* HomePresenterProtocol.swift */; };
+		411142AD2FACB2C900268097 /* Mulish-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142A62FACB2C700268097 /* Mulish-ExtraBold.ttf */; };
+		411142AE2FACB2C900268097 /* Mulish-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142A72FACB2C800268097 /* Mulish-Light.ttf */; };
+		411142AF2FACB2C900268097 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142A82FACB2C800268097 /* Mulish-SemiBold.ttf */; };
+		411142B02FACB2C900268097 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142A92FACB2C800268097 /* Mulish-Bold.ttf */; };
+		411142B12FACB2C900268097 /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142AA2FACB2C900268097 /* Mulish-Regular.ttf */; };
+		411142B22FACB2C900268097 /* Mulish-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411142AB2FACB2C900268097 /* Mulish-Medium.ttf */; };
+		413493022FAAB817006F7A3C /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413493012FAAB817006F7A3C /* Sport.swift */; };
+		413493052FAABDF3006F7A3C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413493042FAABDF3006F7A3C /* HomePresenter.swift */; };
 		B315D2902FA9B412000A70D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D28F2FA9B412000A70D9 /* AppDelegate.swift */; };
 		B315D2922FA9B412000A70D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2912FA9B412000A70D9 /* SceneDelegate.swift */; };
-		B315D2942FA9B412000A70D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2932FA9B412000A70D9 /* ViewController.swift */; };
 		B315D2972FA9B412000A70D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B315D2952FA9B412000A70D9 /* Main.storyboard */; };
 		B315D29A2FA9B412000A70D9 /* SportsApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B315D2982FA9B412000A70D9 /* SportsApplication.xcdatamodeld */; };
 		B315D29C2FA9B413000A70D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B315D29B2FA9B413000A70D9 /* Assets.xcassets */; };
@@ -45,10 +56,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewController.swift; path = Home/View/Controller/HomeCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewCell.swift; path = Home/View/Controller/HomeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HomeViewController+CollectionView.swift"; path = "Home/Extension/HomeViewController+CollectionView.swift"; sourceTree = SOURCE_ROOT; };
+		411142882FAC6D7000268097 /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenterProtocol.swift; path = Home/Presenter/HomePresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
+		411142A62FACB2C700268097 /* Mulish-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBold.ttf"; sourceTree = "<group>"; };
+		411142A72FACB2C800268097 /* Mulish-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Light.ttf"; sourceTree = "<group>"; };
+		411142A82FACB2C800268097 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
+		411142A92FACB2C800268097 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
+		411142AA2FACB2C900268097 /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
+		411142AB2FACB2C900268097 /* Mulish-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Medium.ttf"; sourceTree = "<group>"; };
+		413493012FAAB817006F7A3C /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sport.swift; path = Home/Model/Sport.swift; sourceTree = SOURCE_ROOT; };
+		413493042FAABDF3006F7A3C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = Home/Presenter/HomePresenter.swift; sourceTree = SOURCE_ROOT; };
 		B315D28C2FA9B412000A70D9 /* SportsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D28F2FA9B412000A70D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B315D2912FA9B412000A70D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B315D2932FA9B412000A70D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B315D2962FA9B412000A70D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B315D2992FA9B412000A70D9 /* SportsApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsApplication.xcdatamodel; sourceTree = "<group>"; };
 		B315D29B2FA9B413000A70D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +116,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411142842FAC6CAE00268097 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		411142A42FACB21F00268097 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				411142A92FACB2C800268097 /* Mulish-Bold.ttf */,
+				411142A62FACB2C700268097 /* Mulish-ExtraBold.ttf */,
+				411142A72FACB2C800268097 /* Mulish-Light.ttf */,
+				411142AB2FACB2C900268097 /* Mulish-Medium.ttf */,
+				411142AA2FACB2C900268097 /* Mulish-Regular.ttf */,
+				411142A82FACB2C800268097 /* Mulish-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		413492FA2FAAB515006F7A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				413493012FAAB817006F7A3C /* Sport.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		413492FB2FAAB523006F7A3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				413493032FAABDC5006F7A3C /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		413492FC2FAAB53D006F7A3C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				413493042FAABDF3006F7A3C /* HomePresenter.swift */,
+				411142882FAC6D7000268097 /* HomePresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		413493032FAABDC5006F7A3C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */,
+				4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B315D2832FA9B412000A70D9 = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +194,16 @@
 		B315D28E2FA9B412000A70D9 /* SportsApplication */ = {
 			isa = PBXGroup;
 			children = (
-				B3C7965F2FAB3E4300CB12A1 /* Utils */,
+				B315D29B2FA9B413000A70D9 /* Assets.xcassets */,
+				B315D2A02FA9B413000A70D9 /* Info.plist */,
+				B315D2982FA9B412000A70D9 /* SportsApplication.xcdatamodeld */,
+				B3C7964D2FAB20FE00CB12A1 /* Model */,
+				B3C7965F2FAB3E4300CB12A1 /* Extenstions */,
 				B3C7964F2FAB21A300CB12A1 /* View */,
 				B3C7964E2FAB216900CB12A1 /* Modules */,
 				B3C7964D2FAB20FE00CB12A1 /* Model */,
 				B315D28F2FA9B412000A70D9 /* AppDelegate.swift */,
 				B315D2912FA9B412000A70D9 /* SceneDelegate.swift */,
-				B315D2932FA9B412000A70D9 /* ViewController.swift */,
-				B315D29B2FA9B413000A70D9 /* Assets.xcassets */,
-				B315D2A02FA9B413000A70D9 /* Info.plist */,
-				B315D2982FA9B412000A70D9 /* SportsApplication.xcdatamodeld */,
 			);
 			path = SportsApplication;
 			sourceTree = "<group>";
@@ -151,6 +228,7 @@
 		B3C7964D2FAB20FE00CB12A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				411142A42FACB21F00268097 /* Fonts */,
 				B3C796532FAB222A00CB12A1 /* Services */,
 				B3C796522FAB221600CB12A1 /* Entities */,
 			);
@@ -226,12 +304,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B3C7965F2FAB3E4300CB12A1 /* Utils */ = {
+		B3C7965F2FAB3E4300CB12A1 /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
 				B3C796602FAB3ED400CB12A1 /* UIColor+Extensions.swift */,
 			);
-			path = Utils;
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		B3D2DAF62FACEB380030E45A /* Local */ = {
@@ -346,7 +424,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411142AD2FACB2C900268097 /* Mulish-ExtraBold.ttf in Resources */,
+				411142AE2FACB2C900268097 /* Mulish-Light.ttf in Resources */,
+				411142B02FACB2C900268097 /* Mulish-Bold.ttf in Resources */,
+				411142AF2FACB2C900268097 /* Mulish-SemiBold.ttf in Resources */,
 				B315D29F2FA9B413000A70D9 /* LaunchScreen.storyboard in Resources */,
+				411142B12FACB2C900268097 /* Mulish-Regular.ttf in Resources */,
+				411142B22FACB2C900268097 /* Mulish-Medium.ttf in Resources */,
 				B315D29C2FA9B413000A70D9 /* Assets.xcassets in Resources */,
 				B315D2972FA9B412000A70D9 /* Main.storyboard in Resources */,
 			);
@@ -374,7 +458,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D2DAF22FACE96C0030E45A /* OnboardingViewProtocol.swift in Sources */,
-				B315D2942FA9B412000A70D9 /* ViewController.swift in Sources */,
 				B3C796612FAB3ED400CB12A1 /* UIColor+Extensions.swift in Sources */,
 				B315D29A2FA9B412000A70D9 /* SportsApplication.xcdatamodeld in Sources */,
 				B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */,
