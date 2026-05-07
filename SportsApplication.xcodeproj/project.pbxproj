@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4109A9722FAB946800B1F5F8 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */; };
+		4109A9742FAB969900B1F5F8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */; };
+		411142872FAC6CEC00268097 /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */; };
+		411142892FAC6D7000268097 /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411142882FAC6D7000268097 /* HomePresenterProtocol.swift */; };
+		413493022FAAB817006F7A3C /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413493012FAAB817006F7A3C /* Sport.swift */; };
+		413493052FAABDF3006F7A3C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413493042FAABDF3006F7A3C /* HomePresenter.swift */; };
 		B315D2902FA9B412000A70D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D28F2FA9B412000A70D9 /* AppDelegate.swift */; };
 		B315D2922FA9B412000A70D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2912FA9B412000A70D9 /* SceneDelegate.swift */; };
 		B315D2942FA9B412000A70D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2932FA9B412000A70D9 /* ViewController.swift */; };
@@ -45,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewController.swift; path = Home/View/Controller/HomeCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewCell.swift; path = Home/View/Controller/HomeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HomeViewController+CollectionView.swift"; path = "Home/Extension/HomeViewController+CollectionView.swift"; sourceTree = SOURCE_ROOT; };
+		411142882FAC6D7000268097 /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenterProtocol.swift; path = Home/Presenter/HomePresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
+		413493012FAAB817006F7A3C /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Sport.swift; path = Home/Model/Sport.swift; sourceTree = SOURCE_ROOT; };
+		413493042FAABDF3006F7A3C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = Home/Presenter/HomePresenter.swift; sourceTree = SOURCE_ROOT; };
 		B315D28C2FA9B412000A70D9 /* SportsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D28F2FA9B412000A70D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B315D2912FA9B412000A70D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +106,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411142842FAC6CAE00268097 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				411142862FAC6CEC00268097 /* HomeViewController+CollectionView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		413492FA2FAAB515006F7A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				413493012FAAB817006F7A3C /* Sport.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		413492FB2FAAB523006F7A3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				413493032FAABDC5006F7A3C /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		413492FC2FAAB53D006F7A3C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				413493042FAABDF3006F7A3C /* HomePresenter.swift */,
+				411142882FAC6D7000268097 /* HomePresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		413493032FAABDC5006F7A3C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4109A9712FAB946800B1F5F8 /* HomeCollectionViewController.swift */,
+				4109A9732FAB969900B1F5F8 /* HomeCollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B315D2832FA9B412000A70D9 = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +171,10 @@
 		B315D28E2FA9B412000A70D9 /* SportsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				B3C7964D2FAB20FE00CB12A1 /* Model */,
 				B3C7965F2FAB3E4300CB12A1 /* Utils */,
 				B3C7964F2FAB21A300CB12A1 /* View */,
 				B3C7964E2FAB216900CB12A1 /* Modules */,
-				B3C7964D2FAB20FE00CB12A1 /* Model */,
 				B315D28F2FA9B412000A70D9 /* AppDelegate.swift */,
 				B315D2912FA9B412000A70D9 /* SceneDelegate.swift */,
 				B315D2932FA9B412000A70D9 /* ViewController.swift */,
@@ -187,6 +241,10 @@
 		B3C796512FAB220600CB12A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				411142842FAC6CAE00268097 /* Extension */,
+				413492FC2FAAB53D006F7A3C /* Presenter */,
+				413492FB2FAAB523006F7A3C /* View */,
+				413492FA2FAAB515006F7A3C /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -373,6 +431,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413493052FAABDF3006F7A3C /* HomePresenter.swift in Sources */,
+				411142872FAC6CEC00268097 /* HomeViewController+CollectionView.swift in Sources */,
 				B3D2DAF22FACE96C0030E45A /* OnboardingViewProtocol.swift in Sources */,
 				B315D2942FA9B412000A70D9 /* ViewController.swift in Sources */,
 				B3C796612FAB3ED400CB12A1 /* UIColor+Extensions.swift in Sources */,
@@ -381,6 +441,10 @@
 				B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */,
 				B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */,
 				B315D2902FA9B412000A70D9 /* AppDelegate.swift in Sources */,
+				4109A9722FAB946800B1F5F8 /* HomeCollectionViewController.swift in Sources */,
+				413493022FAAB817006F7A3C /* Sport.swift in Sources */,
+				4109A9742FAB969900B1F5F8 /* HomeCollectionViewCell.swift in Sources */,
+				411142892FAC6D7000268097 /* HomePresenterProtocol.swift in Sources */,
 				B3C7965E2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift in Sources */,
 				B315D2922FA9B412000A70D9 /* SceneDelegate.swift in Sources */,
 				B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */,
