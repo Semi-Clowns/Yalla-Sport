@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11g-O2-tUt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iD-Gs-Ou4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,6 +8,9 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+
+
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -156,6 +159,138 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+            <point key="canvasLocation" x="-533" y="130"/>
+        </scene>
+        <!--Onboarding Page View Controller-->
+        <scene sceneID="Xyl-tm-Adb">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="CbR-7O-ftq" customClass="OnboardingPageViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wbA-pl-lbc"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nP-hV-jdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318.4615384615383" y="129.38388625592415"/>
+        </scene>
+        <!--First Onboarding View Controller-->
+        <scene sceneID="Ngr-Qn-rtw">
+            <objects>
+                <viewController storyboardIdentifier="page1" id="JJS-WF-0fP" customClass="FirstOnboardingViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nAB-qe-Ovp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingImage1" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-TO-DnM">
+                                <rect key="frame" x="0.0" y="44" width="390" height="336.66666666666669"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track live scores and match results across your favorite sports" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWF-JR-GLE">
+                                <rect key="frame" x="16" y="473.33333333333331" width="358" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="SecondaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Yalla Sport" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-Kd-M3l">
+                                <rect key="frame" x="16" y="412.66666666666669" width="358" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vIB-D5-Vy4"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="centerX" secondItem="vIB-D5-Vy4" secondAttribute="centerX" id="2EA-aI-yjy"/>
+                            <constraint firstItem="tWF-JR-GLE" firstAttribute="leading" secondItem="vIB-D5-Vy4" secondAttribute="leading" constant="16" id="Ghw-ky-FVD"/>
+                            <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="gRq-Kd-M3l" secondAttribute="trailing" constant="16" id="LGv-2f-6nw"/>
+                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="leading" secondItem="vIB-D5-Vy4" secondAttribute="leading" constant="16" id="LZp-bO-SYb"/>
+                            <constraint firstItem="tWF-JR-GLE" firstAttribute="top" secondItem="gRq-Kd-M3l" secondAttribute="bottom" constant="32" id="Pgt-O3-ohL"/>
+                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="top" secondItem="9MF-TO-DnM" secondAttribute="bottom" constant="32" id="YRD-H3-Jqj"/>
+                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="centerY" secondItem="vIB-D5-Vy4" secondAttribute="centerY" id="iMy-G7-fOm"/>
+                            <constraint firstItem="9MF-TO-DnM" firstAttribute="top" secondItem="vIB-D5-Vy4" secondAttribute="top" id="k30-jb-BjJ"/>
+                            <constraint firstItem="9MF-TO-DnM" firstAttribute="leading" secondItem="vIB-D5-Vy4" secondAttribute="leading" id="ppx-rn-XZ5"/>
+                            <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="9MF-TO-DnM" secondAttribute="trailing" id="sUT-vt-2jQ"/>
+                            <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="tWF-JR-GLE" secondAttribute="trailing" constant="16" id="uFn-DB-cw0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SF3-7C-FfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183.0769230769229" y="128.67298578199052"/>
+        </scene>
+        <!--Second Onboarding View Controller-->
+        <scene sceneID="Lep-2B-MyN">
+            <objects>
+                <viewController storyboardIdentifier="page2" id="hZL-ap-FY6" customClass="SecondOnboardingViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JNT-qc-1Uf">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingImage1" translatesAutoresizingMaskIntoConstraints="NO" id="KiD-Qx-ybM">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="380.66666666666669"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Sports in One Place" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d9-9D-25M">
+                                <rect key="frame" x="16" y="412.66666666666669" width="358" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football, Basketball, and Cricket updates with standings and fixtures." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpZ-Hs-fhS">
+                                <rect key="frame" x="16" y="473.33333333333331" width="358" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="SecondaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eGH-xS-yqT"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="top" secondItem="KiD-Qx-ybM" secondAttribute="bottom" constant="32" id="0At-AJ-6dV"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-zgE"/>
+                            <constraint firstItem="KiD-Qx-ybM" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" id="1tQ-Vc-h3D"/>
+                            <constraint firstItem="KiD-Qx-ybM" firstAttribute="top" secondItem="JNT-qc-1Uf" secondAttribute="top" id="23m-BL-y5B"/>
+                            <constraint firstItem="CpZ-Hs-fhS" firstAttribute="top" secondItem="8d9-9D-25M" secondAttribute="bottom" constant="32" id="5sN-yW-DmI"/>
+                            <constraint firstItem="KiD-Qx-ybM" firstAttribute="trailing" secondItem="eGH-xS-yqT" secondAttribute="trailing" id="EnU-Ov-BrN"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="centerX" secondItem="eGH-xS-yqT" secondAttribute="centerX" id="U68-sH-SN4"/>
+                            <constraint firstItem="eGH-xS-yqT" firstAttribute="trailing" secondItem="8d9-9D-25M" secondAttribute="trailing" constant="16" id="VSh-YI-mis"/>
+                            <constraint firstItem="eGH-xS-yqT" firstAttribute="trailing" secondItem="CpZ-Hs-fhS" secondAttribute="trailing" constant="16" id="VYq-vM-815"/>
+                            <constraint firstItem="CpZ-Hs-fhS" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="aR9-KD-fM1"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="centerY" secondItem="eGH-xS-yqT" secondAttribute="centerY" id="qRS-HC-0dd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2G-p2-zW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2903.0769230769229" y="128.67298578199052"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d3k-f0-oEX">
+            <objects>
+                <navigationController storyboardIdentifier="OnboardingPage" automaticallyAdjustsScrollViewInsets="NO" id="1iD-Gs-Ou4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8wj-9K-Wxn">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CbR-7O-ftq" kind="relationship" relationship="rootViewController" id="0v7-nV-3Zv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUd-15-TCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="389.23076923076923" y="129.38388625592415"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="OnboardingImage1" width="360" height="218"/>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryTextColor">
+            <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryTextColor">
+            <color red="0.51764705882352946" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
