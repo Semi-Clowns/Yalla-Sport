@@ -9,8 +9,6 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-
-
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -40,7 +38,7 @@
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <size key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Urs-gw-Fas" customClass="HomeCollectionViewCell" customModule="SportsApplication" customModuleProvider="target">
@@ -153,27 +151,7 @@
             </objects>
             <point key="canvasLocation" x="1105.7971014492755" y="59.598214285714285"/>
         </scene>
-       </scenes>
-        <resources>
-            <image name="house" catalog="system" width="128" height="106"/>
-            <image name="house.fill" catalog="system" width="128" height="106"/>
-            <image name="star" catalog="system" width="128" height="116"/>
-            <image name="star.fill" catalog="system" width="128" height="116"/>
-            <image name="OnboardingImage1" width="360" height="218"/>
-            <namedColor name="BackgroundColor">
-                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            </namedColor>
-            <namedColor name="PrimaryTextColor">
-                <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            </namedColor>
-            <namedColor name="SecondaryTextColor">
-                <color red="0.51764705882352946" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            </namedColor>
-            <systemColor name="systemBackgroundColor">
-                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            </systemColor>
-        </resources>
-    </document>
+        <!--Onboarding Page View Controller-->
         <scene sceneID="Xyl-tm-Adb">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="CbR-7O-ftq" customClass="OnboardingPageViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -256,7 +234,7 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8d9-9D-25M" firstAttribute="top" secondItem="KiD-Qx-ybM" secondAttribute="bottom" constant="32" id="0At-AJ-6dV"/>
-                            <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-zgE"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-vzE"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" id="1tQ-Vc-h3D"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="top" secondItem="JNT-qc-1Uf" secondAttribute="top" id="23m-BL-y5B"/>
                             <constraint firstItem="CpZ-Hs-fhS" firstAttribute="top" secondItem="8d9-9D-25M" secondAttribute="bottom" constant="32" id="5sN-yW-DmI"/>
@@ -293,6 +271,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="OnboardingImage1" width="360" height="218"/>
         <namedColor name="BackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
