@@ -112,8 +112,8 @@ extension OnboardingPageViewController: OnboardingViewProtocol {
     }
 
     func navigateToMainApp() {
-        guard let HomePage = storyboard?.instantiateViewController(withIdentifier: "HomePage") else { return }
-        navigationController?.pushViewController(HomePage, animated: true)
+        guard let homePage = storyboard?.instantiateViewController(withIdentifier: "HomePage") else { return }
+        navigationController?.setViewControllers([homePage], animated: true)
     }
 }
 
