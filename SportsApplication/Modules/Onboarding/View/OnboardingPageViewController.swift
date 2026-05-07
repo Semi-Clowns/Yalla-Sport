@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol OnboardingViewProtocol: AnyObject {
-    func updateUI(index: Int, isLastPage: Bool)
-    func navigateToMainApp()
-}
-
 class OnboardingPageViewController: UIPageViewController {
 
     private var presenter: OnboardingPresenterProtocol!
@@ -38,7 +33,7 @@ class OnboardingPageViewController: UIPageViewController {
 
     private let actionButton: UIButton = {
         let nextButton = UIButton(type: .system)
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle("Next →", for: .normal)
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         nextButton.backgroundColor = .primaryColor
@@ -88,9 +83,7 @@ class OnboardingPageViewController: UIPageViewController {
         actionButton.addTarget(self, action: #selector(actionTapped), for: .touchUpInside)
         skipButton.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
     }
-
    
-
     @objc private func actionTapped() {
         presenter.nextTapped(currentIndex: getCurrentIndex())
     }
@@ -115,7 +108,7 @@ extension OnboardingPageViewController: OnboardingViewProtocol {
 
         pageControl.currentPage = index
         skipButton.isHidden = isLastPage
-        actionButton.setTitle(isLastPage ? "Get Started" : "Next", for: .normal)
+        actionButton.setTitle(isLastPage ? "Get Started →" : "Next →", for: .normal)
     }
 
     func navigateToMainApp() {
@@ -146,6 +139,8 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource, UIPageVi
         presenter.didSwipeToPage(index: getCurrentIndex())
     }
 }
+
+
     /*
     // MARK: - Navigation
 

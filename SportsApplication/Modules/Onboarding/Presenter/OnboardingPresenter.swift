@@ -6,16 +6,7 @@
 //
 
 import Foundation
-import Foundation
 
-protocol OnboardingPresenterProtocol: AnyObject {
-    var pageCount: Int { get }
-    func viewDidLoad()
-    func nextTapped(currentIndex: Int)
-    func didSwipeToPage(index: Int)
-    func skipTapped()
-    func getPages() -> [String]
-}
 
 class OnboardingPresenter: OnboardingPresenterProtocol {
 
@@ -29,7 +20,6 @@ class OnboardingPresenter: OnboardingPresenterProtocol {
     init(view: OnboardingViewProtocol,localDataManager: LocalDataManagerProtocol = LocalDataManager.shared) {
         self.view = view
         self.localDataManager = localDataManager
-        
     }
 
     func getPages() -> [String] {
