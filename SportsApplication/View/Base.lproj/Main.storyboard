@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iD-Gs-Ou4">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -219,7 +218,7 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8d9-9D-25M" firstAttribute="top" secondItem="KiD-Qx-ybM" secondAttribute="bottom" constant="32" id="0At-AJ-6dV"/>
-                            <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-vzE"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-zgE"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" id="1tQ-Vc-h3D"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="top" secondItem="JNT-qc-1Uf" secondAttribute="top" id="23m-BL-y5B"/>
                             <constraint firstItem="CpZ-Hs-fhS" firstAttribute="top" secondItem="8d9-9D-25M" secondAttribute="bottom" constant="32" id="5sN-yW-DmI"/>
