@@ -7,34 +7,35 @@
 
 import Foundation
 
-
 class OnboardingPresenter: OnboardingPresenterProtocol {
+ 
 
     weak var view: OnboardingViewProtocol?
-    private let pageIdentifiers: [String] = ["page1", "page2"]
+    private let pageIdentifiers: [String] 
     private let localDataManager: LocalDataManagerProtocol
-    var pageCount: Int {
-        pageIdentifiers.count
-    }
+    
 
-    init(view: OnboardingViewProtocol,localDataManager: LocalDataManagerProtocol = LocalDataManager.shared) {
+    init(view: OnboardingViewProtocol,localDataManager: LocalDataManagerProtocol = LocalDataManager.shared,pageIdentifiers: [String] = ["page1", "page2"] ) {
         self.view = view
         self.localDataManager = localDataManager
+        self.pageIdentifiers = pageIdentifiers
     }
 
     func getPages() -> [String] {
         return pageIdentifiers
     }
-
+    func getPageCount() -> Int {
+        pageIdentifiers.count
+    }
     func viewDidLoad() {
-        view?.updateUI(index: 0, isLastPage: pageCount == 1)
+        view?.updateUI(index: 0, isLastPage: getPageCount() == 1)
     }
 
     func nextTapped(currentIndex: Int) {
-        guard currentIndex < pageCount else { return }
+        guard currentIndex < getPageCount() else { return }
         let nextIndex = currentIndex + 1
-        if nextIndex < pageCount {
-            view?.updateUI(index: nextIndex, isLastPage: nextIndex == pageCount - 1)
+        if nextIndex < getPageCount() {
+            view?.updateUI(index: nextIndex, isLastPage: nextIndex == getPageCount() - 1)
         } else {
             localDataManager.setHasSeenOnboarding(true)
             view?.navigateToMainApp()
@@ -42,8 +43,8 @@ class OnboardingPresenter: OnboardingPresenterProtocol {
     }
 
     func didSwipeToPage(index: Int) {
-        guard index >= 0, index < pageCount else { return }
-        view?.updateUI(index: index, isLastPage: index == pageCount - 1)
+        guard index >= 0, index < getPageCount() else { return }
+        view?.updateUI(index: index, isLastPage: index == getPageCount() - 1)
     }
 
     func skipTapped() {

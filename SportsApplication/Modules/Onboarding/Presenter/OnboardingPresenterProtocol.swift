@@ -7,7 +7,7 @@
 import Foundation
 
 protocol OnboardingPresenterProtocol {
-    var pageCount: Int { get }
+    func getPageCount() -> Int
     func viewDidLoad()
     func nextTapped(currentIndex: Int)
     func didSwipeToPage(index: Int)
