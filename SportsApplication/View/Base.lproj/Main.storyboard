@@ -160,7 +160,7 @@
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
             <point key="canvasLocation" x="-533" y="130"/>
-        </scene>
+    </resources>
         <!--Onboarding Page View Controller-->
         <scene sceneID="Xyl-tm-Adb">
             <objects>
