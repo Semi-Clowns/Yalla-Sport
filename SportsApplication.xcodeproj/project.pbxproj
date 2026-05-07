@@ -17,6 +17,14 @@
 		B315D2AA2FA9B414000A70D9 /* SportsApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2A92FA9B414000A70D9 /* SportsApplicationTests.swift */; };
 		B315D2B42FA9B414000A70D9 /* SportsApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2B32FA9B414000A70D9 /* SportsApplicationUITests.swift */; };
 		B315D2B62FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2B52FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift */; };
+		B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D5BF02FABC750006D897B /* LocalDataManager.swift */; };
+		B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */; };
+		B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */; };
+		B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */; };
+		B3C7965E2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7965D2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift */; };
+		B3C796612FAB3ED400CB12A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796602FAB3ED400CB12A1 /* UIColor+Extensions.swift */; };
+		B3D2DAF22FACE96C0030E45A /* OnboardingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2DAF12FACE96C0030E45A /* OnboardingViewProtocol.swift */; };
+		B3D2DAF52FACEA840030E45A /* OnboardingPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2DAF42FACEA840030E45A /* OnboardingPresenterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		B315D2AF2FA9B414000A70D9 /* SportsApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D2B32FA9B414000A70D9 /* SportsApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsApplicationUITests.swift; sourceTree = "<group>"; };
 		B315D2B52FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsApplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B37D5BF02FABC750006D897B /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
+		B3C7965D2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
+		B3C796602FAB3ED400CB12A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		B3D2DAF12FACE96C0030E45A /* OnboardingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewProtocol.swift; sourceTree = "<group>"; };
+		B3D2DAF42FACEA840030E45A /* OnboardingPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		B315D28E2FA9B412000A70D9 /* SportsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				B3C7965F2FAB3E4300CB12A1 /* Utils */,
 				B3C7964F2FAB21A300CB12A1 /* View */,
 				B3C7964E2FAB216900CB12A1 /* Modules */,
 				B3C7964D2FAB20FE00CB12A1 /* Model */,
@@ -110,8 +127,6 @@
 				B315D29B2FA9B413000A70D9 /* Assets.xcassets */,
 				B315D2A02FA9B413000A70D9 /* Info.plist */,
 				B315D2982FA9B412000A70D9 /* SportsApplication.xcdatamodeld */,
-				B315D2952FA9B412000A70D9 /* Main.storyboard */,
-				B315D29D2FA9B413000A70D9 /* LaunchScreen.storyboard */,
 			);
 			path = SportsApplication;
 			sourceTree = "<group>";
@@ -146,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C796512FAB220600CB12A1 /* Home */,
-				B3C796502FAB21F000CB12A1 /* Onboadrding */,
+				B3C796502FAB21F000CB12A1 /* Onboarding */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -154,15 +169,19 @@
 		B3C7964F2FAB21A300CB12A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B315D2952FA9B412000A70D9 /* Main.storyboard */,
+				B315D29D2FA9B413000A70D9 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		B3C796502FAB21F000CB12A1 /* Onboadrding */ = {
+		B3C796502FAB21F000CB12A1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				B3C796552FAB37C600CB12A1 /* View */,
+				B3C796542FAB37AA00CB12A1 /* Presenter */,
 			);
-			path = Onboadrding;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		B3C796512FAB220600CB12A1 /* Home */ = {
@@ -182,8 +201,45 @@
 		B3C796532FAB222A00CB12A1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B3D2DAF62FACEB380030E45A /* Local */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B3C796542FAB37AA00CB12A1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */,
+				B3D2DAF42FACEA840030E45A /* OnboardingPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3C796552FAB37C600CB12A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */,
+				B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */,
+				B3C7965D2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift */,
+				B3D2DAF12FACE96C0030E45A /* OnboardingViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3C7965F2FAB3E4300CB12A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3C796602FAB3ED400CB12A1 /* UIColor+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3D2DAF62FACEB380030E45A /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				B37D5BF02FABC750006D897B /* LocalDataManager.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,10 +373,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D2DAF22FACE96C0030E45A /* OnboardingViewProtocol.swift in Sources */,
 				B315D2942FA9B412000A70D9 /* ViewController.swift in Sources */,
+				B3C796612FAB3ED400CB12A1 /* UIColor+Extensions.swift in Sources */,
 				B315D29A2FA9B412000A70D9 /* SportsApplication.xcdatamodeld in Sources */,
+				B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */,
+				B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */,
+				B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */,
 				B315D2902FA9B412000A70D9 /* AppDelegate.swift in Sources */,
+				B3C7965E2FAB3BBB00CB12A1 /* SecondOnboardingViewController.swift in Sources */,
 				B315D2922FA9B412000A70D9 /* SceneDelegate.swift in Sources */,
+				B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */,
+				B3D2DAF52FACEA840030E45A /* OnboardingPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
