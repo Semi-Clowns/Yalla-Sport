@@ -19,11 +19,10 @@ class AppComponents {
             activityIndicator.startAnimating()
 
             loadingView.addSubview(activityIndicator)
-            vc.view.window?.addSubview(loadingView)
-            
+            vc.view.addSubview(loadingView)
         }
         
         static func hideLoading(on vc: UIViewController) {
-            vc.view.window?.viewWithTag(999)?.removeFromSuperview()        }
+            vc.view.viewWithTag(999)?.removeFromSuperview()        }
 }
 
