@@ -10,7 +10,7 @@ jobs:
   build:
     name: Build using Xcode 13.2.1
     # Xcode 13.2.1 works best on macOS 12
-    runs-on: macos-12 
+    runs-on: macos-13
 
     steps:
       - name: Checkout
