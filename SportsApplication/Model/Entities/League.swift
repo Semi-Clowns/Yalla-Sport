@@ -13,5 +13,6 @@ struct League : Codable {
     let leagueLogo: String?
     let countryName: String?
     let countryLogo: String?
+    let sportType: String?
     var isFav: Bool = false
 }
