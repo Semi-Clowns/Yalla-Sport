@@ -38,7 +38,7 @@ class LeagueTableViewCell: UITableViewCell {
         leagueNameLabel.text = league.leagueName
         leagueImageView.kf.setImage(
             with: URL(string:league.leagueLogo ?? ""),
-                placeholder: UIImage(systemName: "" ),
+                placeholder: UIImage(systemName: "photo.circle.fill"),
                 options: [
                     .transition(.fade(0.3)),
                     .cacheSerializer(FormatIndicatedCacheSerializer.png)
@@ -48,7 +48,7 @@ class LeagueTableViewCell: UITableViewCell {
         leagueCountryNameLabel.text = league.countryName
         leagueCountryImageView.kf.setImage(
             with: URL(string:league.countryLogo ?? ""),
-                placeholder: UIImage(systemName: "" ),
+                placeholder: UIImage(systemName: "photo.circle.fill" ),
                 options: [
                     .transition(.fade(0.3)),
                     .cacheSerializer(FormatIndicatedCacheSerializer.png)

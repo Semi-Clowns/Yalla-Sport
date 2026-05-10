@@ -24,6 +24,22 @@ struct League : Codable {
         case countryLogo = "country_logo"
     }
     
+    init(id: Int,
+             leagueName: String? = nil,
+             leagueLogo: String? = nil,
+             countryName: String? = nil,
+             countryLogo: String? = nil,
+             sportType: String? = nil,
+             isFav: Bool = false) {
+            self.id = id
+            self.leagueName = leagueName
+            self.leagueLogo = leagueLogo
+            self.countryName = countryName
+            self.countryLogo = countryLogo
+            self.sportType = sportType
+            self.isFav = isFav
+        }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id          = try container.decode(Int.self, forKey: .id)

@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home-->
+        <!--Home Collection View Controller-->
         <scene sceneID="jzN-M7-ece">
             <objects>
                 <collectionViewController id="TQH-NT-QyW" customClass="HomeCollectionViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,17 +81,14 @@
                             <outlet property="delegate" destination="TQH-NT-QyW" id="4Sb-yX-bvR"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Home" id="03A-2u-yYk">
-                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
-                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="mbr-5d-Meb"/>
                     <connections>
                         <segue destination="dal-xD-LUA" kind="show" identifier="goToAllLeagues" id="XE3-8Q-8ay"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIl-w9-DSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="863"/>
+            <point key="canvasLocation" x="1964.6153846153845" y="862.32227488151659"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="kRf-6c-5l3">
@@ -123,7 +120,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWU-QU-gEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="863"/>
+            <point key="canvasLocation" x="2913.8461538461538" y="862.32227488151659"/>
         </scene>
         <!--All Leagues View Controller-->
         <scene sceneID="7Vd-LC-O1I">
@@ -134,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-mO-Wmp">
-                                <rect key="frame" x="8" y="52" width="374" height="750"/>
+                                <rect key="frame" x="8" y="52" width="374" height="701"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="27O-bb-9fj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
@@ -177,11 +174,12 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MJN-ua-xPy">
-                                        <rect key="frame" x="0.0" y="100" width="374" height="650"/>
+                                        <rect key="frame" x="0.0" y="100" width="374" height="601"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableView>
                                 </subviews>
+                                <gestureRecognizers/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7LF-zY-Gnw"/>
@@ -201,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VX-Vt-OxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="1617"/>
+            <point key="canvasLocation" x="1049" y="1627"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Hub-yh-Vqq">
@@ -214,7 +212,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="TQH-NT-QyW" kind="relationship" relationship="viewControllers" id="skP-eW-O3r"/>
+                        <segue destination="lR6-5I-7Ht" kind="relationship" relationship="viewControllers" id="skP-eW-O3r"/>
                         <segue destination="jmu-pT-h3R" kind="relationship" relationship="viewControllers" id="0zB-1m-Mio"/>
                     </connections>
                 </tabBarController>
@@ -320,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2G-p2-zW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="274"/>
+            <point key="canvasLocation" x="2173.8461538461538" y="273.69668246445497"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d3k-f0-oEX">
@@ -338,6 +336,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUd-15-TCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1420" y="274"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="l9V-Dj-qkI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lR6-5I-7Ht" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="03A-2u-yYk">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l8i-7l-6Bg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TQH-NT-QyW" kind="relationship" relationship="rootViewController" id="f34-tk-ruY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ql-nD-I9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035.3846153846152" y="862.32227488151659"/>
         </scene>
     </scenes>
     <resources>

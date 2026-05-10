@@ -46,14 +46,15 @@ class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProto
         
         // register nib
         
-        leaguesTableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "LeagueTableViewCell")
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        leaguesTableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "LeagueTableViewCell")
         
         
         // search bar
 //        leaguesSearchBar.layoutMargins = UIEdgeInsets(  top: 0, left: 0, bottom: 0, right: 0)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -64,6 +65,7 @@ class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProto
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
 
