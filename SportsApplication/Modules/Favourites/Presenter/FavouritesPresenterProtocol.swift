@@ -6,7 +6,7 @@
 //
 
 protocol FavouritesPresenterProtocol {
-    func viewDidLoad()
+    func fetchFavourites()
     func removeFavourite(leagueId: Int)
     func deleteConfirmation(leagueId: Int)
     func didSelectLeague(leagueId: Int,sportType:String)

@@ -52,6 +52,7 @@
 		B3415E072FB000FF00780D9A /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3415E062FB000FF00780D9A /* NetworkMonitor.swift */; };
 		B3415E092FB0029200780D9A /* AppAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3415E082FB0029200780D9A /* AppAlerts.swift */; };
 		B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D5BF02FABC750006D897B /* LocalDataManager.swift */; };
+		B39F42E22FB12F4100DDC340 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E12FB12F4100DDC340 /* AppComponents.swift */; };
 		B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */; };
 		B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */; };
 		B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */; };
@@ -115,6 +116,7 @@
 		B3415E062FB000FF00780D9A /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		B3415E082FB0029200780D9A /* AppAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlerts.swift; sourceTree = "<group>"; };
 		B37D5BF02FABC750006D897B /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		B39F42E12FB12F4100DDC340 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -321,12 +323,13 @@
 			path = "remote ";
 			sourceTree = "<group>";
 		};
-		B3415E0A2FB01C9F00780D9A /* Common */ = {
+		B3415E0A2FB01C9F00780D9A /* utils  */ = {
 			isa = PBXGroup;
 			children = (
 				B3415E082FB0029200780D9A /* AppAlerts.swift */,
+				B39F42E12FB12F4100DDC340 /* AppComponents.swift */,
 			);
-			path = Common;
+			path = "utils ";
 			sourceTree = "<group>";
 		};
 		B3C7964D2FAB20FE00CB12A1 /* Model */ = {
@@ -352,7 +355,7 @@
 		B3C7964F2FAB21A300CB12A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B3415E0A2FB01C9F00780D9A /* Common */,
+				B3415E0A2FB01C9F00780D9A /* utils  */,
 				B3415DFD2FAFF5DC00780D9A /* Cell */,
 				B315D29D2FA9B413000A70D9 /* LaunchScreen.storyboard */,
 				B315D2952FA9B412000A70D9 /* Main.storyboard */,
@@ -566,6 +569,7 @@
 				411142C32FACEE5B00268097 /* HomePresenterProtocol.swift in Sources */,
 				B3415DF02FAFDBD200780D9A /* CoreDataManager.swift in Sources */,
 				B315D29A2FA9B412000A70D9 /* SportsApplication.xcdatamodeld in Sources */,
+				B39F42E22FB12F4100DDC340 /* AppComponents.swift in Sources */,
 				B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */,
 				411142C02FACEE5A00268097 /* HomeViewController+CollectionView.swift in Sources */,
 				B3415DFA2FAFE4E300780D9A /* FavouritesPresenterProtocol.swift in Sources */,

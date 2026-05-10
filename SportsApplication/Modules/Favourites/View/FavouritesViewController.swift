@@ -9,7 +9,7 @@ import UIKit
 
 final class FavouritesViewController: UITableViewController {
     
-    var presenter: FavouritesPresenterProtocol!
+    var presenter: FavouritesPresenterProtocol?
     private var favourites: [[League]] = []
     private var sectionTitles: [String] = []
     
@@ -20,7 +20,7 @@ final class FavouritesViewController: UITableViewController {
             UINib(nibName: "LeagueTableViewCell", bundle: nil),
             forCellReuseIdentifier: "LeagueTableViewCell"
         )
-        presenter.viewDidLoad()
+        presenter?.fetchFavourites()
 
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
@@ -49,7 +49,7 @@ final class FavouritesViewController: UITableViewController {
         
         cell.favAction = { [weak self] in
             guard let self = self else { return }
-            self.presenter.deleteConfirmation(leagueId: league.id)
+            self.presenter?.deleteConfirmation(leagueId: league.id)
         }
         return cell
     }
@@ -65,12 +65,12 @@ final class FavouritesViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let leagueId = favourites[indexPath.section][indexPath.row].id
-            presenter.deleteConfirmation(leagueId: leagueId)
+            presenter?.deleteConfirmation(leagueId: leagueId)
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let league = favourites[indexPath.section][indexPath.row]
-        presenter.didSelectLeague(leagueId: league.id,sportType: league.sportType ?? "other")
+        presenter?.didSelectLeague(leagueId: league.id,sportType: league.sportType ?? "other")
     }
     
 }
@@ -84,6 +84,7 @@ extension FavouritesViewController: FavouritesViewProtocol {
         tableView.backgroundView = nil
         tableView.reloadData()
     }
+    
     func showEmptyState() {
         favourites = []
         sectionTitles = []
@@ -97,7 +98,7 @@ extension FavouritesViewController: FavouritesViewProtocol {
     }
     
     func showError(message: String) {
-        AppComponents.showAlert(on: self, title: "Error", message: message)
+        AppAlerts.showAlert(on: self, title: "Error", message: message)
         }
     
     func showLoading() {
@@ -114,16 +115,16 @@ extension FavouritesViewController: FavouritesViewProtocol {
     }
     
     func showDeleteAlert(leagueId: Int) {
-        AppComponents.showConfirmation(
+        AppAlerts.showConfirmation(
                 on: self,
                 title: "Remove From Favourite",
                 message: "Are you sure you want to remove this league?",
                 confirmTitle: "Remove"
             ) { [weak self] in
-                self?.presenter.removeFavourite(leagueId: leagueId)
+                self?.presenter?.removeFavourite(leagueId: leagueId)
             }
         }
     func showNoInternet() {
-        AppComponents.showNoInternet(on: self)
+        AppAlerts.showNoInternet(on: self)
         }
 }

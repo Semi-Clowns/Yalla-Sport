@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppComponents {
+class AppAlerts {
     
     static func showAlert(on vc: UIViewController, title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -31,22 +31,5 @@ class AppComponents {
         
         vc.present(alert, animated: true)
     }
-    static func showLoading(on vc: UIViewController){
-            let loadingView = UIView(frame: vc.view.bounds)
-            loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-            loadingView.tag = 999
-            
-            let activityIndicator = UIActivityIndicatorView(style: .large)
-            activityIndicator.color = .white
-            activityIndicator.center = loadingView.center
-            activityIndicator.startAnimating()
-
-            loadingView.addSubview(activityIndicator)
-            vc.view.window?.addSubview(loadingView)
-            
-        }
-        
-        static func hideLoading(on vc: UIViewController) {
-            vc.view.viewWithTag(999)?.removeFromSuperview()
-        }
+    
 }

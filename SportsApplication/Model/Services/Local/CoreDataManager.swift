@@ -14,11 +14,12 @@ final class CoreDataManager {
     
     private lazy var managedContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError("error")
+            fatalError("Unable to access the application")
         }
         return appDelegate.persistentContainer.viewContext
     }()
-    func addToFavourites(league: League) {
+    
+    func addToFavourites(league: League) throws {
         guard !isFavourite(leagueId: league.id) else { return }
         
         let entity = NSEntityDescription.entity(forEntityName: "FavouriteLeague", in: managedContext)!
@@ -31,61 +32,40 @@ final class CoreDataManager {
         leagueObject.setValue(league.countryLogo, forKey: "countryLogo")
         leagueObject.setValue(league.sportType, forKey: "sportType")
         
-        do {
-            try managedContext.save()
-            print("League saved")
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        try managedContext.save()
     }
     
-    func removeFromFavourites(leagueId: Int) {
+    func removeFromFavourites(leagueId: Int) throws {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteLeague")
         fetchRequest.predicate = NSPredicate(format: "leagueId == %d", leagueId)
         
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            results.forEach { managedContext.delete($0) }
-            try managedContext.save()
-            print("League removed ")
-        } catch let error  {
-            print(error.localizedDescription)
-        }
+        let results = try managedContext.fetch(fetchRequest)
+        results.forEach { managedContext.delete($0) }
+        try managedContext.save()
     }
     
-    func getAllFavourites() -> [String: [League]] {
+    func getAllFavourites() throws -> [String: [League]] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteLeague")
+        let results = try managedContext.fetch(fetchRequest)
         
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-                        let leagues = results.map { object in
-                League(
-                    id: object.value(forKey: "leagueId") as? Int ?? 0,
-                    leagueName: object.value(forKey: "leagueName") as? String,
-                    leagueLogo: object.value(forKey: "leagueLogo") as? String,
-                    countryName: object.value(forKey: "countryName") as? String,
-                    countryLogo: object.value(forKey: "countryLogo") as? String,
-                    sportType: object.value(forKey: "sportType") as? String,
-                    isFav: true
-                )
-            }
-            
-        return Dictionary(grouping: leagues) { $0.sportType ?? "Other" }
-            
-        } catch {
-            print(error.localizedDescription)
-            return [:]
+        let leagues = results.map { object in
+            League(
+                id: object.value(forKey: "leagueId") as? Int ?? 0,
+                leagueName: object.value(forKey: "leagueName") as? String,
+                leagueLogo: object.value(forKey: "leagueLogo") as? String,
+                countryName: object.value(forKey: "countryName") as? String,
+                countryLogo: object.value(forKey: "countryLogo") as? String,
+                sportType: object.value(forKey: "sportType") as? String,
+                isFav: true
+            )
         }
+        
+        return Dictionary(grouping: leagues) { $0.sportType ?? "Other" }
     }
     
     func isFavourite(leagueId: Int) -> Bool {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteLeague")
         fetchRequest.predicate = NSPredicate(format: "leagueId == %d", leagueId)
-        
-        do {
-            return try managedContext.count(for: fetchRequest) > 0
-        } catch {
-            return false
-        }
+        return (try? managedContext.count(for: fetchRequest)) ?? 0 > 0
     }
 }
