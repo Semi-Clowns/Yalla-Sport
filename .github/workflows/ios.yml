@@ -1,26 +1,18 @@
-name: iOS starter workflow
-
-on:
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "dev" ]
-
 jobs:
   build:
     name: Build using Xcode 13.2.1
-    # Xcode 13.2.1 works best on macOS 12
-    runs-on: macos-13
+    # macOS 14 runners are much more plentiful and start faster
+    runs-on: macos-14 
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 13.2.1
-        run: |
-          # This command tells the runner which Xcode version to use
-          sudo xcode-select -s /Applications/Xcode_13.2.1.app/Contents/Developer
-          xcodebuild -version
+      - name: Select Xcode
+        # This action is the "Golden Standard" for finding old Xcodes on new runners
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '13.2.1'
 
       - name: Set Default Scheme
         run: |
@@ -30,16 +22,11 @@ jobs:
           echo "Using default scheme: $default"
 
       - name: Build
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
         run: |
-          # Xcode 13 uses 'instruments -s devices' or 'xcrun simctl'
-          # Let's pick a standard iPhone 13 simulator which was common for Xcode 13
           device="iPhone 13"
+          scheme=$(cat default)
           
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          
+          # Detect workspace vs project
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then 
             filetype_parameter="workspace"
             file_to_build="`ls -A | grep -i \\.xcworkspace\$ | head -1`"
@@ -48,6 +35,4 @@ jobs:
             file_to_build="`ls -A | grep -i \\.xcodeproj\$ | head -1`"
           fi
           
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          
-          xcodebuild build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
+          xcodebuild build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=iOS Simulator,name=$device"
