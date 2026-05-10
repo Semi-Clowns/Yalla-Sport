@@ -10,8 +10,7 @@ import UIKit
 final class FavouritesViewController: UITableViewController {
     
     var presenter: FavouritesPresenterProtocol?
-    private var favourites: [[League]] = []
-    private var sectionTitles: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +29,12 @@ final class FavouritesViewController: UITableViewController {
    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitles.count
+        return presenter?.numberOfSections() ?? 0
     }
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return favourites[section].count
+        return presenter?.numberOfItems(in: section) ?? 0
     }
     
     override func tableView(_ tableView: UITableView,
@@ -44,7 +43,10 @@ final class FavouritesViewController: UITableViewController {
             withIdentifier: "LeagueTableViewCell",
             for: indexPath) as! LeagueTableViewCell
         
-        let league = favourites[indexPath.section][indexPath.row]
+        guard let league = presenter?.getLeague(at: indexPath) else {
+                return cell
+            }
+        
         cell.configCell(forLeague: league)
         
         cell.favAction = { [weak self] in
@@ -56,7 +58,7 @@ final class FavouritesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        return presenter?.getSectionTitle(for: section)
     }
   
     
@@ -64,12 +66,16 @@ final class FavouritesViewController: UITableViewController {
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let leagueId = favourites[indexPath.section][indexPath.row].id
-            presenter?.deleteConfirmation(leagueId: leagueId)
+            guard let league = presenter?.getLeague(at: indexPath) else {
+                    return
+                }
+            presenter?.deleteConfirmation(leagueId: league.id)
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let league = favourites[indexPath.section][indexPath.row]
+        guard let league = presenter?.getLeague(at: indexPath) else {
+                return
+            }
         presenter?.didSelectLeague(leagueId: league.id,sportType: league.sportType ?? "other")
     }
     
@@ -78,23 +84,26 @@ final class FavouritesViewController: UITableViewController {
 
 extension FavouritesViewController: FavouritesViewProtocol {
     
-    func showFavourites(leagues: [[League]], sections: [String]) {
-        favourites = leagues
-        sectionTitles = sections
-        tableView.backgroundView = nil
-        tableView.reloadData()
+    func showFavourites() {
+       
+        DispatchQueue.main.async {
+                self.tableView.backgroundView = nil
+                self.tableView.reloadData()
+            }
     }
     
     func showEmptyState() {
-        favourites = []
-        sectionTitles = []
+        DispatchQueue.main.async { [weak self] in
         let emptyLabel = UILabel()
         emptyLabel.text = "No Favourites Yet ⭐"
         emptyLabel.textAlignment = .center
         emptyLabel.textColor = .secondaryText
         emptyLabel.font = UIFont(name: "Mulish-Medium", size: 18)
-        tableView.backgroundView = emptyLabel
-        tableView.reloadData()
+            self?.tableView.backgroundView = emptyLabel
+            self?.tableView.reloadData()
+        }
+        
+        
     }
     
     func showError(message: String) {
