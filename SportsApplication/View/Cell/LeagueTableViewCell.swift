@@ -7,9 +7,7 @@
 
 import UIKit
 import Kingfisher
-
 class LeagueTableViewCell: UITableViewCell {
-
     @IBOutlet private var cardContainerView: UIView!
     @IBOutlet private var favButton: UIButton!
     @IBOutlet private var leagueCountryNameLabel: UILabel!
@@ -21,17 +19,14 @@ class LeagueTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         cardContainerView.layer.cornerRadius = 12
         cardContainerView.layer.masksToBounds = true
-
         contentView.backgroundColor = .clear
         self.backgroundColor = .clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -42,26 +37,24 @@ class LeagueTableViewCell: UITableViewCell {
     func configCell(forLeague league : League) {
         leagueNameLabel.text = league.leagueName
         leagueImageView.kf.setImage(
-                   with: URL(string:league.leagueLogo ?? ""),
-                       placeholder: UIImage(systemName: "photo"),
-                       options: [
-                           .transition(.fade(0.3)),
-                           .cacheSerializer(FormatIndicatedCacheSerializer.png)
-                       ]
-                   )
-
-               leagueCountryNameLabel.text = league.countryName
-       leagueCountryImageView.kf.setImage(
-           with: URL(string:league.countryLogo ?? ""),
-               placeholder: UIImage(systemName: "photo"),
-               options: [
-                   .transition(.fade(0.3)),
-                   .cacheSerializer(FormatIndicatedCacheSerializer.png)
-               ]
-           )
+            with: URL(string:league.leagueLogo ?? ""),
+                placeholder: UIImage(systemName: "" ),
+                options: [
+                    .transition(.fade(0.3)),
+                    .cacheSerializer(FormatIndicatedCacheSerializer.png)
+                ]
+            )
 
         leagueCountryNameLabel.text = league.countryName
-        
+        leagueCountryImageView.kf.setImage(
+            with: URL(string:league.countryLogo ?? ""),
+                placeholder: UIImage(systemName: "" ),
+                options: [
+                    .transition(.fade(0.3)),
+                    .cacheSerializer(FormatIndicatedCacheSerializer.png)
+                ]
+            )
+
 
         favButton.tintColor = league.isFav ? #colorLiteral(red: 0.9725490196, green: 0.4705882353, blue: 0.4431372549, alpha: 1) : #colorLiteral(red: 0.8012740016, green: 0.8012740016, blue: 0.8012740016, alpha: 1)
     }
