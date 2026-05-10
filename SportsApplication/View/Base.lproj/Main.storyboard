@@ -10,6 +10,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mulish-Bold.ttf">
+            <string>Mulish-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home-->
         <scene sceneID="jzN-M7-ece">
@@ -80,6 +85,9 @@
                         <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
                         <imageReference key="selectedImage" image="house.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
+                    <connections>
+                        <segue destination="dal-xD-LUA" kind="show" identifier="goToAllLeagues" id="XE3-8Q-8ay"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIl-w9-DSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,6 +124,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWU-QU-gEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1986" y="863"/>
+        </scene>
+        <!--All Leagues View Controller-->
+        <scene sceneID="7Vd-LC-O1I">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="dal-xD-LUA" customClass="AllLeaguesViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MZC-23-UaH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-mO-Wmp">
+                                <rect key="frame" x="8" y="52" width="374" height="750"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="27O-bb-9fj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse Competition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA3-c2-G2P">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="MRs-r5-9q3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDQ-a8-Ukf">
+                                                <rect key="frame" x="0.0" y="52" width="374" height="36"/>
+                                                <subviews>
+                                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search for competition.." translatesAutoresizingMaskIntoConstraints="NO" id="A5s-w4-eJ2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="PBj-qu-fbo"/>
+                                                        </constraints>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <scopeButtonTitles>
+                                                            <string>Title</string>
+                                                            <string>Title</string>
+                                                        </scopeButtonTitles>
+                                                    </searchBar>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="A5s-w4-eJ2" secondAttribute="bottom" id="2rr-6Q-wFW"/>
+                                                    <constraint firstItem="A5s-w4-eJ2" firstAttribute="leading" secondItem="mDQ-a8-Ukf" secondAttribute="leading" id="4R8-bi-Dox"/>
+                                                    <constraint firstItem="A5s-w4-eJ2" firstAttribute="centerX" secondItem="mDQ-a8-Ukf" secondAttribute="centerX" id="KzR-Yk-RiL"/>
+                                                    <constraint firstItem="A5s-w4-eJ2" firstAttribute="centerY" secondItem="mDQ-a8-Ukf" secondAttribute="centerY" id="aex-36-bVH"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zA3-c2-G2P" secondAttribute="trailing" id="ggc-cD-xWy"/>
+                                            <constraint firstItem="mDQ-a8-Ukf" firstAttribute="trailing" secondItem="zA3-c2-G2P" secondAttribute="trailing" id="oN9-Gp-aUB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MJN-ua-xPy">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="650"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7LF-zY-Gnw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Udk-mO-Wmp" firstAttribute="leading" secondItem="7LF-zY-Gnw" secondAttribute="leading" constant="8" id="IO5-IP-VXY"/>
+                            <constraint firstItem="Udk-mO-Wmp" firstAttribute="top" secondItem="7LF-zY-Gnw" secondAttribute="top" constant="8" id="Uz1-C4-OZS"/>
+                            <constraint firstItem="7LF-zY-Gnw" firstAttribute="trailing" secondItem="Udk-mO-Wmp" secondAttribute="trailing" constant="8" id="g6n-2R-4kD"/>
+                            <constraint firstItem="7LF-zY-Gnw" firstAttribute="bottom" secondItem="Udk-mO-Wmp" secondAttribute="bottom" constant="8" id="w64-8w-CzQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GqD-z8-xD2"/>
+                    <connections>
+                        <outlet property="leaguesSearchBar" destination="A5s-w4-eJ2" id="xln-ta-So3"/>
+                        <outlet property="leaguesTableView" destination="MJN-ua-xPy" id="wiA-v7-8dZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3VX-Vt-OxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="1617"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Hub-yh-Vqq">
@@ -267,7 +353,7 @@
             <color red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryTextColor">
-            <color red="0.51764705882352946" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.47999998927116394" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
