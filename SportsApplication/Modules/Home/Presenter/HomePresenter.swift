@@ -7,11 +7,13 @@ final class HomePresenter : HomePresenterProtocol {
     }
     
     init() {
-        sports.append(Sport(title: "Football", image: "football_bg"))
-        sports.append(Sport(title: "BasketBall", image: "basketball_bg"))
-        sports.append(Sport(title: "Cricket", image: "cricket_bg"))
-        sports.append(Sport(title: "Tennis", image: "tennis_bg"))
+        sports.append(Sport(title: "Football", image: "football_bg" ,type: .football))
+        sports.append(Sport(title: "BasketBall", image: "basketball_bg", type: .basketball))
+        sports.append(Sport(title: "Cricket", image: "cricket_bg", type: .cricket))
+        sports.append(Sport(title: "Tennis", image: "tennis_bg", type: .tennis))
     }
+    
+    
     
     func getSportsCount() -> Int {
          return sports.count
@@ -20,5 +22,10 @@ final class HomePresenter : HomePresenterProtocol {
     func getSportItem(index : Int) -> Sport {
          return sports[index]
     }
+    
+    func getSelectedSport(at index: Int) -> SportType {
+        sports[index].type
+    }
+    
 }
 
