@@ -65,6 +65,10 @@
 		B3415E092FB0029200780D9A /* AppAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3415E082FB0029200780D9A /* AppAlerts.swift */; };
 		B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D5BF02FABC750006D897B /* LocalDataManager.swift */; };
 		B39F42E22FB12F4100DDC340 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E12FB12F4100DDC340 /* AppComponents.swift */; };
+		B39F42E62FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E42FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift */; };
+		B39F42E72FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */; };
+		B39F42EA2FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E82FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift */; };
+		B39F42EB2FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39F42E92FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib */; };
 		B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */; };
 		B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */; };
 		B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */; };
@@ -140,6 +144,10 @@
 		B3415E082FB0029200780D9A /* AppAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlerts.swift; sourceTree = "<group>"; };
 		B37D5BF02FABC750006D897B /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		B39F42E12FB12F4100DDC340 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
+		B39F42E42FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestEventsCollectionViewCell.xib; sourceTree = "<group>"; };
+		B39F42E82FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		B39F42E92FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamEventCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -406,6 +414,10 @@
 			children = (
 				B3415DFE2FAFF5DC00780D9A /* LeagueTableViewCell.swift */,
 				B3415DFF2FAFF5DC00780D9A /* LeagueTableViewCell.xib */,
+				B39F42E42FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift */,
+				B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */,
+				B39F42E82FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift */,
+				B39F42E92FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib */,
 				41721CFF2FB119630054BA7B /* UpcomingCollectionViewCell.swift */,
 				41721D002FB119630054BA7B /* UpcomingCollectionViewCell.xib */,
 			);
@@ -629,6 +641,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39F42EB2FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib in Resources */,
 				411142AD2FACB2C900268097 /* Mulish-ExtraBold.ttf in Resources */,
 				411142AE2FACB2C900268097 /* Mulish-Light.ttf in Resources */,
 				B3415E012FAFF5DC00780D9A /* LeagueTableViewCell.xib in Resources */,
@@ -639,6 +652,7 @@
 				411142B22FACB2C900268097 /* Mulish-Medium.ttf in Resources */,
 				B315D29C2FA9B413000A70D9 /* Assets.xcassets in Resources */,
 				B315D2972FA9B412000A70D9 /* Main.storyboard in Resources */,
+				B39F42E72FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib in Resources */,
 				41721D022FB119630054BA7B /* UpcomingCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +684,7 @@
 				B3C796612FAB3ED400CB12A1 /* UIColor+Extensions.swift in Sources */,
 				B3415DFC2FAFE56C00780D9A /* FavouritesPresenter.swift in Sources */,
 				411142C32FACEE5B00268097 /* HomePresenterProtocol.swift in Sources */,
+				B39F42EA2FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift in Sources */,
 				B3415DF02FAFDBD200780D9A /* CoreDataManager.swift in Sources */,
 				41721D012FB119630054BA7B /* UpcomingCollectionViewCell.swift in Sources */,
 				B315D29A2FA9B412000A70D9 /* SportsApplication.xcdatamodeld in Sources */,
@@ -677,6 +692,7 @@
 				41C9E4D72FAFD2A0003E455E /* NetworkProtocol+Leagues.swift in Sources */,
 				41C9E4CA2FAFD0F0003E455E /* Constants.swift in Sources */,
 				B39F42E22FB12F4100DDC340 /* AppComponents.swift in Sources */,
+				B39F42E62FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift in Sources */,
 				B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */,
 				41C9E4D42FAFD201003E455E /* NetworkService.swift in Sources */,
 				411142C02FACEE5A00268097 /* HomeViewController+CollectionView.swift in Sources */,

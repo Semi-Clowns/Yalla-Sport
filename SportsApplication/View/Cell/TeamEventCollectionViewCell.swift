@@ -1,0 +1,25 @@
+//
+//  TeamEventCollectionViewCell.swift
+//  SportsApplication
+//
+//  Created by Mahmoud  Raafat  on 10/05/2026.
+//
+
+import UIKit
+
+class TeamEventCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var TeamLogo: UIImageView!
+    
+    @IBOutlet weak var TeamName: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 6
+        contentView.backgroundColor = .primaryColor
+    }
+
+    @IBAction func GoToDetails(_ sender: Any) {
+        // navgation to team details screen with team id
+    }
+}
