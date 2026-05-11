@@ -282,7 +282,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsu-Fg-rLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="1618"/>
+            <point key="canvasLocation" x="1965" y="1627"/>
+        </scene>
         <!--League Details Collection View Controller-->
         <scene sceneID="aKJ-Wl-kbj">
             <objects>
@@ -307,7 +308,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhq-RT-Awr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485" y="1627"/>
+            <point key="canvasLocation" x="2937" y="1617"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Hub-yh-Vqq">

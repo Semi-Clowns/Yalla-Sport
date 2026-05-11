@@ -11,7 +11,7 @@ class TeamDetailsPresenter : TeamDetailsPresenterProtocol {
     
     weak var view : TeamDetailsViewControllerProtocol?
     
-    private let team = Team(
+    private let team = TeamDetails(
         coachName: "Pep Guardiola",
         players: [
             Player(name: "Kevin De Bruyne", position: "Midfielder"),
@@ -30,7 +30,7 @@ class TeamDetailsPresenter : TeamDetailsPresenterProtocol {
         self.view = view
     }
     
-    func getTeamDetails() -> Team {
+    func getTeamDetails() -> TeamDetails {
         team
     }
     
@@ -54,7 +54,7 @@ struct Player {
     let position: String
 }
 
-struct Team {
+struct TeamDetails {
     let coachName: String
     let players: [Player]
 }
