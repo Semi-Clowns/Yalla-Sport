@@ -15,17 +15,17 @@ protocol AllLeaguesPresenterProtocol {
     func getLeagueAtIndex(at index : Int) -> League
     func toggleFavorite(at index: Int)
     func filterData(searchText : String)
-    func getSportType() -> SportType
+    func getSportType() -> String
 }
 
 class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
     private var leagues = [League]()
     private var filteredLeagues = [League]()
-    private let sportType : SportType
+    private let sportType : String
     var networkService: NetworkProtocol
     weak var view : AllLeaguesViewControllerProtocol?
     
-    init(networkService: NetworkProtocol, displayLeaguesFor sportType: SportType) {
+    init(networkService: NetworkProtocol, displayLeaguesFor sportType: String) {
         self.networkService = networkService
         self.sportType = sportType
     }
@@ -62,7 +62,9 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
     }
     
     func getLeagueAtIndex(at index : Int) -> League {
-        filteredLeagues[index]
+        var league = filteredLeagues[index]
+        league.sportType = getSportType()
+        return league
     }
     
     func toggleFavorite(at index: Int) {
@@ -81,8 +83,9 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
         }
     }
     
-    func getSportType() -> SportType{
+    func getSportType() -> String{
         self.sportType
     }
+    
     
 }

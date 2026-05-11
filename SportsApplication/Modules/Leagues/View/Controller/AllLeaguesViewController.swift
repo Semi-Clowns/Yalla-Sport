@@ -80,6 +80,7 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
         presenter?.getLeaguesCount() ?? 0
     }
 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(
@@ -134,6 +135,21 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
         return section == 0 ? 60 : 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let league = presenter?.getLeagueAtIndex(at: indexPath.row) else {
+
+            return
+        }
+        guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
+            return
+        }
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league)
+        
+        self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
+        
+        
+    }
+
     
 }
 

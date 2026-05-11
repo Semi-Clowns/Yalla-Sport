@@ -10,7 +10,7 @@ import Foundation
 extension NetworkProtocol {
     
     func getAllLeagues<T: Decodable>(
-        sport: SportType,
+        sport: String,
         responseType: T.Type,
         completion: @escaping (Result<T, Error>) -> Void
     ) {

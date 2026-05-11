@@ -11,14 +11,14 @@ import Alamofire
 final class NetworkService: NetworkProtocol {
 
     func request<T: Decodable>(
-        sport: SportType,
+        sport: String,
         method: String = "GET",
         parameters: [String: Any]?,
         responseType: T.Type,
         completion: @escaping (Result<T, Error>) -> Void
     ) {
         
-        let url = "\(Constants.baseURL)/\(sport.rawValue)/"
+        let url = "\(Constants.baseURL)/\(sport)/"
         
         AF.request(url,
                    method: HTTPMethod(rawValue: method),

@@ -32,7 +32,7 @@ class HomeCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCollectionViewCell
     
         // Configure the cell
-        let sportItem = homePresenter?.getSportItem(index: indexPath.row) ?? Sport(title: "No Sport Item", image: "" , type: .football)
+        let sportItem = homePresenter?.getSportItem(index: indexPath.row) ?? Sport(title: "No Sport Item", image: "" , type: "football")
         cell.configureCell(with: sportItem)
         cell.layer.cornerRadius = 12
     
@@ -49,7 +49,7 @@ class HomeCollectionViewController: UICollectionViewController {
         if segue.identifier == "goToAllLeagues" {
             let allLeaguesVC = segue.destination as! AllLeaguesViewController
             
-            let sport = homePresenter?.getSelectedSport(at: selectedIndex) ?? .football
+            let sport = homePresenter?.getSelectedSport(at: selectedIndex) ?? "football"
             print("Sport from Home : \(sport)")
             
             allLeaguesVC.presenter = AllLeaguesPresenter(
