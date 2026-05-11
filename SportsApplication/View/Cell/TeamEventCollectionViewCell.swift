@@ -22,4 +22,16 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
     @IBAction func GoToDetails(_ sender: Any) {
         // navgation to team details screen with team id
     }
+    func configCell() {
+        TeamLogo.kf.setImage(
+            with: URL(string:""),
+                placeholder: UIImage(systemName: "photo.circle.fill"),
+                options: [
+                    .transition(.fade(0.3)),
+                    .cacheSerializer(FormatIndicatedCacheSerializer.png)
+                ]
+            )
+        TeamName.text = "Manchester United"
+        
+    }
 }

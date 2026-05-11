@@ -23,6 +23,34 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
         
         
     }
+    func configCell() {
+          AwayTeamScore.text = "0"
+          HomeTeamScore.text = "0"
+
+          HomeTeamLogo.kf.setImage(
+              with: URL(string:""),
+                  placeholder: UIImage(systemName: "photo.circle.fill"),
+                  options: [
+                      .transition(.fade(0.3)),
+                      .cacheSerializer(FormatIndicatedCacheSerializer.png)
+                  ]
+              )
+          AwayTeamLogo.kf.setImage(
+              with: URL(string:""),
+                  placeholder: UIImage(systemName: "photo.circle.fill"),
+                  options: [
+                      .transition(.fade(0.3)),
+                      .cacheSerializer(FormatIndicatedCacheSerializer.png)
+                  ]
+              )
+
+          HomeTeamName.text = "Team"
+          AwayTeamName.text = "Team"
+          EventDate.text="15/4"
+
+
+
+      }
     
     
     
