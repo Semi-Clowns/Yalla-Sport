@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TeamEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var TeamLogo: UIImageView!

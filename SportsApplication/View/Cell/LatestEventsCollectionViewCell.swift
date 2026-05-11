@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class LatestEventsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var AwayTeamScore: UILabel!
     @IBOutlet weak var HomeTeamScore: UILabel!
