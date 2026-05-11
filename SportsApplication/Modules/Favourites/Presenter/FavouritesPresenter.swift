@@ -12,7 +12,7 @@ final class FavouritesPresenter {
     private let networkMonitor: NetworkMonitor
     private var favourites: [[League]] = []
     private var sectionTitles: [String] = []
-    private let sportTypes = ["Football", "Basketball", "Tennis", "Cricket"]
+    private let sportTypes = ["football", "basketball", "tennis", "cricket"]
     
     init(view: FavouritesViewProtocol,
          coreDataManager: CoreDataManager = CoreDataManager.shared,
@@ -30,14 +30,15 @@ extension FavouritesPresenter: FavouritesPresenterProtocol {
         
         do {
             let favouritesDictionary = try coreDataManager.getAllFavourites()
-            
             let orderedFavourites = sportTypes.map { sport in
                 favouritesDictionary[sport] ?? []
             }
-            
+           
+
             self.favourites = orderedFavourites.filter { !$0.isEmpty }
             self.sectionTitles = sportTypes.filter { !(favouritesDictionary[$0]?.isEmpty ?? true) }
             
+
             view?.hideLoading()
             
             if self.favourites.isEmpty {

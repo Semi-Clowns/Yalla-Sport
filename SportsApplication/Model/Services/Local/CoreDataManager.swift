@@ -33,6 +33,7 @@ final class CoreDataManager {
         leagueObject.setValue(league.sportType, forKey: "sportType")
         
         try managedContext.save()
+        print("added success")
     }
     
     func removeFromFavourites(leagueId: Int) throws {
