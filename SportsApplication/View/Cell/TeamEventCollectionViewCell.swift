@@ -12,6 +12,8 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var TeamLogo: UIImageView!
     
     @IBOutlet weak var TeamName: UILabel!
+    
+    weak var delegate : TeamEventCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +24,8 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
 
     @IBAction func GoToDetails(_ sender: Any) {
         // navgation to team details screen with team id
+        print("Clicked")
+        delegate?.didTeam(self)
     }
     func configCell() {
         TeamLogo.kf.setImage(
@@ -35,4 +39,9 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
         TeamName.text = "Manchester United"
         
     }
+}
+
+
+protocol TeamEventCellDelegate : AnyObject {
+    func didTeam(_ cell : TeamEventCollectionViewCell)
 }

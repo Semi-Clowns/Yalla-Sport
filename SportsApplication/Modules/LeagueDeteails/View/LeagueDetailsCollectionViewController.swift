@@ -101,6 +101,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
 
                     }
                     //let team = presenter?.getTeam(at: indexPath.row)
+                    cell.delegate = self
                     cell.configCell()
                     return cell
                 }
