@@ -9,6 +9,7 @@ import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
 
+    @IBOutlet var containerView: UIView!
     @IBOutlet private var playerTypeLabel: UILabel!
     @IBOutlet private var playerNameLabel: UILabel!
     @IBOutlet private var tshirtNumberPlayerLabel: UILabel!
@@ -17,8 +18,15 @@ class PlayerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        contentView.layer.cornerRadius = 6
-        contentView.clipsToBounds = true
+        containerView.backgroundColor = UIColor(white: 0.2, alpha: 1.0)
+        
+        containerView.layer.cornerRadius = 12
+        containerView.layer.masksToBounds = true
+        
+        playerImageView.layer.cornerRadius = playerImageView.frame.size.width / 2
+        
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
     }
 
     func configCell(playerName: String,
