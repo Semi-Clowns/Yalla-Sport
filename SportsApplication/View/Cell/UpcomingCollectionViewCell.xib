@@ -19,20 +19,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UpcomingCollectionViewCell" id="gTV-IL-0wX" customClass="UpcomingCollectionViewCell" customModule="SportsApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="408" height="144"/>
+            <rect key="frame" x="0.0" y="0.0" width="534" height="265"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="408" height="144"/>
+                <rect key="frame" x="0.0" y="0.0" width="534" height="265"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNq-72-4Y4" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="408" height="144"/>
+                        <rect key="frame" x="0.0" y="0.0" width="534" height="265"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fq6-w5-Bx2">
-                                <rect key="frame" x="12" y="12" width="384" height="120"/>
+                                <rect key="frame" x="12" y="12" width="510" height="241"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE0-Vh-Vqt">
-                                        <rect key="frame" x="147" y="0.0" width="90.5" height="22"/>
+                                        <rect key="frame" x="210" y="0.0" width="90.5" height="22"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-dX-uix">
                                                 <rect key="frame" x="8" y="2" width="74.5" height="18"/>
@@ -52,27 +52,27 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-yS-fNo">
-                                        <rect key="frame" x="53" y="34" width="278" height="86"/>
+                                        <rect key="frame" x="80" y="34" width="350" height="207"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4AN-lW-Rpi">
-                                                <rect key="frame" x="0.0" y="0.0" width="278" height="86"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="207"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ok1-kH-Mja">
-                                                        <rect key="frame" x="0.0" y="8" width="104" height="70.5"/>
+                                                        <rect key="frame" x="0.0" y="34.5" width="140" height="138.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xWc-cT-W5J">
-                                                                <rect key="frame" x="36" y="0.0" width="32" height="32"/>
+                                                                <rect key="frame" x="30" y="0.0" width="80" height="80"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="32" id="4OP-Ao-uhI"/>
-                                                                    <constraint firstAttribute="height" constant="32" id="7fz-cX-hb8"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="4OP-Ao-uhI"/>
+                                                                    <constraint firstAttribute="height" constant="80" id="7fz-cX-hb8"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nottingham Forest" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-de-d87">
-                                                                <rect key="frame" x="0.0" y="40" width="104" height="30.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nottingham Forest" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-de-d87">
+                                                                <rect key="frame" x="0.0" y="88" width="140" height="50.5"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="104" id="4dO-o6-WLX"/>
+                                                                    <constraint firstAttribute="width" constant="140" id="yIF-MZ-hhO"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
+                                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -85,7 +85,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2uI-vb-3W0">
-                                                        <rect key="frame" x="116" y="27.5" width="46" height="31"/>
+                                                        <rect key="frame" x="152" y="88" width="46" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNo-hL-o3B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="15.5"/>
@@ -110,21 +110,21 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="noa-xq-nei">
-                                                        <rect key="frame" x="174" y="8" width="104" height="70.5"/>
+                                                        <rect key="frame" x="210" y="34.5" width="140" height="138.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jWR-yT-QsD">
-                                                                <rect key="frame" x="36" y="0.0" width="32" height="32"/>
+                                                                <rect key="frame" x="30" y="0.0" width="80" height="80"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="32" id="Fcm-SN-W9O"/>
-                                                                    <constraint firstAttribute="height" constant="32" id="n7F-JU-ZJh"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="Fcm-SN-W9O"/>
+                                                                    <constraint firstAttribute="height" constant="80" id="n7F-JU-ZJh"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manchester United" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzI-Vn-eh8">
-                                                                <rect key="frame" x="0.0" y="40" width="104" height="30.5"/>
+                                                                <rect key="frame" x="0.0" y="88" width="140" height="50.5"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="104" id="X0Z-hf-4M7"/>
+                                                                    <constraint firstAttribute="width" constant="140" id="X0Z-hf-4M7"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
+                                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -162,7 +162,7 @@
                 <constraint firstAttribute="trailing" secondItem="UNq-72-4Y4" secondAttribute="trailing" id="P91-8w-BQc"/>
                 <constraint firstItem="UNq-72-4Y4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zN0-Jb-srG"/>
             </constraints>
-            <size key="customSize" width="408" height="144"/>
+            <size key="customSize" width="534" height="265"/>
             <connections>
                 <outlet property="awayTeamImageView" destination="jWR-yT-QsD" id="sEe-Mi-Rlu"/>
                 <outlet property="awayTeamNameLabel" destination="EzI-Vn-eh8" id="NoG-xQ-MJI"/>
@@ -173,7 +173,7 @@
                 <outlet property="matchTimeLabel" destination="Ycg-s1-5Zz" id="rVA-iA-qCh"/>
                 <outlet property="roundView" destination="iE0-Vh-Vqt" id="Rqz-oa-ujW"/>
             </connections>
-            <point key="canvasLocation" x="-76.811594202898561" y="117.1875"/>
+            <point key="canvasLocation" x="14.492753623188406" y="157.70089285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

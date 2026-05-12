@@ -27,16 +27,17 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
         print("Clicked")
         delegate?.didTeam(self)
     }
-    func configCell() {
+    
+    func configCell(for team : Team) {
         TeamLogo.kf.setImage(
-            with: URL(string:""),
+            with: URL(string:team.teamLogo ?? ""),
                 placeholder: UIImage(systemName: "photo.circle.fill"),
                 options: [
                     .transition(.fade(0.3)),
                     .cacheSerializer(FormatIndicatedCacheSerializer.png)
                 ]
             )
-        TeamName.text = "Manchester United"
+        TeamName.text = team.teamName
         
     }
 }

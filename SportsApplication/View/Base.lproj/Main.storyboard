@@ -245,6 +245,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="uVl-pe-qI0" firstAttribute="leading" secondItem="4Hy-e4-Co3" secondAttribute="leading" constant="16" id="9g6-cG-yeN"/>
                                             <constraint firstAttribute="trailing" secondItem="uVl-pe-qI0" secondAttribute="trailing" constant="16" id="Csr-gZ-6qA"/>
