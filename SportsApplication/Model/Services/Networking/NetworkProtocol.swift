@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkProtocol {
     func request<T: Decodable>(
-        sport: SportType,
+        sport: String,
         method: String,
         parameters: [String: Any]?,
         responseType: T.Type,

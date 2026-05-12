@@ -35,12 +35,22 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
                                             style: .plain,
                                             target: self,
                                             action: #selector(favButtonTapped))
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
+                                        style: .plain,
+                                        target: self ,
+                                         action: #selector(backButtonTapped))
             navigationItem.rightBarButtonItem = favButton
+        navigationItem.leftBarButtonItem = backButton
+             
         }
         
         @objc private func favButtonTapped() {
             presenter?.toggleFavorite()
         }
+    @objc private func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections

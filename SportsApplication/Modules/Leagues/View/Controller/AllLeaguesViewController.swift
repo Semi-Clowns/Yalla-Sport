@@ -136,19 +136,15 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("in func")
         guard let league = presenter?.getLeagueAtIndex(at: indexPath.row) else {
-            print("failed to get the league")
 
             return
         }
         guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
-            print("failed to get the screen")
             return
         }
-        print("before presenter")
         leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league)
-        print("after presenter")
+        
         self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
         
         
