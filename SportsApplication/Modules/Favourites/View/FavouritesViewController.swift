@@ -140,13 +140,13 @@ extension FavouritesViewController: FavouritesViewProtocol {
         AppAlerts.showNoInternet(on: self)
         }
     
-    func navigateToLeagueDetails(with league: League) {
+    func navigateToLeagueDetails(with league: League, sport:String) {
         guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(
             withIdentifier: "LeagueDetails"
         ) as? LeagueDetailsCollectionViewController else {
             return
         }
-        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league)
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
         self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
     }
 }

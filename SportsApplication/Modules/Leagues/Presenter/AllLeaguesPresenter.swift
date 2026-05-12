@@ -144,7 +144,7 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
     func navigateToLeagueDetails(index: Int) {
         if networkMonitor.isConnected{
             let league = getLeagueAtIndex(at: index)
-            self.view?.navigateToLeagueDetails(with :league)
+            self.view?.navigateToLeagueDetails(with :league,sport: sportType)
         }
         else{
             self.view?.showNoInternet()

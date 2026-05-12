@@ -16,7 +16,7 @@ protocol AllLeaguesViewControllerProtocol : AnyObject {
         func showLoading()
         func hideLoading()
         func showNoInternet()
-    func navigateToLeagueDetails(with league: League )
+    func navigateToLeagueDetails(with league: League,sport:String)
         
 }
 
@@ -210,16 +210,13 @@ extension AllLeaguesViewController {
     func showNoInternet() {
         AppAlerts.showNoInternet(on: self)
         }
-    func navigateToLeagueDetails(with league: League){
+    func navigateToLeagueDetails(with league: League,sport:String){
         
-       
-       
         guard let sport = presenter?.getSportType() else {return}
-                 self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
         guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
             return
         }
-        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league ,sport:sport)
         
         self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
     }

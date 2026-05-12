@@ -70,7 +70,7 @@ extension FavouritesPresenter: FavouritesPresenterProtocol {
     func didSelectLeague(indexPath:IndexPath) {
         if networkMonitor.isConnected {
             let league = getLeague(at: indexPath)
-            self.view?.navigateToLeagueDetails(with: league)
+            self.view?.navigateToLeagueDetails(with: league, sport : league.sportType ?? "other" )
         } else {
             view?.showNoInternet()
         }
