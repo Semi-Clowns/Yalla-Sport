@@ -19,17 +19,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="LeagueTableViewCell" customModule="SportsApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="391" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="347" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="391" height="70"/>
+                <rect key="frame" x="0.0" y="0.0" width="347" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-VZ-aDY" userLabel="Card Container View">
-                        <rect key="frame" x="12" y="6" width="367" height="52"/>
+                        <rect key="frame" x="12" y="6" width="323" height="52"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rni-LV-ekz">
-                                <rect key="frame" x="8" y="8" width="351" height="36"/>
+                                <rect key="frame" x="8" y="8" width="307" height="36"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rdy-aM-G3S">
                                         <rect key="frame" x="0.0" y="6" width="24" height="24"/>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-uV-qBy">
-                                        <rect key="frame" x="36" y="0.0" width="287" height="36"/>
+                                        <rect key="frame" x="36" y="0.0" width="243" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Premier League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-TE-55D">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="22"/>
@@ -79,7 +79,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyA-nH-ewQ">
-                                        <rect key="frame" x="335" y="10" width="16" height="16"/>
+                                        <rect key="frame" x="291" y="10" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="AJE-y8-PYq"/>
                                             <constraint firstAttribute="width" constant="16" id="zkf-oS-pzC"/>
@@ -126,7 +126,7 @@
                 <outlet property="leagueImageView" destination="rdy-aM-G3S" id="HzW-FV-F5N"/>
                 <outlet property="leagueNameLabel" destination="lcw-TE-55D" id="hkx-u9-yfk"/>
             </connections>
-            <point key="canvasLocation" x="-409.4202898550725" y="221.65178571428569"/>
+            <point key="canvasLocation" x="165.94202898550725" y="221.65178571428569"/>
         </tableViewCell>
     </objects>
     <resources>

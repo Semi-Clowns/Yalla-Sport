@@ -9,7 +9,9 @@ import Foundation
 
 protocol TeamDetailsPresenterProtocol {
     func attachView(with view : TeamDetailsViewControllerProtocol)
-    func getTeamDetails() -> TeamDetails
+    func getTeamDetails() -> Team
     func getTeamPlayersCount() -> Int
-    func getPlayerAtIndex(at index : Int) -> Player
+    func getPlayerAtIndex(at index : Int) -> Player?
+    func getCoach() -> Coach?
+    
 }

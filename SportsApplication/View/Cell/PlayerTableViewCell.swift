@@ -29,22 +29,12 @@ class PlayerTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
 
-    func configCell(playerName: String,
-                    playerType: String,
-                    tshirtNumber: Int?,
-                    playerImageURL: String?) {
-
-        playerNameLabel.text = playerName
-        playerTypeLabel.text = playerType
-        
-        if let tshirtNumber = tshirtNumber {
-            tshirtNumberPlayerLabel.text = "\(tshirtNumber)"
-        } else {
-            tshirtNumberPlayerLabel.text = "-"
-        }
-
+    func configCell(for player: Player) {
+        playerNameLabel.text = player.playerName
+        playerTypeLabel.text = player.playerType.rawValue
+        tshirtNumberPlayerLabel.text = player.playerNumber?.isEmpty == false ? player.playerNumber : "-"
         playerImageView.kf.setImage(
-            with: URL(string: playerImageURL ?? ""),
+            with: URL(string: player.playerImage ?? ""),
             placeholder: UIImage(systemName: "person.fill")
         )
     }

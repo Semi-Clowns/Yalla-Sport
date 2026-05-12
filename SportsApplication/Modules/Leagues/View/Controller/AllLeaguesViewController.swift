@@ -148,6 +148,9 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
         presenter?.navigateToLeagueDetails(index: indexPath.row)
     }
 
@@ -210,10 +213,13 @@ extension AllLeaguesViewController {
     func navigateToLeagueDetails(with league: League){
         
        
+       
+        guard let sport = presenter?.getSportType() else {return}
+                 self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
         guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
             return
         }
-        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league)
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
         
         self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
     }

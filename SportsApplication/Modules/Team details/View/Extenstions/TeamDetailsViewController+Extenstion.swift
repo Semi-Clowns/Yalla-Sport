@@ -22,9 +22,11 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
 
         guard let team = presenter?.getTeamDetails() else {return UITableViewCell()}
         if indexPath.section == 0 {
-            cell.configCell(playerName: team.coachName, playerType: "Coach", tshirtNumber: nil, playerImageURL: nil)
+            guard let coach = presenter?.getCoach() else { return UITableViewCell() }
+            cell.configCell(for: coach.asPlayer())
         } else {
-            cell.configCell(playerName: presenter?.getPlayerAtIndex(at: indexPath.row).name ?? "" , playerType: presenter?.getPlayerAtIndex(at: indexPath.row).position ?? "", tshirtNumber: nil, playerImageURL: nil)
+            guard let player = presenter?.getPlayerAtIndex(at: indexPath.row) else { return UITableViewCell() }
+            cell.configCell(for: player)
         }
 
         return cell

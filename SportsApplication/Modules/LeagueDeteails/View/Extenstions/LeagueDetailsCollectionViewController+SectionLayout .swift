@@ -14,6 +14,7 @@ extension LeagueDetailsCollectionViewController {
             
             guard let section = LeagueSection(rawValue: sectionIndex) else { return nil }
             
+
             switch section {
             case .upcoming:
                 return self?.drawUpcomingSection()

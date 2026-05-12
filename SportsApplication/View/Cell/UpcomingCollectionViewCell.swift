@@ -31,29 +31,23 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         roundView.layer.cornerRadius = 6
     }
 
-    func config(homeTeamName: String,
-                homeTeamLogo: String?,
-                awayTeamName: String,
-                awayTeamLogo: String?,
-                matchDate: String,
-                matchTime: String,
-                round: String) {
+    func config(for event : Event) {
 
-        homeTeamNameLabel.text = homeTeamName
-        awayTeamNameLabel.text = awayTeamName
+        homeTeamNameLabel.text = event.homeTeamName
+        awayTeamNameLabel.text = event.awayTeamName
 
-        matchDateLabel.text = matchDate
-        matchTimeLabel.text = matchTime
-        matchOnRoundLabel.text = round
+        matchDateLabel.text = event.eventDate
+        matchTimeLabel.text = event.eventTime
+        matchOnRoundLabel.text = "35"
 
         homeTeamImageView.kf.setImage(
-            with: URL(string: homeTeamLogo ?? "https://apiv2.allsportsapi.com/logo/80_manchester-city.jpg"),
-            placeholder: UIImage(systemName: "photo")
+            with: URL(string: event.homeTeamLogo ?? ""),
+            placeholder: UIImage(systemName: "photo.fill")
         )
 
         awayTeamImageView.kf.setImage(
-            with: URL(string: awayTeamLogo ?? "https://apiv2.allsportsapi.com/logo/80_manchester-city.jpg"),
-            placeholder: UIImage(systemName: "photo")
+            with: URL(string: event.awayTeamLogo ?? ""),
+            placeholder: UIImage(systemName: "photo.fill")
         )
     }
 }
