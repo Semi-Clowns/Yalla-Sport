@@ -4,101 +4,174 @@
 //
 //  Created by Mahmoud  Raafat  on 11/05/2026.
 //
-struct Event {
-    let homeTeamName: String
-    let awayTeamName: String
-    let date: String
- 
-}
-
-struct Team {
-    let teamName: String
-    let teamLogo: String
-    }
 import Foundation
-class LeagueDetailsPresenter : LeagueDetailsPresenterProtocol{
-    private weak var view : LeagueDetailsViewProtocol?
+
+class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
+    
+    private weak var view: LeagueDetailsViewProtocol?
     private var upcomingEvents: [Event] = []
-private var latestEvents: [Event] = []
-        private var teams: [Team] = []
+    private var latestEvents: [Event] = []
+    private var teams: [Team] = []
     private var league: League
     private let coreDataManager: CoreDataManager
+    private let networkService: NetworkProtocol
+    private let sport: String
     
-    init(view: LeagueDetailsViewProtocol,league: League , coreDataManager :CoreDataManager = CoreDataManager.shared) {
+    init(
+        view: LeagueDetailsViewProtocol,
+        league: League,
+        sport: String,
+        networkService: NetworkProtocol = NetworkService(),
+        coreDataManager: CoreDataManager = CoreDataManager.shared
+    ) {
         self.view = view
         self.league = league
+        self.sport = sport
+        self.networkService = networkService
         self.coreDataManager = coreDataManager
     }
+    
+    // MARK: - LeagueDetailsPresenterProtocol
+    
     func viewDidLoad() {
         view?.setLeagueTitle(title: league.leagueName ?? "League")
-            view?.updateFavoriteButtonState(isFavorite: league.isFav)
-            fetchLeagueDetails(leagueId: league.id)
+        view?.updateFavoriteButtonState(isFavorite: league.isFav)
+        fetchLeagueDetails(leagueId: league.id)
+        if !(sport == "tennis") {
+            fetchTeam(leagueId: league.id, sport: sport)
         }
+    }
+    
+    func fetchLeagueDetails(leagueId: Int) {
+        view?.showLoading()
+        fetchFixtures(leagueId: leagueId)
+    }
     
     func toggleFavorite() {
-        do{
-            
+        do {
             if !league.isFav {
                 try coreDataManager.addToFavourites(league: league)
                 league.isFav.toggle()
                 view?.updateFavoriteButtonState(isFavorite: league.isFav)
-
             } else {
                 view?.showDeleteAlert(leagueId: league.id)
             }
-            
-            
-        }
-        catch {
+        } catch {
             view?.showError(message: "Failed to add favourites")
         }
-        
     }
+    
     func deleteConfirmation(leagueId: Int) {
-        do{
+        do {
             try coreDataManager.removeFromFavourites(leagueId: leagueId)
             league.isFav.toggle()
             view?.updateFavoriteButtonState(isFavorite: league.isFav)
-        }
-        catch {
+        } catch {
             view?.showError(message: "Failed to remove favourites")
         }
-        
     }
-    func fetchLeagueDetails(leagueId: Int) {
-        view?.showLoading()
-        
-       // call the api service
-            
-            self.upcomingEvents = [Event(homeTeamName: "Man City", awayTeamName: "Arsenal", date: "15/5"),Event(homeTeamName: "Man City", awayTeamName: "Arsenal", date: "15/5")]
-            self.latestEvents = [Event(homeTeamName: "Liverpool", awayTeamName: "Chelsea", date: "10/5"),
-                                 Event(homeTeamName: "Aston Villa", awayTeamName: "Spurs", date: "11/5")]
-            self.teams = [Team(teamName: "Man City", teamLogo: "url"), Team(teamName: "Arsenal", teamLogo: "url")]
-            
-            self.view?.hideLoading()
-            self.view?.reloadCollectionView()
+    
+    // MARK: - Getters
+    
+    func getUpcomingEventsCount() -> Int { upcomingEvents.count }
+    func getUpcomingEvent(at index: Int) -> Event { upcomingEvents[index] }
+    
+    func getLatestEventsCount() -> Int { latestEvents.count }
+    func getLatestEvent(at index: Int) -> Event { latestEvents[index] }
+    
+    func getTeamsCount() -> Int { teams.count }
+    func getTeam(at index: Int) -> Team { teams[index] }
+    
+    // MARK: - Private
+    
+    private func fetchFixtures(leagueId: Int) {
+        let today = Date()
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+
+        let upcomingFrom = formatter.string(from: today)
+        let upcomingTo   = formatter.string(from: calendar.date(byAdding: .day, value: 15, to: today)!)
+
+        let latestFrom: String
+        let latestTo = formatter.string(from: calendar.date(byAdding: .day, value: -1, to: today)!)
+
+        if sport == "tennis" {
+            latestFrom = formatter.string(from: calendar.date(byAdding: .year, value: -6, to: today)!)
+        } else {
+            latestFrom = formatter.string(from: calendar.date(byAdding: .day, value: -15, to: today)!)
         }
 
+        fetchUpcoming(leagueId: leagueId, from: upcomingFrom, to: upcomingTo)
+        fetchLatest(leagueId: leagueId, from: latestFrom, to: latestTo)
+    }
+
+    private func fetchUpcoming(leagueId: Int, from: String, to: String) {
+        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let events):
+                    self.upcomingEvents = events
+                    self.view?.reloadCollectionView()
+                case .failure(let error):
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    private func fetchLatest(leagueId: Int, from: String, to: String) {
+        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.view?.hideLoading()
+                switch result {
+                case .success(let events):
+                    self.latestEvents = events
+                    self.view?.reloadCollectionView()
+                case .failure(let error):
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
     
-   
-    func getUpcomingEventsCount() -> Int {
-        return upcomingEvents.count
+    private func fetchTeam(leagueId: Int, sport: String) {
+        callTeams(leagueId: leagueId, sport: sport) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.view?.hideLoading()
+                switch result {
+                case .success(let teams):
+                    self.teams = teams
+                    self.view?.reloadCollectionView()
+                case .failure(let error):
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
     }
-    func getUpcomingEvent(at index: Int) -> Event {
-        return upcomingEvents[index]
-    }
-    func getLatestEventsCount() -> Int {
-        return latestEvents.count
-    }
-    func getLatestEvent(at index: Int) -> Event {
-        return latestEvents[index]
+
+    private func callTeams(leagueId: Int, sport: String, completion: @escaping (Result<[Team], Error>) -> Void) {
+        networkService.getTeamsFrom(leagueId: leagueId, sport: sport, completion: completion)
     }
     
-    func getTeamsCount() -> Int {
-        return teams.count
+    
+    private func callFixtures(leagueId: Int, from: String, to: String, completion: @escaping (Result<[Event], Error>) -> Void) {
+        switch sport {
+        case "football":   networkService.getFootballFixtures(leagueId: leagueId, from: from, to: to, completion: completion)
+        case "basketball": networkService.getBasketballFixtures(leagueId: leagueId, from: from, to: to, completion: completion)
+        case "tennis":     networkService.getTennisFixtures(leagueId: leagueId, from: from, to: to, completion: completion)
+        case "cricket":    networkService.getCricketFixtures(leagueId: leagueId, from: from, to: to, completion: completion)
+        default:
+            view?.hideLoading()
+            view?.showError(message: "Unsupported sport")
+        }
     }
-    func getTeam(at index: Int) -> Team {
-        return teams[index]
+    
+    func isTennis() -> Bool {
+         sport == "tennis"
     }
- 
+
 }

@@ -19,14 +19,15 @@ final class NetworkService: NetworkProtocol {
     ) {
         
         let url = "\(Constants.baseURL)/\(sport)/"
-        
         AF.request(url,
                    method: HTTPMethod(rawValue: method),
                    parameters: parameters,
                    encoding: URLEncoding.default)
         .validate(statusCode: 200...299)
         .responseDecodable(of: T.self) { response in
-            
+            if let data = response.data {
+                    print("RAW JSON: \(String(data: data, encoding: .utf8) ?? "nil")")
+                }
             switch response.result {
             case .success(let data):
                 completion(.success(data))

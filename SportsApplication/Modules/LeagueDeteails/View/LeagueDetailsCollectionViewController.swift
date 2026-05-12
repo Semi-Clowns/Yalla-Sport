@@ -9,12 +9,16 @@ import UIKit
 
 class LeagueDetailsCollectionViewController: UICollectionViewController {
     var presenter: LeagueDetailsPresenterProtocol?
+    
+    var currentIndex : Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        registerCells()
         setupCompositionalLayout()
         setupNavigationBar()
         presenter?.viewDidLoad()
+        
     }
     
     
@@ -44,17 +48,17 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
              
         }
         
-        @objc private func favButtonTapped() {
-            presenter?.toggleFavorite()
-        }
+    @objc private func favButtonTapped() {
+        presenter?.toggleFavorite()
+    }
     @objc private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
 
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 3
+        // #warning Incomplete implementation, return the number of
+        return presenter?.isTennis() ?? false ? 2 : 3
     }
 
 
@@ -67,8 +71,14 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
                 case .latestEvents:
                     return presenter?.getLatestEventsCount() ?? 0
                 case .teams:
-                    return presenter?.getTeamsCount() ?? 0
+//                    if !(presenter?.isTennis() ?? false) {
+                        return presenter?.getTeamsCount() ?? 0
+//                    } else {
+//                        return 0
+//                    }
+                    
                 }
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,9 +91,9 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpcomingCollectionViewCell", for: indexPath) as? UpcomingCollectionViewCell else{
                         return UICollectionViewCell()
                     }
-                    //let event = presenter?.getUpcomingEvent(at: indexPath.row)
+                    guard let event = presenter?.getUpcomingEvent(at: indexPath.row) else {return UICollectionViewCell()}
                     
-                  // cell.configCell()
+                    cell.config(for: event)
                      return cell
                     
                 case .latestEvents:
@@ -91,8 +101,8 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
                         return UICollectionViewCell()
                     }
                     
-                   // let event = presenter?.getLatestEvent(at: indexPath.row)
-                     cell.configCell()
+                    guard let event = presenter?.getLatestEvent(at: indexPath.row) else {return UICollectionViewCell()}
+                 cell.configCell(for: event)
                     return cell
                     
                 case .teams:
@@ -100,9 +110,11 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
                         return UICollectionViewCell()
 
                     }
-                    //let team = presenter?.getTeam(at: indexPath.row)
+                    guard let team = presenter?.getTeam(at: indexPath.row) else {return UICollectionViewCell() }
+                    self.currentIndex = indexPath.row
                     cell.delegate = self
-                    cell.configCell()
+                    
+                    cell.configCell(for: team)
                     return cell
                 }
     }

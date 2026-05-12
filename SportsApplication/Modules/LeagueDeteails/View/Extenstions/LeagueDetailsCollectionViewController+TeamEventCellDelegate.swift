@@ -7,15 +7,17 @@
 
 import UIKit
 
-extension LeagueDetailsCollectionViewController : TeamEventCellDelegate {
+extension LeagueDetailsCollectionViewController: TeamEventCellDelegate {
     func didTeam(_ cell: TeamEventCollectionViewCell) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "TeamDetailsView") as? TeamDetailsViewController else {
-                print("Error Occured")
-                return}
-            print("vc initaite ")
-            navigationController?.pushViewController(vc, animated: true)
+        guard let indexPath = collectionView.indexPath(for: cell),
+              let team = presenter?.getTeam(at: indexPath.item) else { return }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "TeamDetailsView") as? TeamDetailsViewController else { return }
+
+        vc.presenter = TeamDetailsPresenter(team: team)
+        vc.presenter?.attachView(with: vc)
+
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 }
