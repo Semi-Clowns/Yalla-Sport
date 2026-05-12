@@ -18,8 +18,13 @@ final class NetworkMonitor {
 
     private init() {
         monitor.pathUpdateHandler = { path in
-            self.isConnected = path.status == .satisfied
-            self.connectionChanged?(self.isConnected)
+            let isActuallyConnected = path.status == .satisfied
+                && (path.usesInterfaceType(.wifi)
+                || path.usesInterfaceType(.cellular)
+                || path.usesInterfaceType(.wiredEthernet))
+            
+            self.isConnected = isActuallyConnected
+            self.connectionChanged?(isActuallyConnected)
         }
         monitor.start(queue: queue)
     }

@@ -10,10 +10,17 @@ import UIKit
 
 protocol AllLeaguesViewControllerProtocol : AnyObject {
     func showLeagues(leagues: [League])
+        func reloadRow(at index: Int)
+        func showDeleteConfirmation(for index: Int, leagueName: String) 
+        func showError(message: String)
+        func showLoading()
+        func hideLoading()
+        func showNoInternet()
+    func navigateToLeagueDetails(with league: League )
+        
 }
 
 class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProtocol {
-
     @IBOutlet var leaguesTableView: UITableView!
     @IBOutlet var leaguesSearchBar: UISearchBar!
     
@@ -55,6 +62,11 @@ class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProto
         // search bar
 //        leaguesSearchBar.layoutMargins = UIEdgeInsets(  top: 0, left: 0, bottom: 0, right: 0)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.loadLeagues()
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -101,7 +113,7 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
 
             self.presenter?.toggleFavorite(at: indexPath.row)
 
-            tableView.reloadRows(at: [indexPath], with: .none)
+          //  tableView.reloadRows(at: [indexPath], with: .none)
         }
 
         return cell
@@ -136,18 +148,10 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let league = presenter?.getLeagueAtIndex(at: indexPath.row) else {
-            return
-        }
-        guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
-            return
-        }
-        guard let sport = presenter?.getSportType() else {return}
-        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
-        
-        self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
         
         
+        
+        presenter?.navigateToLeagueDetails(index: indexPath.row)
     }
 
     
@@ -169,5 +173,54 @@ extension AllLeaguesViewController: UISearchBarDelegate {
 extension AllLeaguesViewController {
     func showLeagues(leagues: [League]) {
         leaguesTableView.reloadData()
+    }
+    func reloadRow(at index: Int) {
+            let indexPath = IndexPath(row: index, section: 0)
+            leaguesTableView.reloadRows(at: [indexPath], with: .none)
+        }
+        
+    
+    func showError(message: String) {
+        AppAlerts.showAlert(on: self, title: "Error", message: message)
+        }
+    
+    func showLoading() {
+        DispatchQueue.main.async {
+            AppComponents.showLoading(on: self)
+                }
+        
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async {
+            AppComponents.hideLoading(on: self)
+                }
+    }
+    
+    func showDeleteConfirmation(for index: Int, leagueName: String) {
+        AppAlerts.showConfirmation(
+                on: self,
+                title: "Remove From Favourite",
+                message: "Are you sure you want to remove \(leagueName)?",
+                confirmTitle: "Remove"
+            ) { [weak self] in
+                self?.presenter?.confirmRemoveFavorite(at: index)
+            }
+        }
+    func showNoInternet() {
+        AppAlerts.showNoInternet(on: self)
+        }
+    func navigateToLeagueDetails(with league: League){
+        
+       
+       
+        guard let sport = presenter?.getSportType() else {return}
+                 self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
+        guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetails") as? LeagueDetailsCollectionViewController  else{
+            return
+        }
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
+        
+        self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
     }
 }
