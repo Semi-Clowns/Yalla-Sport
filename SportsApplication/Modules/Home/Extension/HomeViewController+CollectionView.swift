@@ -1,8 +1,7 @@
 import UIKit
 
 extension HomeCollectionViewController :
-    UICollectionViewDelegateFlowLayout,
-    HomeViewControllerProtocol {
+    UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -23,4 +22,5 @@ extension HomeCollectionViewController :
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
 }

@@ -9,7 +9,7 @@ protocol FavouritesPresenterProtocol {
     func fetchFavourites()
     func removeFavourite(leagueId: Int)
     func deleteConfirmation(leagueId: Int)
-    func didSelectLeague(leagueId: Int,sportType:String)
+    func didSelectLeague(indexPath:IndexPath)
     func numberOfSections() -> Int
     func numberOfItems(in section: Int) -> Int
     func getLeague(at indexPath: IndexPath) -> League

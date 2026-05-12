@@ -12,4 +12,5 @@ protocol FavouritesViewProtocol: AnyObject {
     func hideLoading()
     func showDeleteAlert(leagueId: Int)
     func showNoInternet()
+    func navigateToLeagueDetails(with league: League )
 }

@@ -88,9 +88,9 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIl-w9-DSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964.6153846153845" y="862.32227488151659"/>
+            <point key="canvasLocation" x="1940" y="1194"/>
         </scene>
-        <!--Favourites-->
+        <!--Favourites View Controller-->
         <scene sceneID="kRf-6c-5l3">
             <objects>
                 <tableViewController id="jmu-pT-h3R" customClass="FavouritesViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,14 +113,11 @@
                             <outlet property="delegate" destination="jmu-pT-h3R" id="YXA-3W-Ple"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favourites" id="SjF-Rp-rS7">
-                        <imageReference key="image" image="star" catalog="system" symbolScale="medium"/>
-                        <imageReference key="selectedImage" image="star.fill" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="kIr-7d-dpa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWU-QU-gEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913.8461538461538" y="862.32227488151659"/>
+            <point key="canvasLocation" x="3843.0769230769229" y="862.32227488151659"/>
         </scene>
         <!--All Leagues View Controller-->
         <scene sceneID="7Vd-LC-O1I">
@@ -322,7 +319,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="lR6-5I-7Ht" kind="relationship" relationship="viewControllers" id="skP-eW-O3r"/>
-                        <segue destination="jmu-pT-h3R" kind="relationship" relationship="viewControllers" id="0zB-1m-Mio"/>
+                        <segue destination="48H-ED-hZi" kind="relationship" relationship="viewControllers" id="0zB-1m-Mio"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROF-qN-2D7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,6 +446,7 @@
         <!--Home-->
         <scene sceneID="l9V-Dj-qkI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ql-nD-I9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lR6-5I-7Ht" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="03A-2u-yYk">
                         <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
@@ -464,9 +462,30 @@
                         <segue destination="TQH-NT-QyW" kind="relationship" relationship="rootViewController" id="f34-tk-ruY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ql-nD-I9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035.3846153846152" y="862.32227488151659"/>
+            <point key="canvasLocation" x="1048" y="1167"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="cEZ-P9-2Dc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48H-ED-hZi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" id="SjF-Rp-rS7">
+                        <imageReference key="image" image="star" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="star.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Od3-lp-U9G">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jmu-pT-h3R" kind="relationship" relationship="rootViewController" id="ZWw-qe-lma"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCT-kg-qEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913.8461538461538" y="862.32227488151659"/>
         </scene>
     </scenes>
     <resources>
