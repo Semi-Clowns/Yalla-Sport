@@ -1,7 +1,8 @@
 import UIKit
 
 protocol HomeViewControllerProtocol : AnyObject {
-    
+    func showNoInternet()
+    func navigateToDisplayLeague()
 }
 
 class HomeCollectionViewController: UICollectionViewController {
@@ -42,11 +43,13 @@ class HomeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         print("Selected : \(selectedIndex)" )
-        performSegue(withIdentifier: "goToAllLeagues", sender: nil)
+        
+        homePresenter?.navigateToDisplayLeague()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAllLeagues" {
+            
             let allLeaguesVC = segue.destination as! AllLeaguesViewController
             
             let sport = homePresenter?.getSelectedSport(at: selectedIndex) ?? "football"
@@ -56,13 +59,24 @@ class HomeCollectionViewController: UICollectionViewController {
                 networkService: NetworkService(),
                 displayLeaguesFor: sport)
         }
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         print("shouldSelect")
         return true
     }
+    
 
+}
+
+extension HomeCollectionViewController :HomeViewControllerProtocol {
+    func showNoInternet() {
+        AppAlerts.showNoInternet(on: self)
+        }
+    func navigateToDisplayLeague() {
+        performSegue(withIdentifier: "goToAllLeagues", sender: nil)
+    }
 }
 
 
