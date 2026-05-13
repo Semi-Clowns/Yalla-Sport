@@ -11,7 +11,7 @@ struct Event {
     let eventId: String
     let eventDate: String
     let eventTime: String
-    
+    let leagueRound: String?
     
     let homeTeamName: String
     let awayTeamName: String
