@@ -13,5 +13,6 @@ protocol TeamDetailsPresenterProtocol {
     func getTeamPlayersCount() -> Int
     func getPlayerAtIndex(at index : Int) -> Player?
     func getCoach() -> Coach?
+    func getTeamCoachCount() -> Int
     
 }

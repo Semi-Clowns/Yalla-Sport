@@ -17,13 +17,12 @@ class PlayerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        containerView.backgroundColor = UIColor(white: 0.2, alpha: 1.0)
         
         containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
         
         playerImageView.layer.cornerRadius = playerImageView.frame.size.width / 2
+
         
         self.backgroundColor = .clear
         self.selectionStyle = .none
@@ -35,6 +34,9 @@ class PlayerTableViewCell: UITableViewCell {
     func configCell(for player: Player) {
         playerNameLabel.text = player.playerName
         playerTypeLabel.text = player.playerType.rawValue
+        
+        playerTypeLabel.textColor = player.playerType.badgeColor
+
         tshirtNumberPlayerLabel.text = player.playerNumber?.isEmpty == false ? player.playerNumber : "-"
         playerImageView.kf.setImage(
             with: URL(string: player.playerImage ?? ""),

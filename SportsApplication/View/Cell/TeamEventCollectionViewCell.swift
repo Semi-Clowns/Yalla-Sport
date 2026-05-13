@@ -18,7 +18,7 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 6
+        contentView.layer.cornerRadius = 16
         contentView.backgroundColor = .primaryColor
         isSkeletonable = true
         contentView.isSkeletonable = true

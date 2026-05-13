@@ -14,7 +14,7 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : presenter?.getTeamPlayersCount() ?? 0
+        return section == 0 ? presenter?.getTeamCoachCount() ?? 0 : presenter?.getTeamPlayersCount() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,14 +37,14 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
         return indexPath.section == 0 ? 90 : 80
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
-            header.textLabel?.textColor = .white
+            header.textLabel?.textColor = .primaryText
             header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-            header.tintColor = .clear
         }
     }
 }

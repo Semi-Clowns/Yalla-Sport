@@ -93,7 +93,7 @@ extension LeagueDetailsCollectionViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let width: NSCollectionLayoutDimension = isEmpty ? .fractionalWidth(1.0) : .fractionalWidth(0.32)
-        let height: NSCollectionLayoutDimension = isEmpty ? .absolute(100) : .absolute(140)
+        let height: NSCollectionLayoutDimension = isEmpty ? .absolute(100) : .absolute(190)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])

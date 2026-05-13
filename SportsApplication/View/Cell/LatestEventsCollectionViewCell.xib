@@ -22,144 +22,156 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LatestEventsCollectionViewCell" id="gTV-IL-0wX" customClass="LatestEventsCollectionViewCell" customModule="SportsApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="252" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="511" height="149"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="252" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="511" height="149"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mainBgView" userLabel="ContentView">
-                        <rect key="frame" x="8" y="8" width="236" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="511" height="149"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
-                                <rect key="frame" x="0.0" y="0.0" width="236" height="64"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-PL-6He">
+                                <rect key="frame" x="0.0" y="0.0" width="511" height="149"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="statusStack">
-                                        <rect key="frame" x="0.0" y="14" width="36" height="36"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
+                                        <rect key="frame" x="16" y="8" width="479" height="133"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="FT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblFT">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="15.5"/>
-                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
-                                                <color key="textColor" name="SubTitleColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="30/30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblDate">
-                                                <rect key="frame" x="0.0" y="15.5" width="36" height="20.5"/>
-                                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
-                                                <color key="textColor" name="SubTitleColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="lblDate" secondAttribute="trailing" id="2S1-Zv-3Pb"/>
-                                            <constraint firstItem="lblFT" firstAttribute="leading" secondItem="statusStack" secondAttribute="leading" id="CIj-OO-wq9"/>
-                                            <constraint firstItem="lblDate" firstAttribute="leading" secondItem="statusStack" secondAttribute="leading" id="N19-Bc-b5l"/>
-                                            <constraint firstAttribute="bottom" secondItem="lblDate" secondAttribute="bottom" id="Z36-Sz-Q3M"/>
-                                            <constraint firstAttribute="height" constant="36" id="Zoz-KC-4ia"/>
-                                            <constraint firstItem="lblFT" firstAttribute="top" secondItem="statusStack" secondAttribute="top" id="eoq-ag-BGx"/>
-                                            <constraint firstAttribute="trailing" secondItem="lblFT" secondAttribute="trailing" id="jal-kr-0js"/>
-                                            <constraint firstItem="lblDate" firstAttribute="top" secondItem="lblFT" secondAttribute="bottom" id="lZe-FY-aSL"/>
-                                            <constraint firstItem="lblDate" firstAttribute="top" secondItem="lblFT" secondAttribute="bottom" id="p0v-n1-T86"/>
-                                            <constraint firstAttribute="width" constant="36" id="pYI-SW-YmN"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="obF-vq-fIm">
-                                        <rect key="frame" x="46" y="3" width="190" height="58"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="homeRow">
-                                                <rect key="frame" x="0.0" y="0.0" width="190" height="24"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="statusStack">
+                                                <rect key="frame" x="0.0" y="48.5" width="36" height="36"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="imgHome">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="Tue-Wx-TRL"/>
-                                                            <constraint firstAttribute="width" constant="24" id="UME-Gb-Jb3"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-1g-dvf">
-                                                        <rect key="frame" x="32" y="0.0" width="158" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="FT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblFT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
+                                                        <color key="textColor" name="SubTitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="30/30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblDate">
+                                                        <rect key="frame" x="0.0" y="15.5" width="36" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="12"/>
+                                                        <color key="textColor" name="SubTitleColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="lblDate" secondAttribute="trailing" id="2S1-Zv-3Pb"/>
+                                                    <constraint firstItem="lblFT" firstAttribute="leading" secondItem="statusStack" secondAttribute="leading" id="CIj-OO-wq9"/>
+                                                    <constraint firstItem="lblDate" firstAttribute="leading" secondItem="statusStack" secondAttribute="leading" id="N19-Bc-b5l"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lblDate" secondAttribute="bottom" id="Z36-Sz-Q3M"/>
+                                                    <constraint firstAttribute="height" constant="36" id="Zoz-KC-4ia"/>
+                                                    <constraint firstItem="lblFT" firstAttribute="top" secondItem="statusStack" secondAttribute="top" id="eoq-ag-BGx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lblFT" secondAttribute="trailing" id="jal-kr-0js"/>
+                                                    <constraint firstItem="lblDate" firstAttribute="top" secondItem="lblFT" secondAttribute="bottom" id="lZe-FY-aSL"/>
+                                                    <constraint firstItem="lblDate" firstAttribute="top" secondItem="lblFT" secondAttribute="bottom" id="p0v-n1-T86"/>
+                                                    <constraint firstAttribute="width" constant="36" id="pYI-SW-YmN"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="obF-vq-fIm">
+                                                <rect key="frame" x="46" y="37.5" width="433" height="58"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="homeRow">
+                                                        <rect key="frame" x="0.0" y="0.0" width="433" height="24"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblHome">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="24"/>
-                                                                <fontDescription key="fontDescription" name="Mulish-SemiBold" family="Mulish" pointSize="15"/>
-                                                                <color key="textColor" name="PrimaryTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblHomeScore">
-                                                                <rect key="frame" x="149" y="0.0" width="9" height="24"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="imgHome">
+                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="Tue-Wx-TRL"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="UME-Gb-Jb3"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-1g-dvf">
+                                                                <rect key="frame" x="32" y="0.0" width="401" height="24"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblHome">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="298" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="Mulish-SemiBold" family="Mulish" pointSize="15"/>
+                                                                        <color key="textColor" name="PrimaryTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblHomeScore">
+                                                                        <rect key="frame" x="392" y="0.0" width="9" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="15"/>
+                                                                        <color key="textColor" name="PrimaryTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="lblHome" firstAttribute="top" secondItem="s1I-1g-dvf" secondAttribute="top" id="7Lo-k3-BmW"/>
+                                                                    <constraint firstItem="lblHomeScore" firstAttribute="top" secondItem="s1I-1g-dvf" secondAttribute="top" id="Bi6-Y9-QcI"/>
+                                                                    <constraint firstItem="lblHome" firstAttribute="leading" secondItem="s1I-1g-dvf" secondAttribute="leading" id="PGC-QK-4ku"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="lblHome" secondAttribute="bottom" id="iXd-7V-OVL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="lblHomeScore" secondAttribute="trailing" id="oci-V3-JOF"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="lblHomeScore" secondAttribute="bottom" id="xCh-7t-WQI"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="s1I-1g-dvf" secondAttribute="trailing" id="UxS-uN-Pdf"/>
+                                                            <constraint firstAttribute="bottom" secondItem="s1I-1g-dvf" secondAttribute="bottom" id="Vab-Lb-XA0"/>
+                                                            <constraint firstItem="s1I-1g-dvf" firstAttribute="top" secondItem="homeRow" secondAttribute="top" id="y1L-Hm-SV4"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awayRow">
+                                                        <rect key="frame" x="0.0" y="34" width="433" height="24"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-Kg-1NP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="24"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="imgAway">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="hM1-tS-Sfv"/>
+                                                                            <constraint firstAttribute="width" constant="24" id="ytz-DH-Jas"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblAway">
+                                                                        <rect key="frame" x="32" y="0.0" width="39" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="Mulish-SemiBold" family="Mulish" pointSize="15"/>
+                                                                        <color key="textColor" name="PrimaryTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="lblAway" secondAttribute="trailing" id="FWI-q6-EyA"/>
+                                                                    <constraint firstItem="lblAway" firstAttribute="top" secondItem="dWB-Kg-1NP" secondAttribute="top" id="On5-2m-cbv"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="imgAway" secondAttribute="bottom" id="SKC-Rw-6Ml"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="lblAway" secondAttribute="bottom" id="d6i-Vr-ngI"/>
+                                                                    <constraint firstItem="imgAway" firstAttribute="top" secondItem="dWB-Kg-1NP" secondAttribute="top" id="gnc-Lb-bwF"/>
+                                                                    <constraint firstItem="imgAway" firstAttribute="leading" secondItem="dWB-Kg-1NP" secondAttribute="leading" id="l5e-uC-wZP"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblAwayScore">
+                                                                <rect key="frame" x="424" y="0.0" width="9" height="24"/>
                                                                 <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="15"/>
                                                                 <color key="textColor" name="PrimaryTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="lblHome" firstAttribute="top" secondItem="s1I-1g-dvf" secondAttribute="top" id="7Lo-k3-BmW"/>
-                                                            <constraint firstItem="lblHomeScore" firstAttribute="top" secondItem="s1I-1g-dvf" secondAttribute="top" id="Bi6-Y9-QcI"/>
-                                                            <constraint firstItem="lblHome" firstAttribute="leading" secondItem="s1I-1g-dvf" secondAttribute="leading" id="PGC-QK-4ku"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lblHome" secondAttribute="bottom" id="iXd-7V-OVL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="lblHomeScore" secondAttribute="trailing" id="oci-V3-JOF"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lblHomeScore" secondAttribute="bottom" id="xCh-7t-WQI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lblAwayScore" secondAttribute="trailing" id="5dj-9m-ZzX"/>
+                                                            <constraint firstItem="lblAwayScore" firstAttribute="top" secondItem="awayRow" secondAttribute="top" id="kP1-K8-9Kd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lblAwayScore" secondAttribute="bottom" id="v2E-Y7-QY1"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="s1I-1g-dvf" secondAttribute="trailing" id="UxS-uN-Pdf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="s1I-1g-dvf" secondAttribute="bottom" id="Vab-Lb-XA0"/>
-                                                    <constraint firstItem="s1I-1g-dvf" firstAttribute="top" secondItem="homeRow" secondAttribute="top" id="y1L-Hm-SV4"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awayRow">
-                                                <rect key="frame" x="0.0" y="34" width="190" height="24"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-Kg-1NP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="24"/>
-                                                        <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="imgAway">
-                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="hM1-tS-Sfv"/>
-                                                                    <constraint firstAttribute="width" constant="24" id="ytz-DH-Jas"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblAway">
-                                                                <rect key="frame" x="32" y="0.0" width="39" height="24"/>
-                                                                <fontDescription key="fontDescription" name="Mulish-SemiBold" family="Mulish" pointSize="15"/>
-                                                                <color key="textColor" name="PrimaryTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="lblAway" secondAttribute="trailing" id="FWI-q6-EyA"/>
-                                                            <constraint firstItem="lblAway" firstAttribute="top" secondItem="dWB-Kg-1NP" secondAttribute="top" id="On5-2m-cbv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="imgAway" secondAttribute="bottom" id="SKC-Rw-6Ml"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lblAway" secondAttribute="bottom" id="d6i-Vr-ngI"/>
-                                                            <constraint firstItem="imgAway" firstAttribute="top" secondItem="dWB-Kg-1NP" secondAttribute="top" id="gnc-Lb-bwF"/>
-                                                            <constraint firstItem="imgAway" firstAttribute="leading" secondItem="dWB-Kg-1NP" secondAttribute="leading" id="l5e-uC-wZP"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lblAwayScore">
-                                                        <rect key="frame" x="181" y="0.0" width="9" height="24"/>
-                                                        <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="15"/>
-                                                        <color key="textColor" name="PrimaryTextColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="lblAwayScore" secondAttribute="trailing" id="5dj-9m-ZzX"/>
-                                                    <constraint firstItem="lblAwayScore" firstAttribute="top" secondItem="awayRow" secondAttribute="top" id="kP1-K8-9Kd"/>
-                                                    <constraint firstAttribute="bottom" secondItem="lblAwayScore" secondAttribute="bottom" id="v2E-Y7-QY1"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" name="CardBackgroudColor"/>
+                                <constraints>
+                                    <constraint firstItem="mainStack" firstAttribute="leading" secondItem="Ax6-PL-6He" secondAttribute="leading" constant="16" id="7Ly-gk-JeY"/>
+                                    <constraint firstAttribute="bottom" secondItem="mainStack" secondAttribute="bottom" constant="8" id="7Wx-z4-FV3"/>
+                                    <constraint firstItem="mainStack" firstAttribute="top" secondItem="Ax6-PL-6He" secondAttribute="top" constant="8" id="SBa-Io-wuJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" constant="16" id="nm4-Q0-HAI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mainStack" secondAttribute="bottom" id="GBI-yx-s16"/>
-                            <constraint firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" id="Ms2-uG-vGZ"/>
-                            <constraint firstItem="mainStack" firstAttribute="leading" secondItem="mainBgView" secondAttribute="leading" id="U8Q-by-JOJ"/>
-                            <constraint firstItem="mainStack" firstAttribute="top" secondItem="mainBgView" secondAttribute="top" id="nwQ-Pm-ijy"/>
+                            <constraint firstItem="Ax6-PL-6He" firstAttribute="top" secondItem="mainBgView" secondAttribute="top" id="N0Q-7i-FjB"/>
+                            <constraint firstAttribute="bottom" secondItem="Ax6-PL-6He" secondAttribute="bottom" id="SHi-Ad-4ze"/>
+                            <constraint firstItem="Ax6-PL-6He" firstAttribute="leading" secondItem="mainBgView" secondAttribute="leading" id="gsh-z4-7tQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Ax6-PL-6He" secondAttribute="trailing" id="nh3-8A-6LY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -170,14 +182,13 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="CardBackgroudColor"/>
             <constraints>
-                <constraint firstItem="mainBgView" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="F8y-pl-oNA"/>
-                <constraint firstItem="mainBgView" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="qSr-vn-Bqf"/>
-                <constraint firstAttribute="trailing" secondItem="mainBgView" secondAttribute="trailing" constant="8" id="qWB-lJ-glM"/>
-                <constraint firstAttribute="bottom" secondItem="mainBgView" secondAttribute="bottom" constant="8" id="ufv-ci-jf5"/>
+                <constraint firstItem="mainBgView" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F8y-pl-oNA"/>
+                <constraint firstItem="mainBgView" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qSr-vn-Bqf"/>
+                <constraint firstAttribute="trailing" secondItem="mainBgView" secondAttribute="trailing" id="qWB-lJ-glM"/>
+                <constraint firstAttribute="bottom" secondItem="mainBgView" secondAttribute="bottom" id="ufv-ci-jf5"/>
             </constraints>
-            <size key="customSize" width="493" height="182"/>
+            <size key="customSize" width="752" height="251"/>
             <connections>
                 <outlet property="AwayTeamLogo" destination="imgAway" id="SJ9-Ze-H2y"/>
                 <outlet property="AwayTeamName" destination="lblAway" id="w1X-2q-hUz"/>
@@ -186,8 +197,9 @@
                 <outlet property="HomeTeamLogo" destination="imgHome" id="rla-qH-2Qo"/>
                 <outlet property="HomeTeamName" destination="lblHome" id="Bux-QP-Mqb"/>
                 <outlet property="HomeTeamScore" destination="lblHomeScore" id="P7c-80-j1u"/>
+                <outlet property="containerView" destination="Ax6-PL-6He" id="6rp-DH-7tX"/>
             </connections>
-            <point key="canvasLocation" x="229.71014492753625" y="73.660714285714278"/>
+            <point key="canvasLocation" x="416.66666666666669" y="100.78125"/>
         </collectionViewCell>
     </objects>
     <resources>
