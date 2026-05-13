@@ -58,29 +58,6 @@
 ## Project Structure
 
 ```
-YallaKora/
-├── App/
-│   └── AppDelegate.swift
-├── Modules/
-│   ├── Onboarding/
-│   ├── Sports/
-│   ├── Leagues/
-│   ├── LeagueDetails/
-│   │   ├── UpcomingEvents/
-│   │   ├── LatestEvents/
-│   │   └── Teams/
-│   ├── TeamDetails/
-│   └── Favorites/
-├── Network/
-│   ├── NetworkManager.swift
-│   └── Endpoints.swift
-├── CoreData/
-│   └── FavoritesManager.swift
-├── Resources/
-└── YallaKoraTests/
-```
-
----
 
 ## Setup & Installation
 
