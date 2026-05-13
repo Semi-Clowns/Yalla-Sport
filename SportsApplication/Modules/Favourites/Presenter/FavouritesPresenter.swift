@@ -67,10 +67,10 @@ extension FavouritesPresenter: FavouritesPresenterProtocol {
         }
     }
     
-    func didSelectLeague(leagueId: Int, sportType: String) {
+    func didSelectLeague(indexPath:IndexPath) {
         if networkMonitor.isConnected {
-            // naviage to details
-            print("Navigating to \(leagueId)")
+            let league = getLeague(at: indexPath)
+            self.view?.navigateToLeagueDetails(with: league)
         } else {
             view?.showNoInternet()
         }

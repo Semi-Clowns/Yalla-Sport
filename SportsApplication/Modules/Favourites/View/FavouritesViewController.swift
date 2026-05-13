@@ -26,6 +26,11 @@ final class FavouritesViewController: UITableViewController {
         tableView.estimatedRowHeight = 80
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            presenter?.fetchFavourites()
+    }
+    
    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,10 +78,8 @@ final class FavouritesViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let league = presenter?.getLeague(at: indexPath) else {
-                return
-            }
-        presenter?.didSelectLeague(leagueId: league.id,sportType: league.sportType ?? "other")
+      
+        presenter?.didSelectLeague(indexPath: indexPath)
     }
     
 }
@@ -136,4 +139,14 @@ extension FavouritesViewController: FavouritesViewProtocol {
     func showNoInternet() {
         AppAlerts.showNoInternet(on: self)
         }
+    
+    func navigateToLeagueDetails(with league: League) {
+        guard let leagueDetailsScreen = self.storyboard?.instantiateViewController(
+            withIdentifier: "LeagueDetails"
+        ) as? LeagueDetailsCollectionViewController else {
+            return
+        }
+        leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league)
+        self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
+    }
 }
