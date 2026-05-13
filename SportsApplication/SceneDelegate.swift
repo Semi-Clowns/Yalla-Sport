@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
             let window = UIWindow(windowScene: windowScene)
+        
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController: UIViewController
             if LocalDataManager.shared.hasSeenOnboarding() {
@@ -26,6 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingPage")
             }
             window.rootViewController = initialViewController
+        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+            window.overrideUserInterfaceStyle = isDark ? .dark : .light
             self.window = window
             window.makeKeyAndVisible()
     }

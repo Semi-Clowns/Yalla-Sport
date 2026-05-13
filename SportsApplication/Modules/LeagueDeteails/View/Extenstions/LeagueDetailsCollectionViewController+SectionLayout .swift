@@ -7,6 +7,16 @@
 
 import UIKit
 // Sections layout extension
+//
+//  LeagueDetailsCollectionViewController+SectionLayout.swift
+//  SportsApplication
+//
+//  Created by Mahmoud Raafat on 11/05/2026.
+//
+
+import UIKit
+
+// Sections layout extension
 extension LeagueDetailsCollectionViewController {
     
     func setupCompositionalLayout() {
@@ -14,7 +24,6 @@ extension LeagueDetailsCollectionViewController {
             
             guard let section = LeagueSection(rawValue: sectionIndex) else { return nil }
             
-
             switch section {
             case .upcoming:
                 return self?.drawUpcomingSection()
@@ -29,29 +38,41 @@ extension LeagueDetailsCollectionViewController {
     }
     
     func drawUpcomingSection() -> NSCollectionLayoutSection {
+        let isEmpty = presenter?.isUpcomingEmpty() ?? true
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(180))
+        let width: NSCollectionLayoutDimension = isEmpty ? .fractionalWidth(1.0) : .fractionalWidth(0.9)
+        let height: NSCollectionLayoutDimension = isEmpty ? .absolute(100) : .absolute(180)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         
-        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
-            let containerWidth = environment.container.contentSize.width
-            items.forEach { item in
-                let distanceFromCenter = abs((item.frame.midX - offset.x) - containerWidth / 2.0)
-                let minScale: CGFloat = 0.85
-                let maxScale: CGFloat = 1.0
-                let scale = max(maxScale - (distanceFromCenter / containerWidth), minScale)
-                item.transform = CGAffineTransform(scaleX: scale, y: scale)
+        if !isEmpty {
+            section.orthogonalScrollingBehavior = .continuous
+            section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+                let containerWidth = environment.container.contentSize.width
+                guard containerWidth > 0 else { return } // Prevents the NaN crash!
+                items.forEach { item in
+                    let distanceFromCenter = abs((item.frame.midX - offset.x) - containerWidth / 2.0)
+                    let minScale: CGFloat = 0.85
+                    let maxScale: CGFloat = 1.0
+                    let scale = max(maxScale - (distanceFromCenter / containerWidth), minScale)
+                    item.transform = CGAffineTransform(scaleX: scale, y: scale)
+                }
             }
         }
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         section.boundarySupplementaryItems = [createSectionHeader()]
         return section
     }
+    
     func drawLatestEventsSection() -> NSCollectionLayoutSection {
+       
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -66,14 +87,23 @@ extension LeagueDetailsCollectionViewController {
     }
     
     func drawTeamsSection() -> NSCollectionLayoutSection {
+        let isEmpty = presenter?.isTeamsEmpty() ?? true
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.32), heightDimension: .absolute(140))
+        let width: NSCollectionLayoutDimension = isEmpty ? .fractionalWidth(1.0) : .fractionalWidth(0.32)
+        let height: NSCollectionLayoutDimension = isEmpty ? .absolute(100) : .absolute(140)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+        
+        if !isEmpty {
+            section.orthogonalScrollingBehavior = .continuous
+        }
+        
         section.interGroupSpacing = 16
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         section.boundarySupplementaryItems = [createSectionHeader()]

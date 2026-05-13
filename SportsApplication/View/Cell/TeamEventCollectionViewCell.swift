@@ -20,6 +20,8 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 6
         contentView.backgroundColor = .primaryColor
+        isSkeletonable = true
+        contentView.isSkeletonable = true
     }
 
     @IBAction func GoToDetails(_ sender: Any) {

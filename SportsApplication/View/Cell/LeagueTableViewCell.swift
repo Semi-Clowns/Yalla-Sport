@@ -20,9 +20,14 @@ class LeagueTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cardContainerView.layer.cornerRadius = 12
+       
         cardContainerView.layer.masksToBounds = true
         contentView.backgroundColor = .clear
         self.backgroundColor = .clear
+        
+            isSkeletonable = true
+            contentView.isSkeletonable = true
+            cardContainerView.isSkeletonable = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

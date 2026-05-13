@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+import SkeletonView
 protocol AllLeaguesViewControllerProtocol : AnyObject {
     func showLeagues(leagues: [League])
         func reloadRow(at index: Int)
@@ -35,7 +35,7 @@ class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProto
         leaguesTableView.delegate = self
         leaguesTableView.dataSource = self
         leaguesSearchBar.delegate = self
-        
+        leaguesTableView.isSkeletonable = true
         leaguesTableView.register(
             LeagueHeaderView.self,
             forHeaderFooterViewReuseIdentifier: LeagueHeaderView.identifier
@@ -82,7 +82,7 @@ class AllLeaguesViewController: UIViewController , AllLeaguesViewControllerProto
 }
 
 
-extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
+extension AllLeaguesViewController: SkeletonTableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -92,7 +92,10 @@ extension AllLeaguesViewController: UITableViewDataSource, UITableViewDelegate {
         presenter?.getLeaguesCount() ?? 0
     }
 
-    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+            return "LeagueTableViewCell"
+        }
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(
@@ -186,14 +189,32 @@ extension AllLeaguesViewController {
     
     func showLoading() {
         DispatchQueue.main.async {
-            AppComponents.showLoading(on: self)
-                }
+            let baseColor = UIColor { trait in
+                trait.userInterfaceStyle == .dark
+                    ? UIColor(white: 0.2, alpha: 1)
+                    : UIColor(white: 0.85, alpha: 1)
+            }
+            let shimmer = UIColor { trait in
+                trait.userInterfaceStyle == .dark
+                    ? UIColor(white: 0.3, alpha: 1)
+                    : UIColor(white: 0.95, alpha: 1)
+            }
+            let gradient = SkeletonGradient(baseColor: baseColor, secondaryColor: shimmer)
+                
+                let animation = SkeletonAnimationBuilder()
+                    .makeSlidingAnimation(withDirection: .leftRight, duration: 1.2)
+                
+                self.leaguesTableView.showAnimatedGradientSkeleton(
+                    usingGradient: gradient,
+                    animation: animation
+                )
+            }
         
     }
     
     func hideLoading() {
         DispatchQueue.main.async {
-            AppComponents.hideLoading(on: self)
+                    self.leaguesTableView.hideSkeleton()
                 }
     }
     

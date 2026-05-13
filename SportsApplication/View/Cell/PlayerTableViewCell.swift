@@ -27,6 +27,9 @@ class PlayerTableViewCell: UITableViewCell {
         
         self.backgroundColor = .clear
         self.selectionStyle = .none
+        isSkeletonable = true
+        contentView.isSkeletonable = true
+        containerView.isSkeletonable = true
     }
 
     func configCell(for player: Player) {
