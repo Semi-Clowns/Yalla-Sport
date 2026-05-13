@@ -22,6 +22,9 @@ class LeagueTableViewCell: UITableViewCell {
         cardContainerView.layer.cornerRadius = 12
        
         cardContainerView.layer.masksToBounds = true
+        
+        leagueImageView.layer.cornerRadius = leagueImageView.frame.size.width / 2
+        leagueCountryImageView.layer.cornerRadius = leagueCountryImageView.frame.size.width / 2
         contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         

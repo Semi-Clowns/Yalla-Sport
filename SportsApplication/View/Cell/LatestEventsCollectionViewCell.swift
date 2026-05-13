@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 class LatestEventsCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var containerView: UIView!
     @IBOutlet weak var AwayTeamScore: UILabel!
     @IBOutlet weak var HomeTeamScore: UILabel!
     @IBOutlet weak var AwayTeamName: UILabel!
@@ -20,8 +21,10 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        contentView.layer.cornerRadius = 6
-        contentView.clipsToBounds = true
+        containerView.layer.cornerRadius = 16
+        containerView.clipsToBounds = true
+        
+  
         isSkeletonable = true
         contentView.isSkeletonable = true
         

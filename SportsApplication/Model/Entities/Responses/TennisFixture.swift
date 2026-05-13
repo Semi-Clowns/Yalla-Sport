@@ -16,7 +16,7 @@ struct TennisFixture: Codable {
     let eventKey: Int?
     let eventDate: String?
     let eventTime: String?
-    
+    let leagueRound: String?
     let eventFirstPlayer: String?
     let eventSecondPlayer: String?
     
@@ -38,6 +38,7 @@ struct TennisFixture: Codable {
         case eventFirstPlayerLogo = "event_first_player_logo"
         case eventSecondPlayerLogo  = "event_second_player_logo"
         case leagueName = "league_name"
+        case leagueRound = "league_round"
         
     }
 }
@@ -48,12 +49,14 @@ extension TennisFixture {
             eventId: "\(eventKey ?? 0)",
             eventDate: eventDate ?? "",
             eventTime: eventTime ?? "",
+            leagueRound: leagueRound ?? "",
             homeTeamName: eventFirstPlayer ?? "Unknown",
             awayTeamName: eventSecondPlayer ?? "Unknown",
             homeTeamLogo: eventFirstPlayerLogo ?? "",
             awayTeamLogo: eventFirstPlayerLogo ?? "",
             finalResult: eventFinalResult,
             leagueName: leagueName,
+            
             stadium: nil
         )
     }

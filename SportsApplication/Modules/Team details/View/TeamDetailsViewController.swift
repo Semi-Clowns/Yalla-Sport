@@ -20,24 +20,22 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setup Presneter
-//        presenter = TeamDetailsPresenter()
-//        presenter?.attachView(with: self)
-        
         tableView.dataSource = self
         tableView.delegate = self
         
-//        tableView.backgroundColor = .white
         guard let team = presenter?.getTeamDetails() else {return}
+        
         tableView.separatorStyle = .none
+        
         teamImageView.kf.setImage(with: URL(string: team.teamLogo ?? ""),
                                   placeholder: UIImage(systemName: "photo.fill"))
         
         
         print(presenter?.getTeamDetails().teamLogo ?? "")
+        
         teamImageView.layer.cornerRadius = teamImageView.frame.width / 2
         teamNameLabel.text = team.teamName
-//        teamCountryLabel.text = team.tea
+        
         
         let nib = UINib(nibName: "PlayerTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "PlayerTableViewCell")

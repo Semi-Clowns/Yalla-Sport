@@ -29,6 +29,10 @@ class TeamDetailsPresenter : TeamDetailsPresenterProtocol {
         team.players?.count ?? 0
     }
     
+    func getTeamCoachCount() -> Int {
+        team.coaches?.count ?? 0
+    }
+    
     func getPlayers() -> [Player]? {
         team.players ?? []
     }

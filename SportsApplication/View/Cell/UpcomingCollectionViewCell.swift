@@ -25,7 +25,7 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 6
+        contentView.layer.cornerRadius = 16
         
         roundView.clipsToBounds = true
         roundView.layer.cornerRadius = 6
@@ -38,9 +38,18 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         homeTeamNameLabel.text = event.homeTeamName
         awayTeamNameLabel.text = event.awayTeamName
 
-        matchDateLabel.text = event.eventDate
+        
+        
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+
+        if let date = inputFormatter.date(from: event.eventDate) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "d/M"
+            matchDateLabel.text = outputFormatter.string(from: date)
+        }
         matchTimeLabel.text = event.eventTime
-        matchOnRoundLabel.text = "35"
+        matchOnRoundLabel.text = event.leagueRound ?? ""
 
         homeTeamImageView.kf.setImage(
             with: URL(string: event.homeTeamLogo ?? ""),
