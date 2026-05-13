@@ -19,8 +19,15 @@ final class HomePresenter : HomePresenterProtocol {
         return sportsManager.getSportAtIndex(at: index)
     }
     
+    func getAdsCount() -> Int {
+        return sportsManager.getAdsCount()
+    }
+    
+    func getAdItem(index : Int) -> Sport {
+        return sportsManager.getAdItem(index: index)
+    }
     func getSelectedSport(at index: Int) -> String {
-        sportsManager.getSportAtIndex(at: index).type
+        sportsManager.getSportAtIndex(at: index).type ?? ""
     }
     func navigateToDisplayLeague() {
         if networkMonitor.isConnected{

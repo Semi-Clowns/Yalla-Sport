@@ -1,12 +1,19 @@
 struct Sport {
-    let title : String
+    var title : String?
     let image : String
-    let type : String
+    var type : String?
 }
 
 class SportManager {
     
     static let shared = SportManager()
+    
+    private let ads: [Sport] = [
+        Sport(image: "football-stadium"),
+        Sport(image: "basketball-stadium"),
+        Sport(image: "cricket-stadium"),
+        Sport(image: "tennis-stadium")
+    ]
     
     private let sports: [Sport] = [
         Sport(title: "Football", image: "football_bg" ,type: "football"),
@@ -27,5 +34,17 @@ class SportManager {
     
     func getSportsCount() -> Int {
         self.sports.count
+    }
+    
+    func getAds() -> [Sport] {
+        self.ads
+    }
+    
+    func getAdsCount() -> Int {
+        self.ads.count
+    }
+    
+    func getAdItem(index : Int) -> Sport {
+        self.ads[index]
     }
 }
