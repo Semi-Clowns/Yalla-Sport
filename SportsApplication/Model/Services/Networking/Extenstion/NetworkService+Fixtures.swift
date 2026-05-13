@@ -138,6 +138,8 @@ extension NetworkProtocol {
     func getTeamsFrom(
         leagueId: Int,
         sport : String,
+        countryName: String,
+        countryLogo: String,
         completion: @escaping (Result<[Team], Error>) -> Void
     ) {
         let params: [String: Any] = [
@@ -155,7 +157,17 @@ extension NetworkProtocol {
             switch result {
             case .success(let response):
                 let teams = (response.result ?? [])
-                completion(.success(teams))
+                if !teams.isEmpty {
+                    let updatedTeams = teams.map { team -> Team in
+                        var team = team
+                        team.setCountryLogo(countryLogo: countryLogo)
+                        team.setCountryName(countryName: countryName)
+                        return team
+                    }
+                    completion(.success(updatedTeams))
+                } else {
+                    completion(.success(teams))
+                }
             case .failure(let error):
                 completion(.failure(error))
             }

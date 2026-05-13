@@ -214,7 +214,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     }
 
     private func callTeams(leagueId: Int, sport: String, completion: @escaping (Result<[Team], Error>) -> Void) {
-        networkService.getTeamsFrom(leagueId: leagueId, sport: sport, completion: completion)
+        networkService.getTeamsFrom(leagueId: leagueId, sport: sport, countryName: league.countryName ?? "" , countryLogo: league.countryLogo ?? "", completion: completion)
     }
     
     
