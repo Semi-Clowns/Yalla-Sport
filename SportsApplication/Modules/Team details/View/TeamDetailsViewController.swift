@@ -13,6 +13,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: UIView!
     @IBOutlet var teamCountryLabel: UILabel!
+    @IBOutlet var teamCountryLogoImageView: UIImageView!
     @IBOutlet var teamImageView: UIImageView!
     @IBOutlet var teamNameLabel: UILabel!
     var presenter : TeamDetailsPresenterProtocol? // Presenter
@@ -36,6 +37,10 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         teamImageView.layer.cornerRadius = teamImageView.frame.width / 2
         teamNameLabel.text = team.teamName
         
+        teamCountryLabel.text = team.countryName?.uppercased()
+        teamCountryLogoImageView.kf.setImage(with: URL(string: team.countryLogo ?? ""),
+                                  placeholder: UIImage(systemName: "photo.fill"))
+        teamCountryLogoImageView.layer.cornerRadius = teamCountryLogoImageView.frame.width / 2
         
         let nib = UINib(nibName: "PlayerTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "PlayerTableViewCell")

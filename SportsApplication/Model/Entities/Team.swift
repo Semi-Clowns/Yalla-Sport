@@ -35,12 +35,26 @@ struct Team: Codable {
     let teamLogo: String?
     let players: [Player]?
     let coaches: [Coach]?
+    var countryName: String?
+    var countryLogo: String?
 
     enum CodingKeys: String, CodingKey {
         case teamKey   = "team_key"
         case teamName  = "team_name"
         case teamLogo  = "team_logo"
+        case countryName
+        case countryLogo
         case players
         case coaches
+    }
+}
+
+extension Team {
+    mutating func setCountryName(countryName: String){
+        self.countryName = countryName
+    }
+    
+    mutating func setCountryLogo(countryLogo: String){
+        self.countryLogo = countryLogo
     }
 }
