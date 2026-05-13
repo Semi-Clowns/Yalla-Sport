@@ -16,7 +16,7 @@ struct CricketFixture: Codable {
     let eventKey: Int?
     let eventDate: String?
     let eventTime: String?
-    
+    let leagueRound: String?
     let eventHomeTeam: String?
     let eventAwayTeam: String?
     
@@ -40,6 +40,7 @@ struct CricketFixture: Codable {
         case eventStadium = "event_stadium"
         case eventHomeTeamLogo = "event_home_team_logo"
         case eventAwayTeamLogo = "event_away_team_logo"
+        case leagueRound = "league_round"
     }
 }
 
@@ -49,13 +50,16 @@ extension CricketFixture {
             eventId: "\(eventKey ?? 0)",
             eventDate: eventDate ?? "",
             eventTime: eventTime ?? "",
+            leagueRound: leagueRound ?? "",
             homeTeamName: eventHomeTeam ?? "Unknown",
             awayTeamName: eventAwayTeam ?? "Unknown",
             homeTeamLogo: eventHomeTeamLogo ?? "",
             awayTeamLogo: eventAwayTeamLogo ?? "",
             finalResult: eventFinalResult,
             leagueName: leagueName,
+            
             stadium: eventStadium
+            
         )
     }
 }
