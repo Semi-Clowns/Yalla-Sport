@@ -25,6 +25,10 @@ protocol LeagueDetailsPresenterProtocol{
     func getTeam(at index: Int) -> Team
     
     func isTennis() -> Bool
+    func isCompletelyEmpty() -> Bool
+    func isUpcomingEmpty() -> Bool
+    func isLatestEmpty() -> Bool
+    func isTeamsEmpty() -> Bool
     
     
 

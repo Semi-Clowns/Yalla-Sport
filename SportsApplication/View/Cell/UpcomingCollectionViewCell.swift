@@ -29,6 +29,8 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         
         roundView.clipsToBounds = true
         roundView.layer.cornerRadius = 6
+        isSkeletonable = true
+        contentView.isSkeletonable = true
     }
 
     func config(for event : Event) {

@@ -12,7 +12,11 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NavigationBarManager.setupMainNav(
+                for: self,
+                themeTarget: self,
+                themeAction: #selector(themeButtonTapped)
+            )
         homePresenter = HomePresenter()
         homePresenter?.attachView(with: self)
         
@@ -20,7 +24,16 @@ class HomeCollectionViewController: UICollectionViewController {
         //// replace this constants for dynamic one.
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NavigationBarManager.syncThemeIcon(for: self)
 
+    }
+    
+    @objc private func themeButtonTapped() {
+        NavigationBarManager.toggleTheme(for: self)
+
+    }
     override func numberOfSections	(in collectionView: UICollectionView) -> Int {
         return 1
     }

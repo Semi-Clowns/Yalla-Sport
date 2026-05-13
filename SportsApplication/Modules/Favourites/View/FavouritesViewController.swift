@@ -14,6 +14,11 @@ final class FavouritesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NavigationBarManager.setupMainNav(
+                for: self,
+                themeTarget: self,
+                themeAction: #selector(themeButtonTapped)
+            )
         presenter = FavouritesPresenter(view: self)
         tableView.register(
             UINib(nibName: "LeagueTableViewCell", bundle: nil),
@@ -29,8 +34,13 @@ final class FavouritesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             presenter?.fetchFavourites()
+        NavigationBarManager.syncThemeIcon(for: self)
+
     }
-    
+    @objc private func themeButtonTapped() {
+        NavigationBarManager.toggleTheme(for: self)
+
+    }
    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -149,4 +159,5 @@ extension FavouritesViewController: FavouritesViewProtocol {
         leagueDetailsScreen.presenter = LeagueDetailsPresenter(view: leagueDetailsScreen, league: league, sport: sport)
         self.navigationController?.pushViewController(leagueDetailsScreen, animated: true)
     }
+    
 }

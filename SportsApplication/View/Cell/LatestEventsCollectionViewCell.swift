@@ -22,6 +22,8 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
         // Initialization code
         contentView.layer.cornerRadius = 6
         contentView.clipsToBounds = true
+        isSkeletonable = true
+        contentView.isSkeletonable = true
         
         
     }

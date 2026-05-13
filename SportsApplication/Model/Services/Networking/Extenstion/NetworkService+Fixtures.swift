@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-extension NetworkProtocol {
+extension NetworkService {
 
     func getFootballFixtures(
         leagueId: Int,
