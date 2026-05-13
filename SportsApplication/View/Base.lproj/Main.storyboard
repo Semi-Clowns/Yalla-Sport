@@ -309,6 +309,39 @@
             </objects>
             <point key="canvasLocation" x="2937" y="1617"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="wjo-KT-XAe">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="RJW-9x-pmw" customClass="SplashViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQc-84-9BA">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-dz-EOQ">
+                                <rect key="frame" x="29.333333333333343" y="95.666666666666686" width="331.33333333333326" height="663"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7XI-dz-EOQ" secondAttribute="height" multiplier="1:2" id="xnK-dB-2VU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sk7-0P-gHv"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7XI-dz-EOQ" firstAttribute="centerX" secondItem="sk7-0P-gHv" secondAttribute="centerX" id="6ag-WG-n8F"/>
+                            <constraint firstItem="7XI-dz-EOQ" firstAttribute="centerY" secondItem="sk7-0P-gHv" secondAttribute="centerY" id="SoC-TP-H8v"/>
+                            <constraint firstItem="7XI-dz-EOQ" firstAttribute="width" secondItem="oQc-84-9BA" secondAttribute="width" multiplier="0.85" id="kcx-BC-Wju"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xuT-Sp-xNP"/>
+                    <connections>
+                        <outlet property="lottieContainerView" destination="7XI-dz-EOQ" id="dfd-DO-R4k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3A-Nw-AgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4620" y="1590.995260663507"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Hub-yh-Vqq">
             <objects>
@@ -488,6 +521,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCT-kg-qEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2913.8461538461538" y="862.32227488151659"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iKb-d9-s8P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZHG-im-ZFU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0wf-8M-7w2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RJW-9x-pmw" kind="relationship" relationship="rootViewController" id="jWN-NJ-OAm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYE-wg-2wD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3690.7692307692305" y="1590.995260663507"/>
         </scene>
     </scenes>
     <resources>

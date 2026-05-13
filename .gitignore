@@ -32,3 +32,6 @@ Carthage/Build/
 *.swp
 *~
 executable
+# --- Secrets & Configs ---
+# This ignores your API keys so they never reach GitHub
+*.xcconfig
