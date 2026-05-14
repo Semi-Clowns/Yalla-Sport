@@ -43,7 +43,9 @@ extension AllLeaguesViewController: UITableViewDelegate {
         return cell
     }
 
-
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 8
+    }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
@@ -51,7 +53,23 @@ extension AllLeaguesViewController: UITableViewDelegate {
         return view
     }
     
-
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard section == 0 else { return nil }
+        
+        guard let header = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: LeagueHeaderView.identifier
+        ) as? LeagueHeaderView else {
+            return nil
+        }
+        
+        header.configure(title: "All Leagues")
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 12
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.navigateToLeagueDetails(index: indexPath.row)

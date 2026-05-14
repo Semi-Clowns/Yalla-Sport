@@ -19,7 +19,7 @@ class AllLeaguesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+
         // Do any additional setup after loading the view.
         leaguesTableView.delegate = self
         leaguesTableView.dataSource = self
@@ -49,19 +49,6 @@ class AllLeaguesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.loadLeagues()
-    }
-    func setupNavigationBar() {
-            navigationController?.navigationBar.tintColor = .primaryColor
-         
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
-                                        style: .plain,
-                                        target: self ,
-                                         action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
-        navigationItem.title = presenter?.getSportType().capitalized
-        }
-    @objc private func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
     }
 
 }

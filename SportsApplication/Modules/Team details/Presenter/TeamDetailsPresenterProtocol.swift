@@ -14,7 +14,5 @@ protocol TeamDetailsPresenterProtocol {
     func getPlayerAtIndex(at index : Int) -> Player?
     func getCoach() -> Coach?
     func getTeamCoachCount() -> Int
-    func hasCoach() -> Bool
-      func hasPlayers() -> Bool
-      func isFullyEmpty() -> Bool
+    
 }

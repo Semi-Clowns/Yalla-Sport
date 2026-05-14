@@ -63,6 +63,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         let group = DispatchGroup()
         var encounteredError: Error?
 
+        // 1. Fetch Upcoming
         group.enter()
         callFixtures(leagueId: leagueId, from: upcomingFrom, to: upcomingTo) { [weak self] result in
             switch result {
@@ -72,6 +73,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
             group.leave()
         }
 
+        // 2. Fetch Latest
         group.enter()
         callFixtures(leagueId: leagueId, from: latestFrom, to: latestTo) { [weak self] result in
             switch result {
@@ -81,6 +83,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
             group.leave()
         }
 
+        // 3. Fetch Teams (if not tennis)
         if sport != "tennis" {
             group.enter()
             callTeams(leagueId: leagueId, sport: sport) { [weak self] result in
@@ -92,6 +95,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
             }
         }
 
+        // 4. Notify when ALL are done
         group.notify(queue: .main) { [weak self] in
             self?.view?.hideLoading()
             
@@ -137,61 +141,61 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     func getTeamsCount() -> Int { teams.count }
     func getTeam(at index: Int) -> Team { teams[index] }
-//
-//    // MARK: - Private
-//
-//    private func fetchFixtures(leagueId: Int) {
-//        let today = Date()
-//        let calendar = Calendar.current
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//
-//        let upcomingFrom = formatter.string(from: today)
-//        let upcomingTo   = formatter.string(from: calendar.date(byAdding: .day, value: 15, to: today)!)
-//
-//        let latestFrom: String
-//        let latestTo = formatter.string(from: calendar.date(byAdding: .day, value: -1, to: today)!)
-//
-//        if sport == "tennis" {
-//            latestFrom = formatter.string(from: calendar.date(byAdding: .year, value: -6, to: today)!)
-//        } else {
-//            latestFrom = formatter.string(from: calendar.date(byAdding: .day, value: -15, to: today)!)
-//        }
-//
-//        fetchUpcoming(leagueId: leagueId, from: upcomingFrom, to: upcomingTo)
-//        fetchLatest(leagueId: leagueId, from: latestFrom, to: latestTo)
-//    }
-//
-//    private func fetchUpcoming(leagueId: Int, from: String, to: String) {
-//        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let events):
-//                    self.upcomingEvents = events
-//                    self.view?.reloadCollectionView()
-//                case .failure(let error):
-//                    self.view?.showError(message: error.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-//
-//    private func fetchLatest(leagueId: Int, from: String, to: String) {
-//        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                self.view?.hideLoading()
-//                switch result {
-//                case .success(let events):
-//                    self.latestEvents = events
-//                    self.view?.reloadCollectionView()
-//                case .failure(let error):
-//                    self.view?.showError(message: error.localizedDescription)
-//                }
-//            }
-//        }
-//    }
+    
+    // MARK: - Private
+    
+    private func fetchFixtures(leagueId: Int) {
+        let today = Date()
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+
+        let upcomingFrom = formatter.string(from: today)
+        let upcomingTo   = formatter.string(from: calendar.date(byAdding: .day, value: 15, to: today)!)
+
+        let latestFrom: String
+        let latestTo = formatter.string(from: calendar.date(byAdding: .day, value: -1, to: today)!)
+
+        if sport == "tennis" {
+            latestFrom = formatter.string(from: calendar.date(byAdding: .year, value: -6, to: today)!)
+        } else {
+            latestFrom = formatter.string(from: calendar.date(byAdding: .day, value: -15, to: today)!)
+        }
+
+        fetchUpcoming(leagueId: leagueId, from: upcomingFrom, to: upcomingTo)
+        fetchLatest(leagueId: leagueId, from: latestFrom, to: latestTo)
+    }
+
+    private func fetchUpcoming(leagueId: Int, from: String, to: String) {
+        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let events):
+                    self.upcomingEvents = events
+                    self.view?.reloadCollectionView()
+                case .failure(let error):
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    private func fetchLatest(leagueId: Int, from: String, to: String) {
+        callFixtures(leagueId: leagueId, from: from, to: to) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.view?.hideLoading()
+                switch result {
+                case .success(let events):
+                    self.latestEvents = events
+                    self.view?.reloadCollectionView()
+                case .failure(let error):
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
     
     private func fetchTeam(leagueId: Int, sport: String) {
         callTeams(leagueId: leagueId, sport: sport) { [weak self] result in

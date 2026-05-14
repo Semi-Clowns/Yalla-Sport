@@ -39,9 +39,6 @@ class TeamDetailsPresenter : TeamDetailsPresenterProtocol {
 
     func getPlayerAtIndex(at index: Int) -> Player? { team.players?[index] }
     func getCoach() -> Coach? { team.coaches?.first }
-    func hasCoach() -> Bool { !(team.coaches?.isEmpty ?? true) }
-    func hasPlayers() -> Bool { !(team.players?.isEmpty ?? true) }
-    func isFullyEmpty() -> Bool { !hasCoach() && !hasPlayers() }
 }
 
 

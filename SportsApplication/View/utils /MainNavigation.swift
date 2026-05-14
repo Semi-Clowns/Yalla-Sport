@@ -43,8 +43,7 @@ class NavigationBarManager {
         
         let isDark = window.overrideUserInterfaceStyle == .dark
         viewController.navigationItem.rightBarButtonItem?.image = UIImage(
-            systemName: isDark ? "sun.max.fill" : "moon.fill"
-
+            systemName: isDark ? "circle.righthalf.filled" : "circle.lefthalf.filled"
         )
     }
     static func toggleTheme(for viewController: UIViewController) {
@@ -59,8 +58,7 @@ class NavigationBarManager {
             UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve) {
                 window.overrideUserInterfaceStyle = newStyle
                 viewController.navigationItem.rightBarButtonItem?.image = UIImage(
-                    systemName: newStyle == .dark ? "sun.max.fill" : "moon.fill"
-
+                    systemName: newStyle == .dark ? "circle.righthalf.filled" : "circle.lefthalf.filled"
                 )
             }
         }

@@ -113,10 +113,7 @@ extension LeagueDetailsCollectionViewController : LeagueDetailsViewProtocol{
     func reloadCollectionView() {
         DispatchQueue.main.async {
             self.checkAndShowEmptyState()
-            self.collectionView.collectionViewLayout.invalidateLayout()
-                   self.setupCompositionalLayout() 
-                   
-                   self.collectionView.reloadData()
+                    self.collectionView.reloadData()
                 }
     }
     

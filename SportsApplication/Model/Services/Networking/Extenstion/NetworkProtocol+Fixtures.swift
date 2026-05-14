@@ -33,13 +33,9 @@ extension NetworkProtocol {
         ) { result in
             switch result {
             case .success(let response):
-                print("✅ Response: \(response)")
-                print("✅ Result count: \(response.result?.count ?? -1)")
                 let events = (response.result ?? []).map { $0.toEvent() }
                 completion(.success(events))
             case .failure(let error):
-                print("❌ Error: \(error)")
-                print("❌ Error description: \(error.localizedDescription)")
                 completion(.failure(error))
             }
         }
