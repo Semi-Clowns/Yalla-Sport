@@ -44,10 +44,53 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         
         let nib = UINib(nibName: "PlayerTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "PlayerTableViewCell")
-        
+        let emptyNib = UINib(nibName: "EmptyStateTeamsCell", bundle: nil)
+        tableView.register(emptyNib, forCellReuseIdentifier: "EmptyStateTeamsCell")
+        if presenter?.isFullyEmpty() == true {
+            showFullEmptyState()
+        }
         setupTableHeader()
     }
-    
+    func showFullEmptyState() {
+        tableView.isHidden = true
+
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(container)
+
+        let imageView = UIImageView(image: UIImage(systemName: "sportscourt"))
+        imageView.tintColor = .systemGray3
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let label = UILabel()
+        label.text = "Team details will be available soon"
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(imageView)
+        container.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            container.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            container.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+
+            imageView.topAnchor.constraint(equalTo: container.topAnchor),
+            imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 80),
+            imageView.heightAnchor.constraint(equalToConstant: 80),
+
+            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            label.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+        ])
+    }
     func setupTableHeader() {
         tableView.tableHeaderView = headerView
         headerView.translatesAutoresizingMaskIntoConstraints = false

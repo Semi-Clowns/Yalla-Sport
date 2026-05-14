@@ -14,6 +14,15 @@
         <array key="Mulish-Bold.ttf">
             <string>Mulish-Bold</string>
         </array>
+        <array key="Mulish-Medium.ttf">
+            <string>Mulish-Medium</string>
+        </array>
+        <array key="Mulish-Regular.ttf">
+            <string>Mulish-Regular</string>
+        </array>
+        <array key="Mulish-SemiBold.ttf">
+            <string>Mulish-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home Collection View Controller-->
@@ -130,11 +139,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-mO-Wmp">
                                 <rect key="frame" x="8" y="96" width="374" height="706"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="27O-bb-9fj">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="27O-bb-9fj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse Competition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA3-c2-G2P">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="MRs-r5-9q3"/>
                                                 </constraints>
@@ -143,10 +152,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDQ-a8-Ukf">
-                                                <rect key="frame" x="0.0" y="52" width="354" height="36"/>
+                                                <rect key="frame" x="0.0" y="44" width="374" height="36"/>
                                                 <subviews>
                                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search for competition.." translatesAutoresizingMaskIntoConstraints="NO" id="A5s-w4-eJ2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="PBj-qu-fbo"/>
                                                         </constraints>
@@ -166,12 +175,14 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="zA3-c2-G2P" secondAttribute="trailing" constant="20" symbolic="YES" id="ggc-cD-xWy"/>
+                                            <constraint firstItem="zA3-c2-G2P" firstAttribute="top" secondItem="27O-bb-9fj" secondAttribute="top" id="f0N-lw-gK9"/>
+                                            <constraint firstItem="mDQ-a8-Ukf" firstAttribute="top" secondItem="zA3-c2-G2P" secondAttribute="bottom" constant="16" id="gLc-Hd-Uny"/>
+                                            <constraint firstItem="zA3-c2-G2P" firstAttribute="leading" secondItem="27O-bb-9fj" secondAttribute="leading" id="kWE-Oa-H8D"/>
                                             <constraint firstItem="mDQ-a8-Ukf" firstAttribute="trailing" secondItem="zA3-c2-G2P" secondAttribute="trailing" id="oN9-Gp-aUB"/>
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MJN-ua-xPy">
-                                        <rect key="frame" x="0.0" y="100" width="374" height="606"/>
+                                        <rect key="frame" x="0.0" y="92" width="374" height="614"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableView>
@@ -398,19 +409,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingImage1" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-TO-DnM">
-                                <rect key="frame" x="0.0" y="44" width="390" height="336.66666666666669"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball-stadium" translatesAutoresizingMaskIntoConstraints="NO" id="9MF-TO-DnM">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track live scores and match results across your favorite sports" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWF-JR-GLE">
-                                <rect key="frame" x="16" y="473.33333333333331" width="358" height="40.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="SecondaryTextColor"/>
+                                <rect key="frame" x="16" y="583.33333333333337" width="358" height="55.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Yalla Sport" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-Kd-M3l">
-                                <rect key="frame" x="16" y="412.66666666666669" width="358" height="28.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" name="PrimaryTextColor"/>
+                                <rect key="frame" x="16" y="516" width="358" height="35.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Mulish-Medium" family="Mulish" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -422,14 +433,17 @@
                             <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="gRq-Kd-M3l" secondAttribute="trailing" constant="16" id="LGv-2f-6nw"/>
                             <constraint firstItem="gRq-Kd-M3l" firstAttribute="leading" secondItem="vIB-D5-Vy4" secondAttribute="leading" constant="16" id="LZp-bO-SYb"/>
                             <constraint firstItem="tWF-JR-GLE" firstAttribute="top" secondItem="gRq-Kd-M3l" secondAttribute="bottom" constant="32" id="Pgt-O3-ohL"/>
-                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="top" secondItem="9MF-TO-DnM" secondAttribute="bottom" constant="32" id="YRD-H3-Jqj"/>
-                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="centerY" secondItem="vIB-D5-Vy4" secondAttribute="centerY" id="iMy-G7-fOm"/>
-                            <constraint firstItem="9MF-TO-DnM" firstAttribute="top" secondItem="vIB-D5-Vy4" secondAttribute="top" id="k30-jb-BjJ"/>
+                            <constraint firstItem="gRq-Kd-M3l" firstAttribute="centerY" secondItem="vIB-D5-Vy4" secondAttribute="centerY" multiplier="1.25" id="iMy-G7-fOm"/>
+                            <constraint firstItem="9MF-TO-DnM" firstAttribute="top" secondItem="nAB-qe-Ovp" secondAttribute="top" id="k30-jb-BjJ"/>
                             <constraint firstItem="9MF-TO-DnM" firstAttribute="leading" secondItem="vIB-D5-Vy4" secondAttribute="leading" id="ppx-rn-XZ5"/>
+                            <constraint firstAttribute="bottom" secondItem="9MF-TO-DnM" secondAttribute="bottom" id="qHB-QY-51T"/>
                             <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="9MF-TO-DnM" secondAttribute="trailing" id="sUT-vt-2jQ"/>
                             <constraint firstItem="vIB-D5-Vy4" firstAttribute="trailing" secondItem="tWF-JR-GLE" secondAttribute="trailing" constant="16" id="uFn-DB-cw0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="9MF-TO-DnM" id="vhl-wq-UMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SF3-7C-FfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -443,38 +457,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingImage1" translatesAutoresizingMaskIntoConstraints="NO" id="KiD-Qx-ybM">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="380.66666666666669"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis-stadium" translatesAutoresizingMaskIntoConstraints="NO" id="KiD-Qx-ybM">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Sports in One Place" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d9-9D-25M">
-                                <rect key="frame" x="16" y="412.66666666666669" width="358" height="28.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" name="PrimaryTextColor"/>
+                                <rect key="frame" x="16" y="516" width="358" height="35.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Mulish-SemiBold" family="Mulish" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football, Basketball, and Cricket updates with standings and fixtures." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpZ-Hs-fhS">
-                                <rect key="frame" x="16" y="473.33333333333331" width="358" height="40.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="SecondaryTextColor"/>
+                                <rect key="frame" x="16" y="583.33333333333337" width="358" height="83"/>
+                                <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGH-xS-yqT"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8d9-9D-25M" firstAttribute="top" secondItem="KiD-Qx-ybM" secondAttribute="bottom" constant="32" id="0At-AJ-6dV"/>
                             <constraint firstItem="8d9-9D-25M" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="10d-ce-zgE"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" id="1tQ-Vc-h3D"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="top" secondItem="JNT-qc-1Uf" secondAttribute="top" id="23m-BL-y5B"/>
                             <constraint firstItem="CpZ-Hs-fhS" firstAttribute="top" secondItem="8d9-9D-25M" secondAttribute="bottom" constant="32" id="5sN-yW-DmI"/>
                             <constraint firstItem="KiD-Qx-ybM" firstAttribute="trailing" secondItem="eGH-xS-yqT" secondAttribute="trailing" id="EnU-Ov-BrN"/>
                             <constraint firstItem="8d9-9D-25M" firstAttribute="centerX" secondItem="eGH-xS-yqT" secondAttribute="centerX" id="U68-sH-SN4"/>
+                            <constraint firstAttribute="bottom" secondItem="KiD-Qx-ybM" secondAttribute="bottom" id="Ue9-S7-uOR"/>
                             <constraint firstItem="eGH-xS-yqT" firstAttribute="trailing" secondItem="8d9-9D-25M" secondAttribute="trailing" constant="16" id="VSh-YI-mis"/>
                             <constraint firstItem="eGH-xS-yqT" firstAttribute="trailing" secondItem="CpZ-Hs-fhS" secondAttribute="trailing" constant="16" id="VYq-vM-815"/>
                             <constraint firstItem="CpZ-Hs-fhS" firstAttribute="leading" secondItem="eGH-xS-yqT" secondAttribute="leading" constant="16" id="aR9-KD-fM1"/>
-                            <constraint firstItem="8d9-9D-25M" firstAttribute="centerY" secondItem="eGH-xS-yqT" secondAttribute="centerY" id="qRS-HC-0dd"/>
+                            <constraint firstItem="8d9-9D-25M" firstAttribute="centerY" secondItem="eGH-xS-yqT" secondAttribute="centerY" multiplier="1.25" id="qRS-HC-0dd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="KiD-Qx-ybM" id="Wep-00-9Ej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2G-p2-zW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -625,11 +642,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="OnboardingImage1" width="360" height="218"/>
+        <image name="basketball-stadium" width="359.66665649414062" height="240"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="tennis-stadium" width="426.33334350585938" height="240"/>
         <namedColor name="BackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -638,9 +656,6 @@
         </namedColor>
         <namedColor name="PrimaryTextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="SecondaryTextColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.47999998927116394" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

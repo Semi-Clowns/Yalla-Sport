@@ -81,6 +81,7 @@
 		B315D2AA2FA9B414000A70D9 /* SportsApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2A92FA9B414000A70D9 /* SportsApplicationTests.swift */; };
 		B315D2B42FA9B414000A70D9 /* SportsApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2B32FA9B414000A70D9 /* SportsApplicationUITests.swift */; };
 		B315D2B62FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D2B52FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift */; };
+		B32002992FB5BF8900B5337B /* EmptyStateTeamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32002982FB5BF8900B5337B /* EmptyStateTeamsCell.swift */; };
 		B32FB5992FB51B260066E189 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B32FB5982FB51B260066E189 /* Lottie */; };
 		B32FB59B2FB51B960066E189 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FB59A2FB51B960066E189 /* SplashViewController.swift */; };
 		B32FB59D2FB524900066E189 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B32FB59C2FB524900066E189 /* splash.json */; };
@@ -203,6 +204,7 @@
 		B315D2AF2FA9B414000A70D9 /* SportsApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D2B32FA9B414000A70D9 /* SportsApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsApplicationUITests.swift; sourceTree = "<group>"; };
 		B315D2B52FA9B414000A70D9 /* SportsApplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsApplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B32002982FB5BF8900B5337B /* EmptyStateTeamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTeamsCell.swift; sourceTree = "<group>"; };
 		B32FB59A2FB51B960066E189 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B32FB59C2FB524900066E189 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		B333E0622FB4C60E0091FD3D /* EmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateCell.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				41721D192FB258FD0054BA7B /* Extenstions */,
 				41721D172FB22C720054BA7B /* TeamDetailsViewController.swift */,
 				41721D212FB259DD0054BA7B /* TeamDetailsViewControllerProtocol.swift */,
+				B32002982FB5BF8900B5337B /* EmptyStateTeamsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -683,7 +686,6 @@
 				B37DFAFE2FB2A23000E8BC16 /* LeagueDetailsViewProtocol.swift */,
 				B37DFB022FB2A29D00E8BC16 /* LeagueDetailsCollectionViewController.swift */,
 				B37DFB062FB2B60F00E8BC16 /* SectionHeader.swift */,
-				B333E0622FB4C60E0091FD3D /* EmptyStateCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -702,6 +704,7 @@
 				B37DFB092FB2CB5B00E8BC16 /* LeagueDetailsCollectionViewController+SectionLayout .swift */,
 				B37DFB0B2FB2CBF100E8BC16 /*  LeagueDetailsCollectionViewController+ProtocolConform.swift */,
 				4183477E2FB27F0900F140EC /* LeagueDetailsCollectionViewController+TeamEventCellDelegate.swift */,
+				B333E0622FB4C60E0091FD3D /* EmptyStateCell.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -1025,6 +1028,7 @@
 				B315D2922FA9B412000A70D9 /* SceneDelegate.swift in Sources */,
 				41C9E4DA2FAFD310003E455E /* LeagueResponse.swift in Sources */,
 				B333E0632FB4C60E0091FD3D /* EmptyStateCell.swift in Sources */,
+				B32002992FB5BF8900B5337B /* EmptyStateTeamsCell.swift in Sources */,
 				B37DFB0C2FB2CBF100E8BC16 /*  LeagueDetailsCollectionViewController+ProtocolConform.swift in Sources */,
 				B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */,
 				41721D122FB223140054BA7B /* PlayerTableViewCell.swift in Sources */,
