@@ -17,4 +17,5 @@ protocol AllLeaguesPresenterProtocol {
     func filterData(searchText : String)
     func getSportType() -> String
     func navigateToLeagueDetails(index: Int)
+    func refreshFavoriteStates()
 }

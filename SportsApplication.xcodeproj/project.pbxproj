@@ -111,7 +111,7 @@
 		B384080F2FB654CE00BEFA96 /* HomeViewController+CompositionalLayout .swift in Sources */ = {isa = PBXBuildFile; fileRef = B384080E2FB654CE00BEFA96 /* HomeViewController+CompositionalLayout .swift */; };
 		B38408112FB6556600BEFA96 /* HomeCollectionViewController+ProtocolConform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38408102FB6556600BEFA96 /* HomeCollectionViewController+ProtocolConform.swift */; };
 		B38408132FB65ADF00BEFA96 /* HomeViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38408122FB65ADF00BEFA96 /* HomeViewControllerProtocol.swift */; };
-		B38408152FB65D0D00BEFA96 /* SprotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38408142FB65D0D00BEFA96 /* SprotManager.swift */; };
+		B38408172FB65F7800BEFA96 /* SportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38408162FB65F7800BEFA96 /* SportManager.swift */; };
 		B39F42E22FB12F4100DDC340 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E12FB12F4100DDC340 /* AppComponents.swift */; };
 		B39F42E62FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E42FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift */; };
 		B39F42E72FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */; };
@@ -243,7 +243,7 @@
 		B384080E2FB654CE00BEFA96 /* HomeViewController+CompositionalLayout .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CompositionalLayout .swift"; sourceTree = "<group>"; };
 		B38408102FB6556600BEFA96 /* HomeCollectionViewController+ProtocolConform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCollectionViewController+ProtocolConform.swift"; sourceTree = "<group>"; };
 		B38408122FB65ADF00BEFA96 /* HomeViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerProtocol.swift; sourceTree = "<group>"; };
-		B38408142FB65D0D00BEFA96 /* SprotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprotManager.swift; sourceTree = "<group>"; };
+		B38408162FB65F7800BEFA96 /* SportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportManager.swift; sourceTree = "<group>"; };
 		B39F42E12FB12F4100DDC340 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		B39F42E42FB198DA00DDC340 /* LatestEventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestEventsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				411142BB2FACEE5A00268097 /* Sport.swift */,
-				B38408142FB65D0D00BEFA96 /* SprotManager.swift */,
+				B38408162FB65F7800BEFA96 /* SportManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1006,6 +1006,7 @@
 				B37DFAFF2FB2A23000E8BC16 /* LeagueDetailsViewProtocol.swift in Sources */,
 				B39F42EA2FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift in Sources */,
 				41D3164D2FB53FBC00922FA3 /* PlayerDetailsPresenter.swift in Sources */,
+				B38408172FB65F7800BEFA96 /* SportManager.swift in Sources */,
 				B3415DF02FAFDBD200780D9A /* CoreDataManager.swift in Sources */,
 				418347CD2FB33E3400F140EC /* Team.swift in Sources */,
 				B37DFB032FB2A29D00E8BC16 /* LeagueDetailsCollectionViewController.swift in Sources */,
@@ -1031,7 +1032,6 @@
 				B37D5BF12FABC750006D897B /* LocalDataManager.swift in Sources */,
 				41C9E4D42FAFD201003E455E /* NetworkService.swift in Sources */,
 				411142C02FACEE5A00268097 /* HomeViewController+CollectionView.swift in Sources */,
-				B38408152FB65D0D00BEFA96 /* SprotManager.swift in Sources */,
 				413B2C0C2FB4CE7400DD5EF8 /* AllLeaguesViewController+AllLeaguesViewControllerProtocol.swift in Sources */,
 				B3415DFA2FAFE4E300780D9A /* FavouritesPresenterProtocol.swift in Sources */,
 				B3415E092FB0029200780D9A /* AppAlerts.swift in Sources */,
