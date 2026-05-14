@@ -7,13 +7,6 @@
 
 import Foundation
 
-protocol LocalDataManagerProtocol {
-    func setHasSeenOnboarding(_ seen: Bool)
-    func hasSeenOnboarding() -> Bool
-    func isDarkMode() -> Bool
-    func setDarkMode(isDark: Bool)
-}
-
 class LocalDataManager: LocalDataManagerProtocol {
     
     static let shared = LocalDataManager()
