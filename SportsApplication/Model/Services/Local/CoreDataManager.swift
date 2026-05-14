@@ -10,14 +10,19 @@ import UIKit
 final class CoreDataManager {
     
     static let shared = CoreDataManager()
+    private static var persistentContainer: NSPersistentContainer?
+
     private init() {}
     
     private lazy var managedContext: NSManagedObjectContext = {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError("Unable to access the application")
-        }
-        return appDelegate.persistentContainer.viewContext
-    }()
+           guard let container = CoreDataManager.persistentContainer else {
+               fatalError("fail to find app")
+           }
+           return container.viewContext
+       }()
+    static func setup(with container: NSPersistentContainer) {
+           persistentContainer = container
+       }
     
     func addToFavourites(league: League) throws {
         guard !isFavourite(leagueId: league.id) else { return }
