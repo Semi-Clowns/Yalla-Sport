@@ -32,4 +32,10 @@ class AppAlerts {
         vc.present(alert, animated: true)
     }
     
+    static func showNoData(on vc: UIViewController, for name: String) {
+        showAlert(on: vc,
+                  title: "No Data Available",
+                  message: "There is no information available for \(name).")
+    }
+    
 }
