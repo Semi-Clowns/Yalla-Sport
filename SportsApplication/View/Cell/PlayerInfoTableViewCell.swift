@@ -38,7 +38,7 @@ class PlayerInfoTableViewCell: UITableViewCell {
         infoTitleLabel.text = infoTitle
         if infoImage != nil {
             infoImageView.kf.setImage(with: URL(string: infoImage ?? "" ),
-                                      placeholder: UIImage(systemName: "photo"))
+                                      placeholder: UIImage(named: "teamBadge"))
         } else {
             infoImageView.isHidden = true
         }

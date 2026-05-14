@@ -53,12 +53,12 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
 
         homeTeamImageView.kf.setImage(
             with: URL(string: event.homeTeamLogo ?? ""),
-            placeholder: UIImage(systemName: "photo.fill")
+            placeholder: UIImage(named: "teamBadge")
         )
 
         awayTeamImageView.kf.setImage(
             with: URL(string: event.awayTeamLogo ?? ""),
-            placeholder: UIImage(systemName: "photo.fill")
+            placeholder: UIImage(named: "teamBadge")
         )
     }
 }

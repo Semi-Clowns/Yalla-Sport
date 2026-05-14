@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PlayerTableViewCell: UITableViewCell {
 
@@ -32,6 +33,15 @@ class PlayerTableViewCell: UITableViewCell {
     }
 
     func configCell(for player: Player) {
+        let placeHolder : String!
+       
+        if player.playerType == .coach{
+            placeHolder =  "coach"
+        }
+        else{
+            placeHolder = "playerPlaceholder"
+        }
+        
         playerNameLabel.text = player.playerName
         playerTypeLabel.text = player.playerType.rawValue
         
@@ -40,7 +50,7 @@ class PlayerTableViewCell: UITableViewCell {
         tshirtNumberPlayerLabel.text = player.playerNumber?.isEmpty == false ? player.playerNumber : "-"
         playerImageView.kf.setImage(
             with: URL(string: player.playerImage ?? ""),
-            placeholder: UIImage(systemName: "person.fill")
+            placeholder: UIImage(named: placeHolder)
         )
     }
 }

@@ -29,7 +29,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         tableView.separatorStyle = .none
         
         teamImageView.kf.setImage(with: URL(string: team.teamLogo ?? ""),
-                                  placeholder: UIImage(systemName: "photo.fill"))
+                                  placeholder: UIImage(named: "teamBadge"))
         
         
         print(presenter?.getTeamDetails().teamLogo ?? "")
@@ -39,7 +39,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         
         teamCountryLabel.text = team.countryName?.uppercased()
         teamCountryLogoImageView.kf.setImage(with: URL(string: team.countryLogo ?? ""),
-                                  placeholder: UIImage(systemName: "photo.fill"))
+                                  placeholder: UIImage(named: "earth"))
         teamCountryLogoImageView.layer.cornerRadius = teamCountryLogoImageView.frame.width / 2
         
         let nib = UINib(nibName: "PlayerTableViewCell", bundle: nil)
