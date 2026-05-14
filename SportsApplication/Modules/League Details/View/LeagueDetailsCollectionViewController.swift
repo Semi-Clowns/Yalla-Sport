@@ -80,7 +80,17 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
         case .upcoming:
             return presenter.isUpcomingEmpty() ? 1 : presenter.getUpcomingEventsCount()
         case .latestEvents:
-            return presenter.isLatestEmpty() ? 1 : presenter.getLatestEventsCount()
+            if presenter.isLatestEmpty() {
+                return 1
+            } else {
+                if presenter.getLatestEventsCount() >= 7  {
+                    return 7
+                } else {
+                    return presenter.getLatestEventsCount()
+                }
+            }
+            
+
         case .teams:
             return presenter.isTeamsEmpty() ? 1 : presenter.getTeamsCount()
         }

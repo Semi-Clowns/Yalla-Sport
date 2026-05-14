@@ -43,7 +43,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         
         teamCountryLabel.text = team.countryName?.uppercased()
         teamCountryLogoImageView.kf.setImage(with: URL(string: team.countryLogo ?? ""),
-                                  placeholder: UIImage(systemName: "photo.fill"))
+                                  placeholder: UIImage(named: "teamsBadge"))
         teamCountryLogoImageView.layer.cornerRadius = teamCountryLogoImageView.frame.width / 2
         
         let nib = UINib(nibName: "PlayerTableViewCell", bundle: nil)

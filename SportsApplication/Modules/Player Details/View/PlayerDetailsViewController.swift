@@ -31,9 +31,11 @@ class PlayerDetailsViewController: UIViewController {
            
            playerImageView.layer.cornerRadius = 12
            
+           let isPlayer = player.playerType != .coach
+           
            playerImageView.kf.setImage(
                with: URL(string: player.playerImage ?? ""),
-               placeholder: UIImage(systemName: "person.fill")
+               placeholder: UIImage(named: isPlayer ? "playerPlaceholder" : "coach" )
            )
        }
        
