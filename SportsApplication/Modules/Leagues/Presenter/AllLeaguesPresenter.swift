@@ -7,27 +7,13 @@
 
 import Foundation
 
-
-protocol AllLeaguesPresenterProtocol {
-    func loadLeagues()
-    func attachView(withView view : AllLeaguesViewControllerProtocol)
-    func getLeaguesCount() -> Int
-    func getLeagueAtIndex(at index : Int) -> League
-    func toggleFavorite(at index: Int)
-    func confirmRemoveFavorite(at index: Int)
-    func filterData(searchText : String)
-    func getSportType() -> String
-    func navigateToLeagueDetails(index: Int)
-}
-
-class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
+class AllLeaguesPresenter : AllLeaguesPresenterProtocol {
     private var leagues = [League]()
     private var filteredLeagues = [League]()
     private let sportType : String
     var networkService: NetworkProtocol
     var coreDataManager: CoreDataManager
     private let networkMonitor: NetworkMonitor
-
 
     weak var view : AllLeaguesViewControllerProtocol?
     
@@ -68,7 +54,6 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
             case .failure(_):
                     DispatchQueue.main.async {
                         self.view?.hideLoading()
-
                         self.view?.showError(message: "Could not laod data due to server error")
                     }
             }

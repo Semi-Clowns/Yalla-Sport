@@ -1,11 +1,3 @@
-//
-//  LeagueDetailsCollectionViewController+SectionLayout .swift
-//  SportsApplication
-//
-//  Created by Mahmoud  Raafat  on 11/05/2026.
-//
-
-import UIKit
 // Sections layout extension
 //
 //  LeagueDetailsCollectionViewController+SectionLayout.swift

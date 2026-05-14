@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol TeamDetailsViewControllerProtocol : AnyObject {
+    
+}
+
 class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerProtocol {
 
     @IBOutlet var tableView: UITableView!
@@ -46,6 +50,7 @@ class TeamDetailsViewController: UIViewController , TeamDetailsViewControllerPro
         tableView.register(nib, forCellReuseIdentifier: "PlayerTableViewCell")
         let emptyNib = UINib(nibName: "EmptyStateTeamsCell", bundle: nil)
         tableView.register(emptyNib, forCellReuseIdentifier: "EmptyStateTeamsCell")
+        
         if presenter?.isFullyEmpty() == true {
             showFullEmptyState()
         }

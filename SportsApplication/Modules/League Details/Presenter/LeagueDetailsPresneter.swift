@@ -37,15 +37,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         view?.setLeagueTitle(title: league.leagueName ?? "League")
         view?.updateFavoriteButtonState(isFavorite: league.isFav)
         fetchLeagueDetails(leagueId: league.id)
-//        if !(sport == "tennis") {
-//            fetchTeam(leagueId: league.id, sport: sport)
-//        }
     }
-    
-//    func fetchLeagueDetails(leagueId: Int) {
-//        view?.showLoading()
-//        fetchFixtures(leagueId: leagueId)
-//    }
      func fetchLeagueDetails(leagueId: Int) {
         view?.showLoading()
         

@@ -9,19 +9,15 @@ import Lottie
 
 class SplashViewController: UIViewController {
 
-    // MARK: - IBOutlet
     @IBOutlet weak var lottieContainerView: UIView!
 
-    // MARK: - Properties
     private var animationView: LottieAnimationView!
 
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
     }
 
-    // MARK: - Setup
     private func setupAnimation() {
         guard !UIAccessibility.isReduceMotionEnabled else {
             navigateToMainApp()
@@ -33,9 +29,9 @@ class SplashViewController: UIViewController {
 
         }
         else{
-        animationView = LottieAnimationView(name: "splash")
+            animationView = LottieAnimationView(name: "splash")
         }
-            animationView.frame = lottieContainerView.bounds
+        animationView.frame = lottieContainerView.bounds
         animationView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
@@ -49,7 +45,7 @@ class SplashViewController: UIViewController {
         }
     }
 
-    // MARK: - Navigation
+    
     private func navigateToMainApp() {
         UIView.animate(withDuration: 0.4) {
             self.view.alpha = 0

@@ -15,11 +15,9 @@ extension LeagueDetailsCollectionViewController : LeagueDetailsViewProtocol{
     }
     
     func updateFavoriteButtonState(isFavorite: Bool) {
-        let color = isFavorite
-                    ? #colorLiteral(red: 0.9725490196, green: 0.4705882353, blue: 0.4431372549, alpha: 1)
-                    : #colorLiteral(red: 0.8012740016, green: 0.8012740016, blue: 0.8012740016, alpha: 1)
+        let color = isFavorite? #colorLiteral(red: 0.9725490196, green: 0.4705882353, blue: 0.4431372549, alpha: 1) : #colorLiteral(red: 0.8012740016, green: 0.8012740016, blue: 0.8012740016, alpha: 1)
                 
-                navigationItem.rightBarButtonItem?.tintColor = color
+        navigationItem.rightBarButtonItem?.tintColor = color
     }
     
     func showDeleteAlert(leagueId: Int) {
@@ -35,7 +33,7 @@ extension LeagueDetailsCollectionViewController : LeagueDetailsViewProtocol{
     
     func showError(message: String) {
         AppAlerts.showAlert(on: self, title: "Error", message: message)
-        }
+    }
     
     func showLoading() {
         DispatchQueue.main.async {
@@ -64,8 +62,8 @@ extension LeagueDetailsCollectionViewController : LeagueDetailsViewProtocol{
     
     func hideLoading() {
         DispatchQueue.main.async {
-                    self.collectionView.hideSkeleton()
-                }
+            self.collectionView.hideSkeleton()
+        }
     }
     
     private func checkAndShowEmptyState() {
@@ -113,10 +111,7 @@ extension LeagueDetailsCollectionViewController : LeagueDetailsViewProtocol{
     func reloadCollectionView() {
         DispatchQueue.main.async {
             self.checkAndShowEmptyState()
-                    self.collectionView.reloadData()
-                }
+            self.collectionView.reloadData()
+        }
     }
-    
-    
-    
 }

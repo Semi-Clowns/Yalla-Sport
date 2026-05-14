@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsu-Fg-rLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="1627"/>
+            <point key="canvasLocation" x="1986" y="1853"/>
         </scene>
         <!--League Details Collection View Controller-->
         <scene sceneID="aKJ-Wl-kbj">
@@ -573,6 +573,71 @@
             </objects>
             <point key="canvasLocation" x="3690.7692307692305" y="1590.995260663507"/>
         </scene>
+        <!--Player Details View Controller-->
+                <scene sceneID="d2T-5x-Zso">
+                    <objects>
+                        <viewController storyboardIdentifier="PlayerDetailsView" id="zhD-gJ-mnc" customClass="PlayerDetailsViewController" customModule="SportsApplication" customModuleProvider="target" sceneMemberID="viewController">
+                            <view key="view" contentMode="scaleToFill" id="Ad1-WK-IqA">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="97b-3O-1EG">
+                                        <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-9e-sde">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="141"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="rUO-8w-6M8">
+                                                        <rect key="frame" x="16" y="8" width="358" height="125"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YE1-XZ-BuN">
+                                                                <rect key="frame" x="116.66666666666666" y="0.0" width="125" height="125"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="125" id="7bN-PY-cYh"/>
+                                                                    <constraint firstAttribute="width" constant="125" id="gIJ-qr-u6Y"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="BackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="rUO-8w-6M8" firstAttribute="top" secondItem="hqT-9e-sde" secondAttribute="top" constant="8" id="GFf-iO-wMu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rUO-8w-6M8" secondAttribute="bottom" constant="8" id="aRb-Mx-Cg4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rUO-8w-6M8" secondAttribute="trailing" constant="16" id="pdz-XM-6wx"/>
+                                                    <constraint firstItem="rUO-8w-6M8" firstAttribute="leading" secondItem="hqT-9e-sde" secondAttribute="leading" constant="16" id="vfY-ri-lrR"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-St-ha9">
+                                                <rect key="frame" x="0.0" y="141" width="390" height="625"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="sectionIndexColor" name="PrimaryTextColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="GLc-St-ha9" secondAttribute="trailing" id="WDy-Ex-dmf"/>
+                                            <constraint firstItem="GLc-St-ha9" firstAttribute="leading" secondItem="97b-3O-1EG" secondAttribute="leading" id="tcR-Pk-czd"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="msk-Um-oZn"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="msk-Um-oZn" firstAttribute="trailing" secondItem="97b-3O-1EG" secondAttribute="trailing" id="8Kq-z0-Y4c"/>
+                                    <constraint firstItem="97b-3O-1EG" firstAttribute="top" secondItem="msk-Um-oZn" secondAttribute="top" id="F5Y-50-gCO"/>
+                                    <constraint firstItem="msk-Um-oZn" firstAttribute="bottom" secondItem="97b-3O-1EG" secondAttribute="bottom" id="ejo-Z0-PA5"/>
+                                    <constraint firstItem="97b-3O-1EG" firstAttribute="leading" secondItem="Ad1-WK-IqA" secondAttribute="leading" id="fN2-Pr-eu5"/>
+                                </constraints>
+                            </view>
+                            <connections>
+                                <outlet property="playerImageView" destination="YE1-XZ-BuN" id="R5y-lz-H6l"/>
+                                <outlet property="tableView" destination="GLc-St-ha9" id="PVM-BV-2me"/>
+                            </connections>
+                        </viewController>
+                        <placeholder placeholderIdentifier="IBFirstResponder" id="D41-Ox-tgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </objects>
+                    <point key="canvasLocation" x="2752" y="2320"/>
+                </scene>
     </scenes>
     <resources>
         <image name="basketball-stadium" width="359.66665649414062" height="240"/>

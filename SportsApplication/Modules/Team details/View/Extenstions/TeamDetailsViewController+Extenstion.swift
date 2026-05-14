@@ -71,4 +71,36 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           tableView.deselectRow(at: indexPath, animated: true)
+           
+           if indexPath.section == 0 {
+               guard let selectedCoach = presenter?.getCoach() else { return }
+               
+               guard !selectedCoach.coachName.isEmpty else {
+                   AppAlerts.showNoData(on: self, for: selectedCoach.coachName)
+                   return
+               }
+               
+               let vc = storyboard?.instantiateViewController(withIdentifier: "PlayerDetailsView") as! PlayerDetailsViewController
+               vc.presenter = PlayerDetailsPresenter(player: selectedCoach.asPlayer())
+               navigationController?.pushViewController(vc, animated: true)
+           } else {
+               guard let selectedPlayer = presenter?.getPlayerAtIndex(at: indexPath.row) else { return }
+               
+               guard !selectedPlayer.playerName.isEmpty else {
+                   AppAlerts.showNoData(on: self, for: selectedPlayer.playerName)
+                   return
+               }
+               
+               let vc = storyboard?.instantiateViewController(withIdentifier: "PlayerDetailsView") as! PlayerDetailsViewController
+               vc.presenter = PlayerDetailsPresenter(player: selectedPlayer)
+               navigationController?.pushViewController(vc, animated: true)
+           }
+       }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        40
+    }
 }
