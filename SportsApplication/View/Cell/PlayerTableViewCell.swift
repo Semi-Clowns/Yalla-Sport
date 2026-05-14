@@ -27,6 +27,7 @@ class PlayerTableViewCell: UITableViewCell {
         
         self.backgroundColor = .clear
         self.selectionStyle = .none
+        
         isSkeletonable = true
         contentView.isSkeletonable = true
         containerView.isSkeletonable = true
@@ -34,23 +35,23 @@ class PlayerTableViewCell: UITableViewCell {
 
     func configCell(for player: Player) {
         let placeHolder : String!
+        
+        placeHolder = getPlaceHolderValue(for: player)
        
-        if player.playerType == .coach{
-            placeHolder =  "coach"
-        }
-        else{
-            placeHolder = "playerPlaceholder"
-        }
         
         playerNameLabel.text = player.playerName
         playerTypeLabel.text = player.playerType.rawValue
         
         playerTypeLabel.textColor = player.playerType.badgeColor
 
-        tshirtNumberPlayerLabel.text = player.playerNumber?.isEmpty == false ? player.playerNumber : "-"
+        tshirtNumberPlayerLabel.text = player.playerNumber?.isEmpty == false ? player.playerNumber : ""
         playerImageView.kf.setImage(
             with: URL(string: player.playerImage ?? ""),
             placeholder: UIImage(named: placeHolder)
         )
+    }
+    
+    private func getPlaceHolderValue(for player : Player) -> String {
+        return player.playerType == .coach ? "coach" : "playerPlaceholder"
     }
 }

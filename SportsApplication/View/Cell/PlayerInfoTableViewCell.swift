@@ -17,17 +17,14 @@ class PlayerInfoTableViewCell: UITableViewCell {
     @IBOutlet var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         infoImageView.layer.cornerRadius = infoImageView.frame.width / 2
         
         containerView.layer.cornerRadius = 32
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func config(

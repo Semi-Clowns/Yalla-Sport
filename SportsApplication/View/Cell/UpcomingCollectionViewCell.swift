@@ -29,17 +29,15 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         
         roundView.clipsToBounds = true
         roundView.layer.cornerRadius = 6
+        
         isSkeletonable = true
         contentView.isSkeletonable = true
     }
 
     func config(for event : Event) {
-
         homeTeamNameLabel.text = event.homeTeamName
         awayTeamNameLabel.text = event.awayTeamName
 
-        
-        
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
 

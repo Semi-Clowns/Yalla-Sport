@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 class LeagueTableViewCell: UITableViewCell {
+    
     @IBOutlet private var cardContainerView: UIView!
     @IBOutlet private var favButton: UIButton!
     @IBOutlet private var leagueCountryNameLabel: UILabel!
@@ -25,6 +26,7 @@ class LeagueTableViewCell: UITableViewCell {
         
         leagueImageView.layer.cornerRadius = leagueImageView.frame.size.width / 2
         leagueCountryImageView.layer.cornerRadius = leagueCountryImageView.frame.size.width / 2
+        
         contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         
@@ -35,7 +37,6 @@ class LeagueTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     @IBAction func favTapped(_ sender: UIButton) {

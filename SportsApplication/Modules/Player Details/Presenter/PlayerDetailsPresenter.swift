@@ -7,13 +7,6 @@
 
 import Foundation
 
-protocol PlayerDetailsPresenterProtocol {
-    func attachView(with view: PlayerDetailsViewControllerProtocol)
-    func getPlayer() -> Player
-    func getInfoRowsCount() -> Int
-    func getInfoRowsAtIndex(at index: Int) -> PlayerInfoRow
-}
-
 class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
     
     private var player: Player
@@ -42,7 +35,6 @@ class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
         infoRows[index]
     }
     
-    // MARK: - Private
     private func buildInfoRows() {
         let allRows: [PlayerInfoRow] = [
             .init(title: "Name",           value: player.playerName,                 imageURL: nil),
@@ -65,10 +57,4 @@ class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
         
         infoRows = allRows.filter { $0.value != nil && $0.value?.isEmpty == false }
     }
-}
-
-struct PlayerInfoRow {
-    let title: String
-    let value: String?
-    let imageURL: String?
 }

@@ -54,8 +54,8 @@ class NavigationBarManager {
             let isDark = window.overrideUserInterfaceStyle == .dark
             let newStyle: UIUserInterfaceStyle = isDark ? .light : .dark
             
-            UserDefaults.standard.set(newStyle == .dark, forKey: "isDarkMode")
-            
+            LocalDataManager.shared.setDarkMode(isDark: newStyle == .dark)
+        
             UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve) {
                 window.overrideUserInterfaceStyle = newStyle
                 viewController.navigationItem.rightBarButtonItem?.image = UIImage(

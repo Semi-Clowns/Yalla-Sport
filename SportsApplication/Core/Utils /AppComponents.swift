@@ -23,6 +23,8 @@ class AppComponents {
         }
         
         static func hideLoading(on vc: UIViewController) {
-            vc.view.viewWithTag(999)?.removeFromSuperview()        }
+            vc.view.viewWithTag(999)?.removeFromSuperview()
+            
+        }
 }
 
