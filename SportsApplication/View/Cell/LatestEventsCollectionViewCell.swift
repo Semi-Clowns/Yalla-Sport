@@ -37,7 +37,7 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
 
           HomeTeamLogo.kf.setImage(
             with: URL(string:event.homeTeamLogo ?? ""),
-                  placeholder: UIImage(systemName: "photo.circle.fill"),
+                  placeholder: UIImage(named: "teamBadge"),
                   options: [
                       .transition(.fade(0.3)),
                       .cacheSerializer(FormatIndicatedCacheSerializer.png)
@@ -45,7 +45,7 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
               )
           AwayTeamLogo.kf.setImage(
             with: URL(string:event.awayTeamLogo ?? ""),
-                  placeholder: UIImage(systemName: "photo.circle.fill"),
+                  placeholder: UIImage(named: "teamBadge"),
                   options: [
                       .transition(.fade(0.3)),
                       .cacheSerializer(FormatIndicatedCacheSerializer.png)

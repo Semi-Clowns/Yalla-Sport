@@ -33,7 +33,7 @@ class TeamEventCollectionViewCell: UICollectionViewCell {
     func configCell(for team : Team) {
         TeamLogo.kf.setImage(
             with: URL(string:team.teamLogo ?? ""),
-                placeholder: UIImage(systemName: "photo.circle.fill"),
+                placeholder: UIImage(named: "teamBadge"),
                 options: [
                     .transition(.fade(0.3)),
                     .cacheSerializer(FormatIndicatedCacheSerializer.png)
