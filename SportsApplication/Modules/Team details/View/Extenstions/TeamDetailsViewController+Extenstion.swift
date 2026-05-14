@@ -24,38 +24,29 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           guard let presenter = presenter else { return UITableViewCell() }
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as? PlayerTableViewCell else { return UITableViewCell() }
+        guard let presenter = presenter else { return UITableViewCell() }
 
-        if indexPath.section == 0 {
-            guard let coach = presenter.getCoach() else { return UITableViewCell() }
-            cell.configCell(for: coach.asPlayer())
-        } else {
-            guard let player = presenter.getPlayerAtIndex(at: indexPath.row) else { return UITableViewCell() }
-            cell.configCell(for: player)
-        }
+          if indexPath.section == 0 && !presenter.hasCoach() {
+              return makeEmptyCell(in: tableView, for: indexPath, message: "No coach available")
+          }
 
-           if indexPath.section == 0 && !presenter.hasCoach() {
-               return makeEmptyCell(in: tableView, for: indexPath, message: "No coach available")
-           }
+          if indexPath.section == 1 && !presenter.hasPlayers() {
+              return makeEmptyCell(in: tableView, for: indexPath, message: "No players available")
+          }
 
-           if indexPath.section == 1 && !presenter.hasPlayers() {
-               return makeEmptyCell(in: tableView, for: indexPath, message: "No players available")
-           }
+          guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as? PlayerTableViewCell else {
+              return UITableViewCell()
+          }
 
-           guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as? PlayerTableViewCell else {
-               return UITableViewCell()
-           }
+          if indexPath.section == 0 {
+              guard let coach = presenter.getCoach() else { return UITableViewCell() }
+              cell.configCell(for: coach.asPlayer())
+          } else {
+              guard let player = presenter.getPlayerAtIndex(at: indexPath.row) else { return UITableViewCell() }
+              cell.configCell(for: player)
+          }
 
-           if indexPath.section == 0 {
-               guard let coach = presenter.getCoach() else { return UITableViewCell() }
-               cell.configCell(for: coach.asPlayer())
-           } else {
-               guard let player = presenter.getPlayerAtIndex(at: indexPath.row) else { return UITableViewCell() }
-               cell.configCell(for: player)
-           }
-
-           return cell
+          return cell
        }
 
        private func makeEmptyCell(in tableView: UITableView, for indexPath: IndexPath, message: String) -> UITableViewCell {
@@ -107,5 +98,8 @@ extension TeamDetailsViewController: UITableViewDelegate, UITableViewDataSource 
             vc.presenter = PlayerDetailsPresenter(player: selectedPlayer)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44 
     }
 }
