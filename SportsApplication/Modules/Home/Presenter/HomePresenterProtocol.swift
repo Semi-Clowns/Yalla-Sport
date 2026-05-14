@@ -7,5 +7,6 @@ protocol HomePresenterProtocol {
     
     func attachView(with view: HomeViewControllerProtocol)
     func getSelectedSport(at index: Int) -> String
-    func navigateToDisplayLeague()
+    func navigateToDisplayLeague(index: Int)
+   
 }

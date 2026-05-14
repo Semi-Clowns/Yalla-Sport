@@ -136,4 +136,21 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol {
             
         }
 }
+    func refreshFavoriteStates() {
+        guard !leagues.isEmpty else { return }  
+           
+           leagues = leagues.map { league in
+               var updated = league
+               updated.isFav = isFavouratie(leagueid: league.id)
+               return updated
+           }
+           filteredLeagues = filteredLeagues.map { league in
+               var updated = league
+               updated.isFav = isFavouratie(leagueid: league.id)
+               return updated
+           }
+           DispatchQueue.main.async {
+               self.view?.showLeagues(leagues: self.filteredLeagues)
+           }
+}
 }
