@@ -13,24 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//            let window = UIWindow(windowScene: windowScene)
-//
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let initialViewController: UIViewController
-//            if LocalDataManager.shared.hasSeenOnboarding() {
-//                initialViewController = storyboard.instantiateViewController(withIdentifier: "HomePage")
-//            } else {
-//                initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingPage")
-//            }
-//            window.rootViewController = initialViewController
-//        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
-//            window.overrideUserInterfaceStyle = isDark ? .dark : .light
-//            self.window = window
-//            window.makeKeyAndVisible()
+        
         guard let windowScene = scene as? UIWindowScene else { return }
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,11 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 withIdentifier: "SplashViewController"
             )
 
-            let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+            let isDark = LocalDataManager.shared.isDarkMode()
 
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = splashVC
-        window?.backgroundColor = .BackgroundColor
+            window?.backgroundColor = .BackgroundColor
             window?.overrideUserInterfaceStyle = isDark ? .dark : .light
             window?.makeKeyAndVisible()
     }

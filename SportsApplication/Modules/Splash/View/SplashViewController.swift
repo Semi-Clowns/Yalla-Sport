@@ -27,7 +27,7 @@ class SplashViewController: UIViewController {
             navigateToMainApp()
             return
         }
-        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+        let isDark = LocalDataManager.shared.isDarkMode()
         if isDark{
             animationView = LottieAnimationView(name: "darksplash")
 
@@ -76,7 +76,7 @@ class SplashViewController: UIViewController {
                 .first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
 
-        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+        let isDark = LocalDataManager.shared.isDarkMode() 
         window.overrideUserInterfaceStyle = isDark ? .dark : .light
 
         window.rootViewController = initialViewController
