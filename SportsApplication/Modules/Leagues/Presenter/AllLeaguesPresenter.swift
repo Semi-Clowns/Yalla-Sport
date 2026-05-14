@@ -18,6 +18,8 @@ protocol AllLeaguesPresenterProtocol {
     func filterData(searchText : String)
     func getSportType() -> String
     func navigateToLeagueDetails(index: Int)
+    func refreshFavoriteStates()
+
 }
 
 class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
@@ -150,5 +152,22 @@ class AllLeaguesPresenter : AllLeaguesPresenterProtocol{
             self.view?.showNoInternet()
             
         }
+}
+    func refreshFavoriteStates() {
+        guard !leagues.isEmpty else { return }  
+           
+           leagues = leagues.map { league in
+               var updated = league
+               updated.isFav = isFavouratie(leagueid: league.id)
+               return updated
+           }
+           filteredLeagues = filteredLeagues.map { league in
+               var updated = league
+               updated.isFav = isFavouratie(leagueid: league.id)
+               return updated
+           }
+           DispatchQueue.main.async {
+               self.view?.showLeagues(leagues: self.filteredLeagues)
+           }
 }
 }

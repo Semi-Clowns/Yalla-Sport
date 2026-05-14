@@ -1,7 +1,12 @@
-final class HomePresenter : HomePresenterProtocol {
+class HomePresenter : HomePresenterProtocol {
+
+    
+
     private let networkMonitor: NetworkMonitor
     private let sportsManager = SportManager.shared
     weak var view : HomeViewControllerProtocol?
+    private var selectedIndex: Int = 0
+
     
     func attachView(with view: HomeViewControllerProtocol) {
         self.view = view
@@ -29,9 +34,10 @@ final class HomePresenter : HomePresenterProtocol {
     func getSelectedSport(at index: Int) -> String {
         sportsManager.getSportAtIndex(at: index).type ?? ""
     }
-    func navigateToDisplayLeague() {
+    func navigateToDisplayLeague(index: Int) {
         if networkMonitor.isConnected{
-            self.view?.navigateToDisplayLeague()
+            
+            self.view?.navigateToDisplayLeague(sport:getSportItem(index: index))
         }
         else{
             self.view?.showNoInternet()

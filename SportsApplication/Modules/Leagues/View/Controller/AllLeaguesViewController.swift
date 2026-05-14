@@ -33,9 +33,8 @@ class AllLeaguesViewController: UIViewController {
         leaguesTableView.rowHeight = UITableView.automaticDimension
         leaguesTableView.estimatedRowHeight = 130
         leaguesTableView.cellLayoutMarginsFollowReadableWidth = false
-
+        leaguesTableView.alpha = 0
         presenter?.attachView(withView: self)
-        print("View Controller Hello ")
         presenter?.loadLeagues()
         
         // register nib
@@ -48,7 +47,7 @@ class AllLeaguesViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.loadLeagues()
+        presenter?.refreshFavoriteStates()
     }
     func setupNavigationBar() {
             navigationController?.navigationBar.tintColor = .primaryColor

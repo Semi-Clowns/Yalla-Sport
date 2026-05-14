@@ -24,27 +24,26 @@ extension AllLeaguesViewController : AllLeaguesViewControllerProtocol{
     
     func showLoading() {
         DispatchQueue.main.async {
-            let baseColor = UIColor { trait in
-                trait.userInterfaceStyle == .dark
-                    ? UIColor(white: 0.2, alpha: 1)
-                    : UIColor(white: 0.85, alpha: 1)
-            }
-            let shimmer = UIColor { trait in
-                trait.userInterfaceStyle == .dark
-                    ? UIColor(white: 0.3, alpha: 1)
-                    : UIColor(white: 0.95, alpha: 1)
-            }
-            let gradient = SkeletonGradient(baseColor: baseColor, secondaryColor: shimmer)
-                
-                let animation = SkeletonAnimationBuilder()
-                    .makeSlidingAnimation(withDirection: .leftRight, duration: 1.2)
-                
-                self.leaguesTableView.showAnimatedGradientSkeleton(
-                    usingGradient: gradient,
-                    animation: animation
-                )
-            }
-        
+            self.leaguesTableView.alpha = 1
+            let isDark = self.traitCollection.userInterfaceStyle == .dark
+                   
+                   let baseColor = isDark
+                       ? UIColor(white: 0.2, alpha: 1)
+                       : UIColor(white: 0.85, alpha: 1)
+                   
+                   let shimmerColor = isDark
+                       ? UIColor(white: 0.3, alpha: 1)
+                       : UIColor(white: 0.95, alpha: 1)
+                   
+                   let gradient = SkeletonGradient(baseColor: baseColor, secondaryColor: shimmerColor)
+                   let animation = SkeletonAnimationBuilder()
+                       .makeSlidingAnimation(withDirection: .leftRight, duration: 1.2)
+                   
+                   self.leaguesTableView.showAnimatedGradientSkeleton(
+                       usingGradient: gradient,
+                       animation: animation
+                   )
+               }
     }
     
     func hideLoading() {
