@@ -5,9 +5,8 @@
 //  Created by Mahmoud  Raafat  on 09/05/2026.
 //
 import CoreData
-import UIKit
 
-final class CoreDataManager {
+class CoreDataManager : LocalDatabaseServiceProtocol {
     
     static let shared = CoreDataManager()
     private static var persistentContainer: NSPersistentContainer?

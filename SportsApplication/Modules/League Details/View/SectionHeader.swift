@@ -26,9 +26,9 @@ class SectionHeaderView: UICollectionReusableView {
         titleLabel.font = UIFont(name: "Mulish-Medium", size: 18)
         titleLabel.textColor = .primaryText
         isSkeletonable = true
-           titleLabel.isSkeletonable = true
-           titleLabel.linesCornerRadius = 4
-           titleLabel.lastLineFillPercent = 40
+        titleLabel.isSkeletonable = true
+        titleLabel.linesCornerRadius = 4
+        titleLabel.lastLineFillPercent = 40
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),

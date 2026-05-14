@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 class LatestEventsCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var AwayTeamScore: UILabel!
     @IBOutlet weak var HomeTeamScore: UILabel!
@@ -20,18 +21,18 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         containerView.layer.cornerRadius = 16
         containerView.clipsToBounds = true
         
   
         isSkeletonable = true
         contentView.isSkeletonable = true
-        
-        
     }
+    
     func configCell(for event : Event) {
         let scores = getScores(from: event.finalResult ?? "0 - 0")
+        
         AwayTeamScore.text = scores.home
         HomeTeamScore.text = scores.away
 
@@ -63,9 +64,6 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
         
         HomeTeamName.text = event.homeTeamName
         AwayTeamName.text = event.awayTeamName
-
-
-
       }
     
     

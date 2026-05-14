@@ -9,33 +9,29 @@ import Lottie
 
 class SplashViewController: UIViewController {
 
-    // MARK: - IBOutlet
     @IBOutlet weak var lottieContainerView: UIView!
 
-    // MARK: - Properties
     private var animationView: LottieAnimationView!
 
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
     }
 
-    // MARK: - Setup
     private func setupAnimation() {
         guard !UIAccessibility.isReduceMotionEnabled else {
             navigateToMainApp()
             return
         }
-        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+        let isDark = LocalDataManager.shared.isDarkMode()
         if isDark{
             animationView = LottieAnimationView(name: "darksplash")
 
         }
         else{
-        animationView = LottieAnimationView(name: "splash")
+            animationView = LottieAnimationView(name: "splash")
         }
-            animationView.frame = lottieContainerView.bounds
+        animationView.frame = lottieContainerView.bounds
         animationView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
@@ -49,7 +45,7 @@ class SplashViewController: UIViewController {
         }
     }
 
-    // MARK: - Navigation
+    
     private func navigateToMainApp() {
         UIView.animate(withDuration: 0.4) {
             self.view.alpha = 0
@@ -76,7 +72,7 @@ class SplashViewController: UIViewController {
                 .first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
 
-        let isDark = UserDefaults.standard.bool(forKey: "isDarkMode")
+        let isDark = LocalDataManager.shared.isDarkMode() 
         window.overrideUserInterfaceStyle = isDark ? .dark : .light
 
         window.rootViewController = initialViewController

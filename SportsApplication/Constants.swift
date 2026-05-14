@@ -15,5 +15,4 @@ struct Constants {
             }
             return key
     }
-    
 }

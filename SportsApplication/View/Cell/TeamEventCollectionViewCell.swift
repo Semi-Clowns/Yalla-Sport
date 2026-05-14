@@ -9,24 +9,23 @@ import UIKit
 import Kingfisher
 
 class TeamEventCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var TeamLogo: UIImageView!
     
+    @IBOutlet weak var TeamLogo: UIImageView!
     @IBOutlet weak var TeamName: UILabel!
     
     weak var delegate : TeamEventCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 16
-        contentView.backgroundColor = .primaryColor
+        
         isSkeletonable = true
         contentView.isSkeletonable = true
     }
 
     @IBAction func GoToDetails(_ sender: Any) {
-        // navgation to team details screen with team id
-        print("Clicked")
         delegate?.didTeam(self)
     }
     

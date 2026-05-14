@@ -17,8 +17,6 @@ extension AllLeaguesViewController: UITableViewDelegate {
         presenter?.getLeaguesCount() ?? 0
     }
 
-    
- 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(
@@ -43,15 +41,11 @@ extension AllLeaguesViewController: UITableViewDelegate {
         return cell
     }
 
-
-
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = .clear
         return view
     }
-    
-
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.navigateToLeagueDetails(index: indexPath.row)

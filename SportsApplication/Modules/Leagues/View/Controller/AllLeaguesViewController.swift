@@ -20,10 +20,11 @@ class AllLeaguesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        // Do any additional setup after loading the view.
+
         leaguesTableView.delegate = self
         leaguesTableView.dataSource = self
         leaguesSearchBar.delegate = self
+        
         leaguesTableView.isSkeletonable = true
         leaguesTableView.register(
             LeagueHeaderView.self,
