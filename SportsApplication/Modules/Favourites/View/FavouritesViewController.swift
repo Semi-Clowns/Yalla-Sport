@@ -108,7 +108,7 @@ extension FavouritesViewController: FavouritesViewProtocol {
     func showEmptyState() {
         DispatchQueue.main.async { [weak self] in
         let emptyLabel = UILabel()
-        emptyLabel.text = "No Favourites Yet ⭐"
+        emptyLabel.text = "No Favourites Yet "
         emptyLabel.textAlignment = .center
         emptyLabel.textColor = .secondaryText
         emptyLabel.font = UIFont(name: "Mulish-Medium", size: 18)

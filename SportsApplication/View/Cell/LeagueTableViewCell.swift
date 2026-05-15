@@ -65,7 +65,7 @@ class LeagueTableViewCell: UITableViewCell {
             )
 
 
-        favButton.tintColor = league.isFav ? #colorLiteral(red: 0.9725490196, green: 0.4705882353, blue: 0.4431372549, alpha: 1) : #colorLiteral(red: 0.8012740016, green: 0.8012740016, blue: 0.8012740016, alpha: 1)
+        favButton.tintColor = league.isFav ? #colorLiteral(red: 0.9960784314, green: 0.9764705882, blue: 0, alpha: 1) : #colorLiteral(red: 0.8012740016, green: 0.8012740016, blue: 0.8012740016, alpha: 1)
     }
     
 }
