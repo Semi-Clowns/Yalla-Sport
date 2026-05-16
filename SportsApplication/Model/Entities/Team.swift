@@ -21,6 +21,10 @@ struct TeamResponse: Codable {
             result = nil
         }
     }
+    init(success: Int?, result: [Team]?) {
+            self.success = success
+            self.result = result
+        }
 
     enum CodingKeys: String, CodingKey {
         case success
