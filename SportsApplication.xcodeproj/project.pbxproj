@@ -115,6 +115,7 @@
 		B39F42E72FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */; };
 		B39F42EA2FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F42E82FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift */; };
 		B39F42EB2FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39F42E92FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib */; };
+		B3B93AD12FBBB75C002D53A9 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B93AD02FBBB75C002D53A9 /* NewsResponse.swift */; };
 		B3C796582FAB38B700CB12A1 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */; };
 		B3C7965A2FAB391100CB12A1 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */; };
 		B3C7965C2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */; };
@@ -249,6 +250,7 @@
 		B39F42E52FB198DA00DDC340 /* LatestEventsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestEventsCollectionViewCell.xib; sourceTree = "<group>"; };
 		B39F42E82FB1ACE200DDC340 /* TeamEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		B39F42E92FB1ACE200DDC340 /* TeamEventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamEventCollectionViewCell.xib; sourceTree = "<group>"; };
+		B3B93AD02FBBB75C002D53A9 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		B3C796572FAB38B700CB12A1 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		B3C796592FAB391100CB12A1 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		B3C7965B2FAB3BA500CB12A1 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				418347852FB307B300F140EC /* BasketballFixture.swift */,
 				418347872FB307CC00F140EC /* TennisFixture.swift */,
 				418347892FB307E600F140EC /* CricketFixture.swift */,
+				B3B93AD02FBBB75C002D53A9 /* NewsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -1052,6 +1055,7 @@
 				411142C62FACEE5B00268097 /* HomePresenter.swift in Sources */,
 				B3415DF82FAFE3FC00780D9A /* FavouritesViewController.swift in Sources */,
 				B384080B2FB6400900BEFA96 /* EmptyStateTeamsCell.swift in Sources */,
+				B3B93AD12FBBB75C002D53A9 /* NewsResponse.swift in Sources */,
 				413B2C0A2FB4CE1900DD5EF8 /* AllLeaguesViewController+UISearchBarDelegate.swift in Sources */,
 				4186CEDC2FAD1CD00045F230 /* League.swift in Sources */,
 				B37DFB072FB2B60F00E8BC16 /* SectionHeader.swift in Sources */,
